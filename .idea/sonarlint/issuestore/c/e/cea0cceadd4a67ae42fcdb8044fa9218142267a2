@@ -1,0 +1,12 @@
+
+K
+java:S2209"5Change this instance-reference to a static reference.(ÑÍãÛ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘Û¬‚
+E
+java:S1128"*Remove this unused import 'Errors.Errors'.(‚ŞÄòùÿÿÿÿ
+]
+java:S1128"GRemove this unused import 'AnalizadorLexico.StateMachine.StateMachine'.(î¹Œı
+g	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(á°úûÿÿÿÿ
+Q
+java:S1128";Remove this unused import 'AnalizadorSintactico.ParserVal'.(«òğè
+7	java:S131""Add a default case to this switch.(Åß¨Â

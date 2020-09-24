@@ -1,0 +1,39 @@
+
+‰
+java:S1319F"sThe type of the "tercetos" object should be an interface such as "List" rather than the implementation "ArrayList".(ã„ğï
+d
+java:S2095"IUse try-with-resources or close this "PrintWriter" in a "finally" clause.(ó¯ã¯üÿÿÿÿ
+2
+java:S1643)"Use a StringBuilder instead.(öêîÇ
+7
+java:S16431"Use a StringBuilder instead.(¢ù€şÿÿÿÿ
+1
+java:S16439"Use a StringBuilder instead.(ÒÓºr
+7
+java:S1643A"Use a StringBuilder instead.(«¢Ñÿÿÿÿÿ
+7
+java:S1643I"Use a StringBuilder instead.(«¢Ñÿÿÿÿÿ
+2
+java:S1643Q"Use a StringBuilder instead.(öêîÇ
+0
+java:S1220""Move this file to a named package.
+Q
+java:S1128";Remove this unused import 'AnalizadorSintactico.ParserVal'.(«òğè
+X
+java:S1128"=Remove this unused import 'AnalizadorLexico.LexicalAnalyzer'.(¨ËÕúÿÿÿÿ
+{
+java:S1149N"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(·¸Ç–
+E
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+5
+java:S2129'" Remove this "String" constructor(Ä±Ş
+5
+java:S2129/" Remove this "String" constructor(Ä±Ş
+5
+java:S21297" Remove this "String" constructor(Ä±Ş
+5
+java:S2129?" Remove this "String" constructor(Ä±Ş
+5
+java:S2129G" Remove this "String" constructor(Ä±Ş
+5
+java:S2129O" Remove this "String" constructor(Ä±Ş

@@ -1,0 +1,19 @@
+
+7
+java:S1643)"Use a StringBuilder instead.(Ó¹øÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±¥Êıÿÿÿÿ
+e
+java:S1104"OMake row a static final constant or non-public and provide accessors if needed.(²¤÷”
+h
+java:S1104	"RMake column a static final constant or non-public and provide accessors if needed.(‰¹´
+g
+java:S1104
+"QMake error a static final constant or non-public and provide accessors if needed.(¥©¼Š
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÇÔáüÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(úºÖŞ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Äûàéùÿÿÿÿ
+5
+java:S2129&" Remove this "String" constructor(Ä±Ş

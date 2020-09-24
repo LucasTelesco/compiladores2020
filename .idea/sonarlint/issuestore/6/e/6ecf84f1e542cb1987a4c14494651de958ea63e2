@@ -1,0 +1,70 @@
+
+G
+java:S1444",Make this "public static yylval" field final(³÷úòıÿÿÿÿ
+f	java:S117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ÉªÚ
+U
+java:S4973é"9Use the "equals" method if value comparison was intended.(ÕòÊ‰ùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õ”®øıÿÿÿÿ
+e	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óô©*
+M
+java:S2696ò"6Make the enclosing method "static" or remove this set.(ûš«
+n
+java:S1104)"SMake tokenId a static final constant or non-public and provide accessors if needed.(ä‡»’úÿÿÿÿ
+m
+java:S1104&"RMake buffer a static final constant or non-public and provide accessors if needed.(²¶óûÿÿÿÿ
+q	java:S116"WRename this field "MAX_INT_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àóå©ÿÿÿÿÿ
+h
+java:S1104$"RMake column a static final constant or non-public and provide accessors if needed.(‰¹´
+g
+java:S1104'"QMake state a static final constant or non-public and provide accessors if needed.(“Î°¹
+
+java:S1319+"wThe type of the "reservedWords" object should be an interface such as "Map" rather than the implementation "Hashtable".(ì—Í˜
+s	java:S116"YRename this field "MIN_FLOAT_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁŒıÎúÿÿÿÿ
+l
+java:S1104("QMake index a static final constant or non-public and provide accessors if needed.(úïÜÙüÿÿÿÿ
+n	java:S116"YRename this field "MAX_FLOAT_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÖº
+f	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œò‡Ô
+e	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò®£8
+e
+java:S1104#"OMake row a static final constant or non-public and provide accessors if needed.(¸®–ñ
+f	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ§¡
+k	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğœñîùÿÿÿÿ
+o
+java:S1104+"YMake reservedWords a static final constant or non-public and provide accessors if needed.(ì—Í˜
+k	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ÷ç’úÿÿÿÿ
+l
+java:S1149+"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ì—Í˜
+k	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Ó¤’şÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(¥°óªÿÿÿÿÿ
+m
+java:S1104*"RMake errors a static final constant or non-public and provide accessors if needed.(£²ôşúÿÿÿÿ
+l	java:S116"WRename this field "MIN_INT_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºµ‰Ö
+ˆ
+java:S1130Ø"qRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from constructor's body.(œ¨Ú
+l
+java:S1104"VMake lastSymbol a static final constant or non-public and provide accessors if needed.(ç°¦â
+f	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊŒÚª
+f	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã‘¢
+p
+java:S2293â"YReplace the type specification in this constructor call with the diamond operator ("<>").(±Æ™Ä
+
+java:S1130Ø"xRemove the declaration of thrown exception 'java.io.FileNotFoundException' which is a subclass of 'java.io.IOException'.(œ¨Ú
+f	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıûò±
+i
+java:S1104!"SMake srcCode a static final constant or non-public and provide accessors if needed.(¥‰ÙÉ
+k	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ş°×ıÿÿÿÿ
+m
+java:S1104%"WMake symbolTable a static final constant or non-public and provide accessors if needed.(‚¬Ì
+]
+java:S1126é"AReplace this if-then-else statement by a single return statement.(ÕòÊ‰ùÿÿÿÿ
+k	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÍª÷ıÿÿÿÿ
+m
+java:S1104"RMake yylval a static final constant or non-public and provide accessors if needed.(³÷úòıÿÿÿÿ
+r	java:S116"XRename this field "MAX_WORD_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥°óªÿÿÿÿÿ
+f	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö®ü
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+k	java:S1173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆËùÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(ºµ‰Ö

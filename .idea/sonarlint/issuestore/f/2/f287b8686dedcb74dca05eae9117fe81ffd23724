@@ -1,0 +1,10 @@
+
+Q
+java:S1128";Remove this unused import 'AnalizadorSintactico.ParserVal'.(«òðè
+V	java:S125"<This block of commented-out lines of code should be removed.(›€Úþÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘Û¬‚
+K
+java:S2209"5Change this instance-reference to a static reference.(êßÒÇ
+E
+java:S1128"*Remove this unused import 'Errors.Errors'.(‚ÞÄòùÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(È´ˆ¦

@@ -1,0 +1,397 @@
+
+T	java:S106Î"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+I
+java:S1199¹	"-Extract this nested code block into a method.(õ¾Õ«øÿÿÿÿ
+K
+java:S2209Ê"5Change this instance-reference to a static reference.(Ûí²7
+W	java:S125²"<This block of commented-out lines of code should be removed.(ˆ°ö’şÿÿÿÿ
+Q
+java:S2209É"5Change this instance-reference to a static reference.(Ş±À¤şÿÿÿÿ
+?	java:S108ˆ")Either remove or fill this block of code.(Äé†ˆ
+i
+java:S1104À"MMake p a static final constant or non-public and provide accessors if needed.(€ÈÑéûÿÿÿÿ
+
+java:S1149³"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(Öí–Ôşÿÿÿÿ
+d	java:S100’"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë³¹§
+T
+java:S1197Ê"8Move the array designator from the variable to the type.(­úŸ…ıÿÿÿÿ
+?	java:S108ç")Either remove or fill this block of code.(Äé†ˆ
+8
+java:S1116"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+?	java:S108—")Either remove or fill this block of code.(Äé†ˆ
+8
+java:S1116õ"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+u
+java:S2293»"YReplace the type specification in this constructor call with the diamond operator ("<>").(ç‹äÂûÿÿÿÿ
+’
+java:S1319¼"vThe type of the "estructuras" object should be an interface such as "List" rather than the implementation "ArrayList".(¼ûš÷üÿÿÿÿ
+T	java:S106½"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+|
+java:S1149œ"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ı‰ñÌ
+t	java:S135†"YReduce the total number of break and continue statements in this loop to use at most one.(ıØ‡ùÿÿÿÿ
+M	java:S106k"9Replace this use of System.out or System.err by a logger.(ÅóüX
+D
+java:S1199û"-Extract this nested code block into a method.(Äé†ˆ
+I
+java:S1199×"-Extract this nested code block into a method.(‡Ô„şÿÿÿÿ
+a
+java:S1124´"EReorder the modifiers to comply with the Java Language Specification.(ÒÚããşÿÿÿÿ
+8
+java:S1116¤"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+T	java:S106¤	"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+T	java:S106è"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+e
+java:S1192ú"IDefine a constant instead of duplicating this literal "trampita" 7 times.(ãíé™ÿÿÿÿÿ
+D
+java:S1199"-Extract this nested code block into a method.(Äé†ˆ
+I
+java:S1199Œ"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+a
+java:S1124½"EReorder the modifiers to comply with the Java Language Specification.(úØˆûÿÿÿÿ
+\
+java:S1124Á"EReorder the modifiers to comply with the Java Language Specification.(ğÓè‘
+R
+java:S1854·"6Remove this useless assignment to local variable "sy".(ÑÄò³ùÿÿÿÿ
+D
+java:S1199ë"-Extract this nested code block into a method.(Äé†ˆ
+o	java:S135‹"YReduce the total number of break and continue statements in this loop to use at most one.(¤Şõ
+\
+java:S1124¿"EReorder the modifiers to comply with the Java Language Specification.(Ä˜´
+J
+java:S1121Æ".Extract the assignment out of this expression.(•çå”üÿÿÿÿ
+D
+java:S1199“"-Extract this nested code block into a method.(¹ËÖá
+~
+java:S1845"gRename method "yytable" to prevent any misunderstanding/clash with field "yytable" defined on line 270.(ÌŠåú
+8
+java:S1116å"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+C
+java:S1199œ"-Extract this nested code block into a method.(ëÉ…
+E
+java:S1121›".Extract the assignment out of this expression.(¿ä½•
+c
+java:S1192"LDefine a constant instead of duplicating this literal "Asignacion " 3 times.(Ï—ÿë
+T	java:S106³	"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+\
+java:S1124è"EReorder the modifiers to comply with the Java Language Specification.(¨Šå³
+I
+java:S1199Û"-Extract this nested code block into a method.(å°…Ùûÿÿÿÿ
+R	java:S125ø"<This block of commented-out lines of code should be removed.(§Ø¢‡
+^
+java:S1192"GDefine a constant instead of duplicating this literal " fila " 8 times.(Ï—ÿë
+i	java:S100†"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”¯áæùÿÿÿÿ
+D
+java:S1199Ê"-Extract this nested code block into a method.(ŞÀÿ
+I
+java:S1199"-Extract this nested code block into a method.(‹ÛËãúÿÿÿÿ
+D
+java:S1199à"-Extract this nested code block into a method.(«¿š‚
+8
+java:S1116ö"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+I
+java:S1199ï"-Extract this nested code block into a method.(ñéû¿şÿÿÿÿ
+=	java:S131ö""Add a default case to this switch.(ü©Ÿ‘ûÿÿÿÿ
+`
+java:S11249"EReorder the modifiers to comply with the Java Language Specification.(¤ÓÀâúÿÿÿÿ
+[
+java:S1124µ"EReorder the modifiers to comply with the Java Language Specification.(£ï´5
+D
+java:S1199ƒ"-Extract this nested code block into a method.(ÿæİì
+I
+java:S1199²"-Extract this nested code block into a method.(ˆ°ö’şÿÿÿÿ
+S	java:S106n"9Replace this use of System.out or System.err by a logger.(Æ¬÷İøÿÿÿÿ
+D
+java:S1199—"-Extract this nested code block into a method.(Äé†ˆ
+D
+java:S1199Ü"-Extract this nested code block into a method.(«¿š‚
+I
+java:S1199ß"-Extract this nested code block into a method.(À³†”ıÿÿÿÿ
+C
+java:S1199ä"-Extract this nested code block into a method.(óò«\
+”
+java:S1319¿"xThe type of the "listaTercetos" object should be an interface such as "List" rather than the implementation "ArrayList".(¸­é”øÿÿÿÿ
+h	java:S100h"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’×šÀşÿÿÿÿ
+\
+java:S1124®"EReorder the modifiers to comply with the Java Language Specification.(ÙÿŠ
+T	java:S106–"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+a
+java:S1124Ø"EReorder the modifiers to comply with the Java Language Specification.(°‚Ü‚üÿÿÿÿ
+T	java:S106Ë"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+D
+java:S1199ä"-Extract this nested code block into a method.(úâÈŠ
+?	java:S108û")Either remove or fill this block of code.(Äé†ˆ
+e
+java:S1104¾"NMake id a static final constant or non-public and provide accessors if needed.(íÁÛÉ
+I
+java:S1199´"-Extract this nested code block into a method.(µµ¹ÿÿÿÿÿ
+^
+java:S1192ë"GDefine a constant instead of duplicating this literal "state " 5 times.(ËÙÍı
+R	java:S125Ê"<This block of commented-out lines of code should be removed.(ñ£¾â
+E
+java:S1121¬".Extract the assignment out of this expression.(¿ä½•
+?	java:S108‹")Either remove or fill this block of code.(Äé†ˆ
+D
+java:S1199Á	"-Extract this nested code block into a method.(ŒÜÿï
+O
+java:S1197³"8Move the array designator from the variable to the type.(±¯°â
+j
+java:S3776ü"SRefactor this method to reduce its Cognitive Complexity from 258 to the 15 allowed.(ìæˆ
+8
+java:S1116À"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+\
+java:S1124¹"EReorder the modifiers to comply with the Java Language Specification.(™·†š
+D
+java:S1199ç"-Extract this nested code block into a method.(Äé†ˆ
+„
+java:S1319¾"mThe type of the "id" object should be an interface such as "List" rather than the implementation "ArrayList".(íÁÛÉ
+T
+java:S1197ã"8Move the array designator from the variable to the type.(ˆ½ˆˆşÿÿÿÿ
+T	java:S106Ã"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+8
+java:S1116ƒ	"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+8
+java:S1116º"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+I
+java:S1199Ò"-Extract this nested code block into a method.(à•Ö°ùÿÿÿÿ
+O
+java:S1197Ú"8Move the array designator from the variable to the type.(ß³†î
+D
+java:S1199”"-Extract this nested code block into a method.(â¼´û
+?	java:S108‡")Either remove or fill this block of code.(Äé†ˆ
+N	java:S106m"9Replace this use of System.out or System.err by a logger.(äÎİô
+\
+java:S1124¼"EReorder the modifiers to comply with the Java Language Specification.(Õ©Õ”
+O
+java:S1197"8Move the array designator from the variable to the type.(¦™—Ï
+D
+java:S1199°"-Extract this nested code block into a method.(®ÿÔß
+a
+java:S1124°"EReorder the modifiers to comply with the Java Language Specification.(é±µ”ûÿÿÿÿ
+?	java:S108¬")Either remove or fill this block of code.(Äé†ˆ
+C
+java:S1199ğ"-Extract this nested code block into a method.(ßÕëj
+8
+java:S1116Ù"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+D
+java:S1199‹"-Extract this nested code block into a method.(Äé†ˆ
+D
+java:S1199ˆ"-Extract this nested code block into a method.(Äé†ˆ
+\
+java:S1124Ù"EReorder the modifiers to comply with the Java Language Specification.(„Çğ
+h	java:S100T"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úä›äùÿÿÿÿ
+d	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥÷²Ğ
+a
+java:S1124ã"EReorder the modifiers to comply with the Java Language Specification.(ˆ½ˆˆşÿÿÿÿ
+s
+java:S1845¾"\Rename field "id" to prevent any misunderstanding/clash with field "ID" defined on line 176.(íÁÛÉ
+D
+java:S1199‡"-Extract this nested code block into a method.(Äé†ˆ
+a
+java:S1124ˆ"EReorder the modifiers to comply with the Java Language Specification.(¤‘¡íûÿÿÿÿ
+D
+java:S1199ş"-Extract this nested code block into a method.(¹ËÖá
+l
+java:S1149À"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(€ÈÑéûÿÿÿÿ
+a
+java:S1124À"EReorder the modifiers to comply with the Java Language Specification.(±öìäşÿÿÿÿ
+I
+java:S1199€"-Extract this nested code block into a method.(óäáÉüÿÿÿÿ
+D
+java:S1199¬"-Extract this nested code block into a method.(Äé†ˆ
+b	java:S100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â¸‹1
+\
+java:S1124Ú"EReorder the modifiers to comply with the Java Language Specification.(ß³†î
+I
+java:S1199½	"-Extract this nested code block into a method.(çæÇ«úÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¯šß
+D
+java:S1199“"-Extract this nested code block into a method.(Äé†ˆ
+
+java:S1319½"qThe type of the "tokens" object should be an interface such as "List" rather than the implementation "ArrayList".(ÅÕ–÷ıÿÿÿÿ
+O
+java:S1197Ó"8Move the array designator from the variable to the type.(êçÁ
+?	java:S108“")Either remove or fill this block of code.(Äé†ˆ
+?	java:S108¨")Either remove or fill this block of code.(Äé†ˆ
+a
+java:S1124»"EReorder the modifiers to comply with the Java Language Specification.(şŸ‰ƒúÿÿÿÿ
+T	java:S106×"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(š“¿
+D
+java:S1199Å	"-Extract this nested code block into a method.(ÉÈ©ı
+u
+java:S2293À"YReplace the type specification in this constructor call with the diamond operator ("<>").(€ÈÑéûÿÿÿÿ
+8
+java:S1116‰"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+C
+java:S1199¿"-Extract this nested code block into a method.(ü€p
+8
+java:S1116Ë"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+C
+java:S1481·"'Remove this unused "sy" local variable.(ÑÄò³ùÿÿÿÿ
+N
+java:S1197y"8Move the array designator from the variable to the type.(À¾ÓÇ
+I
+java:S1199ß"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+I
+java:S1199Œ"-Extract this nested code block into a method.(ÿò™Œúÿÿÿÿ
+J
+java:S1121ã	".Extract the assignment out of this expression.(ĞÂÏùÿÿÿÿ
+h	java:S100_"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÆïúÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(”ŞÈä
+R	java:S125ï"<This block of commented-out lines of code should be removed.(§Ø¢‡
+I
+java:S1199›	"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+T	java:S106Œ"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+
+java:S1149Ì"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(Ÿ–ÄÑùÿÿÿÿ
+c	java:S100A"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éšüç
+D
+java:S1199¨"-Extract this nested code block into a method.(Äé†ˆ
+8
+java:S1116’	"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+I
+java:S1199"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+a
+java:S1124º"EReorder the modifiers to comply with the Java Language Specification.(İı™ßÿÿÿÿÿ
+a
+java:S1124ø"EReorder the modifiers to comply with the Java Language Specification.(‚µ¤øÿÿÿÿ
+
+java:S1149»"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ç‹äÂûÿÿÿÿ
+O
+java:S1197Á"8Move the array designator from the variable to the type.(ğÓè‘
+?	java:S108ˆ")Either remove or fill this block of code.(Äé†ˆ
+?	java:S108„")Either remove or fill this block of code.(Äé†ˆ
+I
+java:S1199Å"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+D
+java:S1199Ê"-Extract this nested code block into a method.(ñ£¾â
+I
+java:S1199›"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+i	java:S100š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÂ‡°øÿÿÿÿ
+n
+java:S1104½"RMake tokens a static final constant or non-public and provide accessors if needed.(ÅÕ–÷ıÿÿÿÿ
+\
+java:S1124·"EReorder the modifiers to comply with the Java Language Specification.(­°ôß
+\
+java:S1124Ó"EReorder the modifiers to comply with the Java Language Specification.(êçÁ
+T
+java:S1197ˆ"8Move the array designator from the variable to the type.(¤‘¡íûÿÿÿÿ
+I
+java:S1199ï"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+T	java:S106ø"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+?	java:S108ã")Either remove or fill this block of code.(Äé†ˆ
+D
+java:S1199˜"-Extract this nested code block into a method.(šµ§·
+8
+java:S1116¡	"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+D
+java:S1199ˆ"-Extract this nested code block into a method.(Äé†ˆ
+I
+java:S1199è"-Extract this nested code block into a method.(Êòœ€üÿÿÿÿ
+I
+java:S1199´"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+I
+java:S1199Œ	"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+?	java:S108ë")Either remove or fill this block of code.(Äé†ˆ
+T	java:S106¡"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+D
+java:S1199®"-Extract this nested code block into a method.(ùÙÀ
+s
+java:S1104¼"WMake estructuras a static final constant or non-public and provide accessors if needed.(¼ûš÷üÿÿÿÿ
+D
+java:S1199ã"-Extract this nested code block into a method.(Äé†ˆ
+a
+java:S1192"JDefine a constant instead of duplicating this literal " columna " 8 times.(Ï—ÿë
+T
+java:S1854"8Remove this useless assignment to local variable "tipo".(ÙƒîĞıÿÿÿÿ
+c	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ïç¯¿
+a
+java:S1124¯"EReorder the modifiers to comply with the Java Language Specification.(é¸ãøÿÿÿÿ
+Q	java:S125Ó"<This block of commented-out lines of code should be removed.(¡³y
+i	java:S100Œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¼øÿÿÿÿ
+W	java:S125Â"<This block of commented-out lines of code should be removed.(ˆ°ö’şÿÿÿÿ
+T
+java:S1197ï"8Move the array designator from the variable to the type.(’üú¾ıÿÿÿÿ
+T
+java:S1197ø"8Move the array designator from the variable to the type.(‚µ¤øÿÿÿÿ
+8
+java:S1116°	"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+8
+java:S1116“"Remove this empty statement.(ÄÕ¥øÿÿÿÿ
+D
+java:S1199Ó"-Extract this nested code block into a method.(­ñĞ
+u
+java:S1104¿"YMake listaTercetos a static final constant or non-public and provide accessors if needed.(¸­é”øÿÿÿÿ
+[
+java:S1124¬"EReorder the modifiers to comply with the Java Language Specification.(‹ªV
+^
+java:S1479ö"BReduce the number of non-empty switch cases from 68 to at most 30.(ü©Ÿ‘ûÿÿÿÿ
+I
+java:S1199¤"-Extract this nested code block into a method.(èÓšÓüÿÿÿÿ
+N
+java:S1197:"8Move the array designator from the variable to the type.(÷ÅıÜ
+?	java:S108")Either remove or fill this block of code.(Äé†ˆ
+T	java:S106•	"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+I
+java:S1199ş"-Extract this nested code block into a method.(Ò°Ñşÿÿÿÿ
+\
+java:S1124³"EReorder the modifiers to comply with the Java Language Specification.(šå÷â
+a
+java:S1124±"EReorder the modifiers to comply with the Java Language Specification.(•ä½şÿÿÿÿ
+Q
+java:S2209È"5Change this instance-reference to a static reference.(¤¨û«øÿÿÿÿ
+D
+java:S1199„"-Extract this nested code block into a method.(Äé†ˆ
+T	java:S106§"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+a
+java:S1124Ê"EReorder the modifiers to comply with the Java Language Specification.(­úŸ…ıÿÿÿÿ
+C
+java:S1199õ"-Extract this nested code block into a method.(îâü)
+I
+java:S1199®"-Extract this nested code block into a method.(úŠäùÿÿÿÿ
+\
+java:S1124¸"EReorder the modifiers to comply with the Java Language Specification.(´ûÖŒ
+M	java:S1065"9Replace this use of System.out or System.err by a logger.(‚š‰1
+L
+java:S2696Ê"6Make the enclosing method "static" or remove this set.(Ûí²7
+O
+java:S1197è"8Move the array designator from the variable to the type.(¨Šå³
+D
+java:S1199¨"-Extract this nested code block into a method.(ŞÀÿ
+~
+java:S1845µ"gRename method "yycheck" to prevent any misunderstanding/clash with field "yycheck" defined on line 307.(îöÚÖ
+a
+java:S1124­"EReorder the modifiers to comply with the Java Language Specification.(Òê…Ãúÿÿÿÿ
+T	java:S106†	"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+C
+java:S1199í"-Extract this nested code block into a method.(îâü)
+T	java:S106ù"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+I
+java:S1199ª	"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+D
+java:S1199ÿ"-Extract this nested code block into a method.(ÿæİì
+I
+java:S1199Õ"-Extract this nested code block into a method.(úŠäùÿÿÿÿ
+\
+java:S1124²"EReorder the modifiers to comply with the Java Language Specification.(¦à›¬
+I
+java:S1199 "-Extract this nested code block into a method.(ÛÁıÿÿÿÿ
+D
+java:S1199ì"-Extract this nested code block into a method.(¢à¨é
+\
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ì·½î
+a
+java:S1124¾"EReorder the modifiers to comply with the Java Language Specification.(Ş††ÿÿÿÿÿ
+[
+java:S1124¶"EReorder the modifiers to comply with the Java Language Specification.(äßàZ
+I
+java:S1199Â"-Extract this nested code block into a method.(ˆ°ö’şÿÿÿÿ
+u
+java:S2293³"YReplace the type specification in this constructor call with the diamond operator ("<>").(Öí–Ôşÿÿÿÿ
+T	java:S106Ü"9Replace this use of System.out or System.err by a logger.(Â€öÙşÿÿÿÿ
+|
+java:S1149Ã"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(ÇÑ‡«
+D
+java:S1199¹"-Extract this nested code block into a method.(ãÉ—
+a
+java:S1124ï"EReorder the modifiers to comply with the Java Language Specification.(’üú¾ıÿÿÿÿ

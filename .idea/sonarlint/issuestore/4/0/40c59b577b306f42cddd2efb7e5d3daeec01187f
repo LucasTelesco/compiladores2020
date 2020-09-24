@@ -1,0 +1,13 @@
+
+l
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ÒÙ£
+—
+java:S1186h"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‹Ğ‡û
+R
+java:S1068"7Remove this unused "mutivalidadApuntado" private field.(Ç¬Æşûÿÿÿÿ
+N	java:S106E"9Replace this use of System.out or System.err by a logger.(Ş½Éâ
+J
+java:S2864n"4Iterate over the "entrySet" instead of the "keySet".(Éõ»—
+2
+java:S1643o"Use a StringBuilder instead.(Ëë½ó
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğ¦İØøÿÿÿÿ
