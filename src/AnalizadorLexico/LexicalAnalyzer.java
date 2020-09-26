@@ -65,401 +65,471 @@ public class LexicalAnalyzer {
 
 
 
-        StateMachine.addTransition(0, '_',1,next); //OK
-        StateMachine.addTransition(0, 'a',9,next); //OK
-        StateMachine.addTransition(0, '1',2,next); //OK
-        StateMachine.addTransition(0, 'i',9,next); //OK
-        StateMachine.addTransition(0, ' ',0,next_espace);//OK
-        StateMachine.addTransition(0, '\n',0,next_line); //OK
-        StateMachine.addTransition(0, '.',4,next); //OK
-        StateMachine.addTransition(0, 'F',9,next); //OK
-        StateMachine.addTransition(0, '*',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '-',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '+',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '&',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '=',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, ')',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '/',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '{',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '}',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, ',',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, ';',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, '(',StateMachine.FINAL_STATE,tokenAscii);//OK
-        StateMachine.addTransition(0, ':',10,next);//OK
-        StateMachine.addTransition(0, '<',10,next);//OK
-        StateMachine.addTransition(0, '>',10,next);//OK
-        StateMachine.addTransition(0, '!',10,next);//OK
-        StateMachine.addTransition(0, '\'',12,cadena_start);//OK
+        StateMachine.addTransition( 0, 'l',  1, id_start);
+        StateMachine.addTransition( 0, 'd',6, numero_start);
+        StateMachine.addTransition( 0, '+', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, '-', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, '*', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, '/', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, '<', 2,next );
+        StateMachine.addTransition( 0, '>', 2,next );
+        StateMachine.addTransition( 0, '=', 2,next );
+        StateMachine.addTransition( 0, '!', 3,next );
+        StateMachine.addTransition( 0, '{', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, '}', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, '(', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, ')', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, ',', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, ';', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 0, '%', 4,comentario_start );
+        StateMachine.addTransition( 0, '\n', 0, next_line );
+        StateMachine.addTransition( 0, '.', 8, flotante_start );
+        StateMachine.addTransition( 0, '_', StateMachine.ERROR_STATE,not_lexema);
+        StateMachine.addTransition( 0, 'f', 1, id_start );
+        StateMachine.addTransition( 0, '"', 2, cadena_start);
+        StateMachine.addTransition( 0, 'C', StateMachine.ERROR_STATE,not_lexema);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 0, ' ', 0, next_espace);
 
 
-        //13 es el estado para no conocer _ solo, este obliga a tener un d/l
-
-        StateMachine.addTransition(1, '_',11,comentario); //OK
-        StateMachine.addTransition(1, 'a',13,id_start);//OK
-        StateMachine.addTransition(1, '1',13,id_start); //OK
-        StateMachine.addTransition(1, 'i',13,id_start); //OK
-        StateMachine.addTransition(1, ' ',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(1, '\n',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '.',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, 'F',13,id_start); //OK
-        StateMachine.addTransition(1, '*',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(1, '-',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(1, '+',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(1, '&',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '=',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, ')',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '/',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '{',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '}',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, ',',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, ';',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '(',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, ':',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '<',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '>',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '!',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(1, '\'',StateMachine.ERROR_STATE,not_lexema);//OK
-
-
-        StateMachine.addTransition(2, '_',3,entero_start); //OK
-        StateMachine.addTransition(2, 'a',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(2, '1',2,next); //OK
-        StateMachine.addTransition(2, 'i',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(2, ' ',StateMachine.ERROR_STATE,not_lexema);//Ok
-        StateMachine.addTransition(2, '\n',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(2, '.',5,flotante_start);//OK
-        StateMachine.addTransition(2, 'F',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '*',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '-',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '+',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '&',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '=',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, ')',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '/',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '{',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '}',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, ',',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, ';',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '(',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, ':',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '<',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '>',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '!',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(2, '\'',StateMachine.ERROR_STATE,not_lexema); //OK
-
-        StateMachine.addTransition(3, '_',StateMachine.ERROR_STATE,not_lexema);//OK//OK
-        StateMachine.addTransition(3, 'a',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '1',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, 'i',StateMachine.FINAL_STATE,entero_end);//OK
-        StateMachine.addTransition(3, ' ',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '\n',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '.',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, 'F',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '*',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '-',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '+',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '&',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '=',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, ')',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '/',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '{',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '}',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, ',',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, ';',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '(',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, ':',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '<',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '>',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '!',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(3, '\'',StateMachine.ERROR_STATE,not_lexema);//OK
+        StateMachine.addTransition( 1, 'l',  1, next);
+        StateMachine.addTransition( 1, 'd',1, next);
+        StateMachine.addTransition( 1, '+', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '-', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '*', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '/', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '<', StateMachine.FINAL_STATE,id_end);
+        StateMachine.addTransition( 1, '>', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '=', StateMachine.FINAL_STATE,id_end  );
+        StateMachine.addTransition( 1, '!', StateMachine.FINAL_STATE,id_end  );
+        StateMachine.addTransition( 1, '{', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '}', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '(', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, ')', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, ',', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, ';', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '%', StateMachine.FINAL_STATE,id_end  );
+        StateMachine.addTransition( 1, '\n', StateMachine.FINAL_STATE,id_end  );
+        StateMachine.addTransition( 1, '.', StateMachine.FINAL_STATE,id_end );
+        StateMachine.addTransition( 1, '_', 1,next);
+        StateMachine.addTransition( 1, 'f', 1, next );
+        StateMachine.addTransition( 1, '"', StateMachine.FINAL_STATE, id_end);
+        StateMachine.addTransition( 1, 'C', StateMachine.ERROR_STATE,id_end);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 1, ' ', StateMachine.FINAL_STATE, next_espace);
 
 
-        StateMachine.addTransition(4, '_',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(4, 'a',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(4, '1',5,flotante_start); //OK
-        StateMachine.addTransition(4, 'i',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(4, ' ',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(4, '\n',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(4, '.',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(4, 'F',StateMachine.ERROR_STATE,not_lexema); //OK
-        StateMachine.addTransition(4, '*',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '-',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '+',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '&',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '=',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, ')',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '/',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '{',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '}',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, ',',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, ';',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '(',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, ':',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '<',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '>',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '!',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(4, '\'',StateMachine.ERROR_STATE,not_lexema);//OK
+        StateMachine.addTransition( 2, 'l',  StateMachine.FINAL_STATE, tokenAscii);
+        StateMachine.addTransition( 2, 'd',StateMachine.FINAL_STATE, tokenAscii);
+        StateMachine.addTransition( 2, '+', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '-', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '*', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '/', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '<', StateMachine.FINAL_STATE,tokenAscii);
+        StateMachine.addTransition( 2, '>', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '=', StateMachine.FINAL_STATE,asignacion_Comparacion  );
+        StateMachine.addTransition( 2, '!', StateMachine.FINAL_STATE,tokenAscii  );
+        StateMachine.addTransition( 2, '{', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '}', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '(', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, ')', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, ',', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, ';', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '%', StateMachine.FINAL_STATE,tokenAscii  );
+        StateMachine.addTransition( 2, '\n', StateMachine.FINAL_STATE,tokenAscii  );
+        StateMachine.addTransition( 2, '.', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '_', StateMachine.FINAL_STATE,tokenAscii);
+        StateMachine.addTransition( 2, 'f', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, '"', StateMachine.FINAL_STATE,tokenAscii);
+        StateMachine.addTransition( 2, 'C', StateMachine.FINAL_STATE,tokenAscii);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 2, ' ', StateMachine.FINAL_STATE,tokenAscii);
 
 
-        StateMachine.addTransition(5, '_',StateMachine.FINAL_STATE,flotante_end); //OK
-        StateMachine.addTransition(5, 'a',StateMachine.FINAL_STATE,flotante_end); //OK
-        StateMachine.addTransition(5, '1',5,next); //OK
-        StateMachine.addTransition(5, 'i',StateMachine.FINAL_STATE,flotante_end); //OK
-        StateMachine.addTransition(5, ' ',StateMachine.FINAL_STATE,flotante_end); //OK
-        StateMachine.addTransition(5, '\n',StateMachine.FINAL_STATE,flotante_end); //OK
-        StateMachine.addTransition(5, '.',StateMachine.FINAL_STATE,flotante_end); //OK
-        StateMachine.addTransition(5, 'F',6,next); //OK
-        StateMachine.addTransition(5, '*',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '-',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '+',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '&',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '=',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, ')',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '/',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '{',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '}',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, ',',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, ';',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '(',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, ':',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '<',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '>',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '!',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(5, '\'',StateMachine.FINAL_STATE,flotante_end);//OK
-
-        StateMachine.addTransition(6, '_',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, 'a',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '1',8,next);//OK
-        StateMachine.addTransition(6, 'i',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, ' ',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '\n',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '.',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, 'F',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '*',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '-',7,next);//OK
-        StateMachine.addTransition(6, '+',7,next);//OK
-        StateMachine.addTransition(6, '&',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '=',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, ')',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '/',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '{',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '}',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, ',',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, ';',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '(',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, ':',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '<',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '>',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '!',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(6, '\'',StateMachine.ERROR_STATE,not_lexema);//OK
+        StateMachine.addTransition( 3, 'l', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, 'd', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '+', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '-', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '*', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '/', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '<', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '>', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '=', StateMachine.FINAL_STATE,asignacion_Comparacion  );
+        StateMachine.addTransition( 3, '!', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '{', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '}', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '(', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, ')', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, ',', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, ';', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '%', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, '\n', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 3, '.', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 3, '_', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, 'f', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 3, '"', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 3, 'C', StateMachine.ERROR_STATE, not_lexema);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 3, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
-        StateMachine.addTransition(7, '_',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, 'a',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '1',8,next);//OK
-        StateMachine.addTransition(7, 'i',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, ' ',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '\n',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '.',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, 'F',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '*',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '-',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '+',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '&',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '=',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, ')',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '/',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '{',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '}',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, ',',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, ';',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '(',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, ':',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '<',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '>',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '!',StateMachine.ERROR_STATE,not_lexema);//OK
-        StateMachine.addTransition(7, '\'',StateMachine.ERROR_STATE,not_lexema);//OK
+        StateMachine.addTransition( 4, 'l', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, 'd', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '+', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '-', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '*', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '/', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '<', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '>', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '=', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '!', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '{', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '}', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '(', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, ')', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, ',', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, ';', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, '%', 5, next);
+        StateMachine.addTransition( 4, '\n', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 4, '.', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 4, '_', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, 'f', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 4, '"', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 4, 'C', StateMachine.ERROR_STATE, not_lexema);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 4, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
-        StateMachine.addTransition(8, '_',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, 'a',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '1',8,next);
-        StateMachine.addTransition(8, 'i',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, ' ',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '\n',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '.',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, 'F',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '*',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '-',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '+',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '&',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '=',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, ')',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '/',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '{',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '}',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, ',',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, ';',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '(',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, ':',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '<',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '>',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '!',StateMachine.FINAL_STATE,flotante_end);//OK
-        StateMachine.addTransition(8, '\'',StateMachine.FINAL_STATE,flotante_end);//OK
+        StateMachine.addTransition( 5, 'l', 5, next);
+        StateMachine.addTransition( 5, 'd', 5, next);
+        StateMachine.addTransition( 5, '+', 5, next);
+        StateMachine.addTransition( 5, '-', 5, next);
+        StateMachine.addTransition( 5, '*', 5, next);
+        StateMachine.addTransition( 5, '/', 5, next);
+        StateMachine.addTransition( 5, '<', 5, next);
+        StateMachine.addTransition( 5, '>', 5, next);
+        StateMachine.addTransition( 5, '=', 5, next);
+        StateMachine.addTransition( 5, '!', 5, next);
+        StateMachine.addTransition( 5, '{', 5, next);
+        StateMachine.addTransition( 5, '}', 5, next);
+        StateMachine.addTransition( 5, '(', 5, next);
+        StateMachine.addTransition( 5, ')', 5, next);
+        StateMachine.addTransition( 5, ',', 5, next);
+        StateMachine.addTransition( 5, ';', 5, next);
+        StateMachine.addTransition( 5, '%', 5, next);
+        StateMachine.addTransition( 5, '\n', StateMachine.FINAL_STATE, comentario_end );
+        StateMachine.addTransition( 5, '.', 5, next );
+        StateMachine.addTransition( 5, '_', 5, next);
+        StateMachine.addTransition( 5, 'f', 5, next);
+        StateMachine.addTransition( 5, '"', 5, next);
+        StateMachine.addTransition( 5, 'C', 5, next);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 5, ' ', 5, next);
 
 
-        StateMachine.addTransition(9, '_',9,next);//OK
-        StateMachine.addTransition(9, 'a',9,next);//OK
-        StateMachine.addTransition(9, '1',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, 'i',9,next);//OK
-        StateMachine.addTransition(9, ' ',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '\n',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '.',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, 'F',9,next);//OK
-        StateMachine.addTransition(9, '*',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '-',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '+',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '&',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '=',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, ')',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '/',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '{',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '}',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, ',',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, ';',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '(',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, ':',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '<',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '>',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '!',StateMachine.FINAL_STATE,palabra_reservada);//OK
-        StateMachine.addTransition(9, '\'',StateMachine.FINAL_STATE,palabra_reservada);//OK
+
+        StateMachine.addTransition( 6, 'l', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, 'd', 6, next);
+        StateMachine.addTransition( 6, '+', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '-', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '*', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '/', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '<', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '>', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '=', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '!', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '{', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '}', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '(', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, ')', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, ',', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, ';', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '%', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, '\n', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 6, '.', 8, next );
+        StateMachine.addTransition( 6, '_', 7, next);
+        StateMachine.addTransition( 6, 'f', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 6, '"', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 6, 'C', StateMachine.ERROR_STATE, not_lexema);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 6, ' ', StateMachine.ERROR_STATE, not_lexema);
+
+
+        StateMachine.addTransition( 7, 'l', StateMachine.FINAL_STATE, entero_end);
+        StateMachine.addTransition( 7, 'd', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '+', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '-', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '*', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '/', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '<', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '>', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '=', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '!', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '{', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '}', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '(', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, ')', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, ',', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, ';', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '%', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, '\n', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 7, '.', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 7, '_', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 7, 'f', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 7, '"', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 7, 'C', StateMachine.ERROR_STATE, not_lexema);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 7, ' ', StateMachine.ERROR_STATE, not_lexema);
+
+
+        StateMachine.addTransition( 8, 'l',  StateMachine.FINAL_STATE, flotante_end);
+        StateMachine.addTransition( 8, 'd', 8, next);
+        StateMachine.addTransition( 8, '+', StateMachine.FINAL_STATE, flotante_end );
+        StateMachine.addTransition( 8, '-', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '*', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '/', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '<', StateMachine.FINAL_STATE,flotante_end);
+        StateMachine.addTransition( 8, '>', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '=', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 8, '!', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 8, '{', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '}', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '(', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, ')', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, ',', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, ';', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '%', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 8, '\n', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 8, '.', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 8, '_', StateMachine.FINAL_STATE,flotante_end);
+        StateMachine.addTransition( 8, 'f',9, next );
+        StateMachine.addTransition( 8, '"', StateMachine.FINAL_STATE,flotante_end);
+        StateMachine.addTransition( 8, 'C', StateMachine.FINAL_STATE,flotante_end);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 8, ' ', StateMachine.FINAL_STATE,flotante_end);
+
+
+        StateMachine.addTransition( 9, 'l', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, 'd', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '+', 10, next);
+        StateMachine.addTransition( 9, '-', 10, next);
+        StateMachine.addTransition( 9, '*', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '/', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '<', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '>', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '=', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '!', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '{', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '}', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '(', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, ')', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, ',', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, ';', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '%', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, '\n', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 9, '.', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 9, '_', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 9, 'f', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 9, '"', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 9, 'C', StateMachine.ERROR_STATE, not_lexema);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 9, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
 //en la accion semantica de cualquier simbolo que no sea = contemplamos la historia (<>) o (!:)
 //si tiene que saltar un error o devolver un token, porque vaya al final o al error
 //la accion semantica  es la que decide
-        StateMachine.addTransition(10, '_',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, 'a',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '1',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, 'i',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, ' ',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '\n',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '.',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, 'F',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '*',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '-',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '+',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '&',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '=',StateMachine.FINAL_STATE,asignacion_Comparacion);//OK
-        StateMachine.addTransition(10, ')',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '/',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '{',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '}',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, ',',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, ';',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '(',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, ':',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '<',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '>',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '!',StateMachine.ERROR_STATE,comp_error);//OK
-        StateMachine.addTransition(10, '\'',StateMachine.ERROR_STATE,comp_error);//OK
+        StateMachine.addTransition( 10, 'l', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, 'd', 11, next);
+        StateMachine.addTransition( 10, '+', 10, next);
+        StateMachine.addTransition( 10, '-', 10, next);
+        StateMachine.addTransition( 10, '*', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '/', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '<', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '>', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '=', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '!', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '{', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '}', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '(', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, ')', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, ',', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, ';', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '%', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, '\n', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 10, '.', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 10, '_', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 10, 'f', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 10, '"', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 10, 'C', StateMachine.ERROR_STATE, not_lexema);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 10, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
 
 
-        StateMachine.addTransition(11, '_',11,next_espace);
-        StateMachine.addTransition(11, 'a',11,next_espace);
-        StateMachine.addTransition(11, '1',11,next_espace);
-        StateMachine.addTransition(11, 'i',11,next_espace);
-        StateMachine.addTransition(11, ' ',11,next_espace);
-        StateMachine.addTransition(11, '\n',StateMachine.INITIAL_STATE,next_line);
-        StateMachine.addTransition(11, '.',11,next_espace);
-        StateMachine.addTransition(11, 'F',11,next_espace);
-        StateMachine.addTransition(11, '*',11,next_espace);
-        StateMachine.addTransition(11, '-',11,next_espace);
-        StateMachine.addTransition(11, '+',11,next_espace);
-        StateMachine.addTransition(11, '&',11,next_espace);
-        StateMachine.addTransition(11, '=',11,next_espace);
-        StateMachine.addTransition(11, ')',11,next_espace);
-        StateMachine.addTransition(11, '/',11,next_espace);
-        StateMachine.addTransition(11, '{',11,next_espace);
-        StateMachine.addTransition(11, '}',11,next_espace);
-        StateMachine.addTransition(11, ',',11,next_espace);
-        StateMachine.addTransition(11, ';',11,next_espace);
-        StateMachine.addTransition(11, '(',11,next_espace);
-        StateMachine.addTransition(11, ':',11,next_espace);
-        StateMachine.addTransition(11, '<',11,next_espace);
-        StateMachine.addTransition(11, '>',11,next_espace);
-        StateMachine.addTransition(11, '!',11,next_espace);
-        StateMachine.addTransition(11, '\'',11,next_espace);
+
+        StateMachine.addTransition( 11, 'l',  StateMachine.FINAL_STATE, flotante_end);
+        StateMachine.addTransition( 11, 'd', 11, next);
+        StateMachine.addTransition( 11, '+', StateMachine.FINAL_STATE, flotante_end );
+        StateMachine.addTransition( 11, '-', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '*', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '/', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '<', StateMachine.FINAL_STATE,flotante_end);
+        StateMachine.addTransition( 11, '>', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '=', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 11, '!', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 11, '{', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '}', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '(', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, ')', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, ',', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, ';', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '%', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 11, '\n', StateMachine.FINAL_STATE,flotante_end  );
+        StateMachine.addTransition( 11, '.', StateMachine.FINAL_STATE,flotante_end );
+        StateMachine.addTransition( 11, '_', StateMachine.FINAL_STATE,flotante_end);
+        StateMachine.addTransition( 11, 'f',9, next );
+        StateMachine.addTransition( 11, '"', StateMachine.FINAL_STATE,flotante_end);
+        StateMachine.addTransition( 11, 'C', StateMachine.FINAL_STATE,flotante_end);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 11, ' ', StateMachine.FINAL_STATE,flotante_end);
 
 
 
-        StateMachine.addTransition(12, '_',12,next);
-        StateMachine.addTransition(12, 'a',12,next);
-        StateMachine.addTransition(12, '1',12,next);
-        StateMachine.addTransition(12, 'i',12,next);
-        StateMachine.addTransition(12, ' ',12,next);
-        StateMachine.addTransition(12, '\n',12,next_line_cadena);
-        StateMachine.addTransition(12, '.',12,next);
-        StateMachine.addTransition(12, 'F',12,next);
-        StateMachine.addTransition(12, '*',12,next);
-        StateMachine.addTransition(12, '-',12,next);
-        StateMachine.addTransition(12, '+',12,next);
-        StateMachine.addTransition(12, '&',12,next);
-        StateMachine.addTransition(12, '=',12,next);
-        StateMachine.addTransition(12, ')',12,next);
-        StateMachine.addTransition(12, '/',12,next);
-        StateMachine.addTransition(12, '{',12,next);
-        StateMachine.addTransition(12, '}',12,next);
-        StateMachine.addTransition(12, ',',12,next);
-        StateMachine.addTransition(12, ';',12,next);
-        StateMachine.addTransition(12, '(',12,next);
-        StateMachine.addTransition(12, ':',12,next);
-        StateMachine.addTransition(12, '<',12,next);
-        StateMachine.addTransition(12, '>',12,next);
-        StateMachine.addTransition(12, '!',12,next);
-        StateMachine.addTransition(12, '\'',StateMachine.FINAL_STATE,cadena_end);//OK
+        StateMachine.addTransition( 12, 'l', 12, next);
+        StateMachine.addTransition( 12, 'd', 12, next);
+        StateMachine.addTransition( 12, '+', 12, next);
+        StateMachine.addTransition( 12, '-', 13, next);
+        StateMachine.addTransition( 12, '*', 12, next);
+        StateMachine.addTransition( 12, '/', 12, next);
+        StateMachine.addTransition( 12, '<', 12, next);
+        StateMachine.addTransition( 12, '>', 12, next);
+        StateMachine.addTransition( 12, '=', 12, next);
+        StateMachine.addTransition( 12, '!', 12, next);
+        StateMachine.addTransition( 12, '{', 12, next);
+        StateMachine.addTransition( 12, '}', 12, next);
+        StateMachine.addTransition( 12, '(', 12, next);
+        StateMachine.addTransition( 12, ')', 12, next);
+        StateMachine.addTransition( 12, ',', 12, next);
+        StateMachine.addTransition( 12, ';', 12, next);
+        StateMachine.addTransition( 12, '%', 12, next);
+        StateMachine.addTransition( 12, '\n', 12, next_line_cadena );
+        StateMachine.addTransition( 12, '.', 12, next );
+        StateMachine.addTransition( 12, '_', 12, next);
+        StateMachine.addTransition( 12, 'f', 12, next);
+        StateMachine.addTransition( 12, '"', StateMachine.FINAL_STATE, cadena_end);
+        StateMachine.addTransition( 12, 'C', 12, next);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 12, ' ', 12, next);
 
 
-        StateMachine.addTransition(13, '_',13,next);//OK
-        StateMachine.addTransition(13, 'a',13,next);//OK
-        StateMachine.addTransition(13, '1',13,next);//OK
-        StateMachine.addTransition(13, 'i',13,next);//OK
-        StateMachine.addTransition(13, ' ',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '\n',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '.',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, 'F',13,next);//OK
-        StateMachine.addTransition(13, '*',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '-',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '+',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '&',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '=',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, ')',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '/',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '{',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '}',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, ',',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, ';',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '(',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, ':',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '<',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '>',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '!',StateMachine.FINAL_STATE,id_end);
-        StateMachine.addTransition(13, '\'',StateMachine.FINAL_STATE,id_end);//OK
+        StateMachine.addTransition( 13, 'l', 12, next);
+        StateMachine.addTransition( 13, 'd', 12, next);
+        StateMachine.addTransition( 13, '+', 12, next);
+        StateMachine.addTransition( 13, '-', 13, next);
+        StateMachine.addTransition( 13, '*', 12, next);
+        StateMachine.addTransition( 13, '/', 12, next);
+        StateMachine.addTransition( 13, '<', 12, next);
+        StateMachine.addTransition( 13, '>', 12, next);
+        StateMachine.addTransition( 13, '=', 12, next);
+        StateMachine.addTransition( 13, '!', 12, next);
+        StateMachine.addTransition( 13, '{', 12, next);
+        StateMachine.addTransition( 13, '}', 12, next);
+        StateMachine.addTransition( 13, '(', 12, next);
+        StateMachine.addTransition( 13, ')', 12, next);
+        StateMachine.addTransition( 13, ',', 12, next);
+        StateMachine.addTransition( 13, ';', 12, next);
+        StateMachine.addTransition( 13, '%', 12, next);
+        StateMachine.addTransition( 13, '\n', 14, next_line_cadena );
+        StateMachine.addTransition( 13, '.', 12, next );
+        StateMachine.addTransition( 13, '_', 12, next);
+        StateMachine.addTransition( 13, 'f', 12, next);
+        StateMachine.addTransition( 13, '"', StateMachine.FINAL_STATE, cadena_end);
+        StateMachine.addTransition( 13, 'C', 12, next);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 13, ' ', 12, next);
+
+        StateMachine.addTransition( 14, 'l', 12, next);
+        StateMachine.addTransition( 14, 'd', 12, next);
+        StateMachine.addTransition( 14, '+', 12, next);
+        StateMachine.addTransition( 14, '-', 12, next);
+        StateMachine.addTransition( 14, '*', 12, next);
+        StateMachine.addTransition( 14, '/', 12, next);
+        StateMachine.addTransition( 14, '<', 12, next);
+        StateMachine.addTransition( 14, '>', 12, next);
+        StateMachine.addTransition( 14, '=', 12, next);
+        StateMachine.addTransition( 14, '!', 12, next);
+        StateMachine.addTransition( 14, '{', 12, next);
+        StateMachine.addTransition( 14, '}', 12, next);
+        StateMachine.addTransition( 14, '(', 12, next);
+        StateMachine.addTransition( 14, ')', 12, next);
+        StateMachine.addTransition( 14, ',', 12, next);
+        StateMachine.addTransition( 14, ';', 12, next);
+        StateMachine.addTransition( 14, '%', 12, next);
+        StateMachine.addTransition( 14, '\n', 12, next_line_cadena );
+        StateMachine.addTransition( 14, '.', 12, next );
+        StateMachine.addTransition( 14, '_', 12, next);
+        StateMachine.addTransition( 14, 'f', 12, next);
+        StateMachine.addTransition( 14, '"', StateMachine.FINAL_STATE, cadena_end);
+        StateMachine.addTransition( 14, 'C', 12, next);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 14, ' ', 12, next);
+
+
+        StateMachine.addTransition( 15, 'l', StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, 'd',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '+',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '-',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '*',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '/',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '<',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '>',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '=',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '!',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '{',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '}',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '(',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, ')',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, ',',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, ';',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '%',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '\n',  StateMachine.FINAL_STATE, palabra_reservada );
+        StateMachine.addTransition( 15, '.',  StateMachine.FINAL_STATE, palabra_reservada );
+        StateMachine.addTransition( 15, '_', 15, next);
+        StateMachine.addTransition( 15, 'f',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, '"',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, 'C',  StateMachine.FINAL_STATE, palabra_reservada);
+        //letra minima?
+        //letra may??
+        StateMachine.addTransition( 15, ' ',  StateMachine.FINAL_STATE, palabra_reservada);
     }
     private void addReservedWord(){
         reservedWords.put("if", (int) Parser.IF);
+        reservedWords.put("then", (int) Parser.THEN);
         reservedWords.put("else", (int) Parser.ELSE);
         reservedWords.put("end_if", (int) Parser.END_IF);
-        reservedWords.put("print", (int) Parser.PRINT);
-        reservedWords.put("integer", (int) Parser.INTEGER);
-        reservedWords.put("single", (int) Parser.SINGLE);
+        reservedWords.put("out", (int) Parser.OUT);
+        reservedWords.put("func", (int) Parser.FUNC);
+        reservedWords.put("return", (int) Parser.RETURN);
         reservedWords.put("loop", (int) Parser.LOOP);
         reservedWords.put("until", (int) Parser.UNTIL);
-        reservedWords.put("let", (int) Parser.LET);
-        reservedWords.put("mut", (int) Parser.MUT);
-    }
+        reservedWords.put("longint", (int) Parser.LONGINT);
 
     public int getRow(){
         return row;
