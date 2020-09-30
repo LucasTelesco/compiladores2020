@@ -63,6 +63,15 @@ public class LexicalAnalyzer {
         SemanticAction not_lexema = new AS_ErrorNotLexema(this);
         SemanticAction palabra_reservada = new AS_Palabra_Reservada(this);
 
+        SemanticAction numero_start = new AS_Numero_Start(this);
+        SemanticAction comentario_start = new AS_Comentario_Start(this);
+        SemanticAction comentario_end = new AS_Comentario_End(this);
+
+
+
+
+
+
 
 
         StateMachine.addTransition( 0, 'l',  1, id_start);

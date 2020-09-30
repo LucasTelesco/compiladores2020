@@ -189,6 +189,12 @@ public final static short LET=273;
 public final static short MUT=274;
 public final static short ENTERO=275;
 public final static short FLOTANTE=276;
+
+public final static short THEN=278;
+public final static short OUT=279;
+public final static short FUNC=280;
+public final static short LONGINT=281;
+
 public final static short YYERRCODE=256;
 final static short yylhs[] = {                           -1,
     0,    0,    2,    0,    1,    1,    3,    3,    5,    5,

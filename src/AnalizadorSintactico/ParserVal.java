@@ -100,6 +100,19 @@ public class ParserVal {
     else if (valor == Parser.SINGLE) {
       return "PALABRA RESERVADA SINGLE";
     }
+    else if (valor == Parser.THEN) {
+      return "PALABRA RESERVADA THEN";
+    }
+    else if (valor == Parser.OUT) {
+      return "PALABRA RESERVADA OUT";
+    }
+    else if (valor == Parser.FUNC) {
+      return "PALABRA RESERVADA FUNC";
+    }
+    else if (valor == Parser.LONGINT) {
+      return "PALABRA RESERVADA LONGINT";
+    }
+
     else if (valor == Parser.MAYIG) {
       return "OPERADOR MAYOR IGUAL";
     }
@@ -180,7 +193,10 @@ public class ParserVal {
   public final static short ENTERO=276;
   public final static short FLOTANTE=277;
   public final static short YYERRCODE=256;
-
+  public final static short THEN=278;
+  public final static short OUT=279;
+  public final static short FUNC=280;
+  public final static short LONGINT=281;
 
   public enum TipoToken {
 
