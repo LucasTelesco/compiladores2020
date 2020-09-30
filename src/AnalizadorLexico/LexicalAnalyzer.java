@@ -548,16 +548,16 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 15, ' ',  StateMachine.FINAL_STATE, palabra_reservada);
     }
     private void addReservedWord() {
-        /*reservedWords.put("if", (int) Parser.IF);
-        reservedWords.put("then", (int) Parser.THEN);
-        reservedWords.put("else", (int) Parser.ELSE);
-        reservedWords.put("end_if", (int) Parser.END_IF);
-        reservedWords.put("out", (int) Parser.OUT);
-        reservedWords.put("func", (int) Parser.FUNC);
-        reservedWords.put("return", (int) Parser.RETURN);
-        reservedWords.put("loop", (int) Parser.LOOP);
-        reservedWords.put("until", (int) Parser.UNTIL);
-        reservedWords.put("longint", (int) Parser.LONGINT);*/
+        reservedWords.put("if", (int) IF);
+       // reservedWords.put("then", (int) THEN);
+        reservedWords.put("else", (int) ELSE);
+        reservedWords.put("end_if", (int) END_IF);
+        //reservedWords.put("out", (int) OUT);
+        //reservedWords.put("func", (int) FUNC);
+        //reservedWords.put("return", (int) RETURN);
+        reservedWords.put("loop", (int) LOOP);
+        reservedWords.put("until", (int) UNTIL);
+        //reservedWords.put("longint", (int) LONGINT);
     }
 
         public int getRow () {
