@@ -2,13 +2,10 @@ package AnalizadorLexico;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Hashtable;
 
 import AnalizadorLexico.SemanticAction.*;
 import AnalizadorLexico.StateMachine.StateMachine;
-import AnalizadorSintactico.Parser;
-import AnalizadorSintactico.ParserVal;
 import Errors.*;
 import SymbolTable.*;
 
@@ -17,7 +14,7 @@ public class LexicalAnalyzer {
 
 
 
-    public static ParserVal yylval = null;
+    //public static ParserVal yylval = null;
     //############  puntero a la tabla de simbolos? #######
 
     public String lastSymbol;
@@ -29,6 +26,28 @@ public class LexicalAnalyzer {
     public final int MAX_INT_SIZE = (int)Math.pow(2,15);
     public final float MIN_FLOAT_SIZE = (float) Math.pow(1.17549435,-38);
     public final float MAX_FLOAT_SIZE = (float) Math.pow(3.40282347,38);
+
+    public final static short IF=257;
+    public final static short ELSE=258;
+    public final static short PRINT=259;
+    public final static short INTEGER=260;
+    public final static short ID=261;
+    public final static short CTE=262;
+    public final static short CADENA=263;
+    public final static short ASIG=264;
+    public final static short MAYIG=265;
+    public final static short MENIG=266;
+    public final static short DIST=267;
+    public final static short FIN=268;
+    public final static short SINGLE=269;
+    public final static short END_IF=270;
+    public final static short LOOP=271;
+    public final static short UNTIL=272;
+    public final static short LET=273;
+    public final static short MUT=274;
+    public final static short ENTERO=275;
+    public final static short FLOTANTE=276;
+    public final static short YYERRCODE=256;
 
     public String srcCode;
     // nos sirve para decir en donde ocurre un error
@@ -97,8 +116,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 0, 'f', 1, id_start );
         StateMachine.addTransition( 0, '"', 2, cadena_start);
         StateMachine.addTransition( 0, 'C', StateMachine.ERROR_STATE,not_lexema);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(0,'m',1, id_start); //minuscula
+        StateMachine.addTransition(0,'M',15, next); //mayuscula
         StateMachine.addTransition( 0, ' ', 0, next_espace);
 
 
@@ -528,8 +547,8 @@ public class LexicalAnalyzer {
         //letra may??
         StateMachine.addTransition( 15, ' ',  StateMachine.FINAL_STATE, palabra_reservada);
     }
-    private void addReservedWord(){
-        reservedWords.put("if", (int) Parser.IF);
+    private void addReservedWord() {
+        /*reservedWords.put("if", (int) Parser.IF);
         reservedWords.put("then", (int) Parser.THEN);
         reservedWords.put("else", (int) Parser.ELSE);
         reservedWords.put("end_if", (int) Parser.END_IF);
@@ -538,64 +557,67 @@ public class LexicalAnalyzer {
         reservedWords.put("return", (int) Parser.RETURN);
         reservedWords.put("loop", (int) Parser.LOOP);
         reservedWords.put("until", (int) Parser.UNTIL);
-        reservedWords.put("longint", (int) Parser.LONGINT);
-
-    public int getRow(){
-        return row;
+        reservedWords.put("longint", (int) Parser.LONGINT);*/
     }
 
-    public int getColumn(){
-        return column;
-    }
+        public int getRow () {
+            return row;
+        }
 
-    public LexicalAnalyzer(String srcCode, SymbolTable symbolTable, Errors errors) throws FileNotFoundException, IOException {
-        this.symbolTable = symbolTable;
-        row = 1;
-        column = 1;
-        state = StateMachine.INITIAL_STATE;
-        index = 0;
-        buffer = "";
-        this.srcCode = srcCode;
-        this.errors = errors;
-        create();
-        reservedWords = new Hashtable<String, Integer>();
-        addReservedWord();
+        public int getColumn () {
+            return column;
+        }
 
-    }
-
-    public boolean isReservedWord(String lexema){
-        //completar
-        if (lexema == "loop")
-            return true;
-        return false;
-    }
-    public int  getNextToken(){
-        tokenId = -1;
-        state = StateMachine.INITIAL_STATE;
-        Character symbol;
-
-        yylval = new ParserVal();
-        yylval.setColumna(column);
-        yylval.setFila(row);
-
-        while (state != StateMachine.FINAL_STATE){
-            if (index >=srcCode.length()){
-                return 0;
-            }
-            symbol = srcCode.charAt(index);
-            int old=state;
-            state = StateMachine.getNextState(state,symbol);
-            StateMachine.getSemanticAction(old,symbol).Action(symbol);
-
-            if (state == StateMachine.INITIAL_STATE){
-                yylval.setColumna(column);
-                yylval.setFila(row);
-            }
+    public LexicalAnalyzer(String srcCode, SymbolTable symbolTable, Errors errors) throws
+        FileNotFoundException, IOException {
+            this.symbolTable = symbolTable;
+            row = 1;
+            column = 1;
+            state = StateMachine.INITIAL_STATE;
+            index = 0;
+            buffer = "";
+            this.srcCode = srcCode;
+            this.errors = errors;
+            create();
+            reservedWords = new Hashtable<String, Integer>();
+            addReservedWord();
 
         }
 
+        public boolean isReservedWord (String lexema){
+            //completar
+            if (lexema == "loop")
+                return true;
+            return false;
+        }
+        public int getNextToken () {
+            tokenId = -1;
+            state = StateMachine.INITIAL_STATE;
+            Character symbol;
 
-        return tokenId;
+           // yylval = new ParserVal();
+          //  yylval.setColumna(column);
+          //  yylval.setFila(row);
+
+            while (state != StateMachine.FINAL_STATE) {
+                if (index >= srcCode.length()) {
+                    return 0;
+                }
+                symbol = srcCode.charAt(index);
+                int old = state;
+                state = StateMachine.getNextState(state, symbol);
+                StateMachine.getSemanticAction(old, symbol).Action(symbol);
+
+                if (state == StateMachine.INITIAL_STATE) {
+                  //  yylval.setColumna(column);
+                 //   yylval.setFila(row);
+                }
+
+            }
+
+
+            return tokenId;
+        }
+
     }
 
-}

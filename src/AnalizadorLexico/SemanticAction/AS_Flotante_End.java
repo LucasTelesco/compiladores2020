@@ -1,8 +1,6 @@
 package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
-import AnalizadorSintactico.Parser;
-import AnalizadorSintactico.ParserVal;
 import Errors.Errors;
 
 public class AS_Flotante_End extends SemanticAction{
@@ -29,9 +27,9 @@ public class AS_Flotante_End extends SemanticAction{
                 num = lexical.MAX_FLOAT_SIZE;
             }
         }
-        lexical.symbolTable.setSymbol(String.valueOf(num), Parser.FLOTANTE);
+        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
         lexical.symbolTable.setAtributo(String.valueOf(num),"=>","CTE FLOTANTE");
-        lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num));
+        //lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num));
 
         //PARA LOS IDENTIFICADORES DE ESTE TIPO EN LA GRAMATICA VA ESTO MISMO
         lexical.symbolTable.getSymbol(String.valueOf(num)).setTipoVar("single");

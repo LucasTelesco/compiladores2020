@@ -2,7 +2,6 @@ package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
 import AnalizadorLexico.StateMachine.StateMachine;
-import AnalizadorSintactico.Parser;
 import Errors.Errors;
 
 public class AS_NextLineCadena extends SemanticAction {

@@ -1,9 +1,6 @@
-import AnalizadorLexico.LexicalAnalyzer;
-import AnalizadorSintactico.Parser;
-import AnalizadorSintactico.ParserVal;
 import Errors.Errors;
 import SymbolTable.SymbolTable;
-import Tercetos.Terceto;
+//import Tercetos.Terceto;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -35,13 +32,13 @@ public class OutFile {
         }
     }
 
-    public void tokenFile(Parser par,String ruta){
+    /*public void tokenFile(Parser par,String ruta){
         String out = new String();
         for(String s :par.tokens){
             out+=s+"\n";
         }
         this.crear(out,ruta);
-    }
+    }*/
 
     public void tlFile(SymbolTable st,String ruta){
         String out = new String();
@@ -51,15 +48,15 @@ public class OutFile {
         this.crear(out,ruta);
     }
 
-    public void structFile(Parser par, String ruta){
+   /* public void structFile(Parser par, String ruta){
         String out = new String();
         for(String pv : par.estructuras){
             out+=pv+"\n";
         }
         this.crear(out,ruta);
-    }
+    }*/
 
-    public void tercetoFile(Parser par, String ruta){
+   /* public void tercetoFile(Parser par, String ruta){
         String out = new String();
         for(Terceto t : par.listaTercetos){
             out+=t.toString()+"\n";
@@ -73,7 +70,7 @@ public class OutFile {
             out+=t.toString()+"\n";
         }
         this.crear(out,ruta);
-    }
+    }*/
 
     public void assemblerFile(Vector<String> vec,String ruta){
         String out = new String();

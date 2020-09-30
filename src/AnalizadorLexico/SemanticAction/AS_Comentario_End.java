@@ -1,7 +1,7 @@
 package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
-import AnalizadorSintactico.Parser;
+
 public class AS_Comentario_End  extends SemanticAction{
 
 

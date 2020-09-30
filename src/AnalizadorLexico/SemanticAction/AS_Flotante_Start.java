@@ -1,9 +1,6 @@
 package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
-import AnalizadorSintactico.Parser;
-import AnalizadorSintactico.ParserVal;
-import Errors.Errors;
 
 public class AS_Flotante_Start extends SemanticAction {
 
@@ -14,7 +11,7 @@ public class AS_Flotante_Start extends SemanticAction {
     //deja el tipo asignado en Start
     @Override
     public void Action(Character symbol) {
-        lexical.tokenId = Parser.FLOTANTE;
+        lexical.tokenId = LexicalAnalyzer.FLOTANTE;
         lexical.buffer+= symbol;
 
 

@@ -1,7 +1,6 @@
 package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
-import AnalizadorSintactico.ParserVal;
 
 public class AS_TokenAscii extends SemanticAction {
 
@@ -14,7 +13,7 @@ public class AS_TokenAscii extends SemanticAction {
         lexical.index++;
         lexical.column++;
 
-        lexical.yylval.ival=lexical.tokenId;
+       // lexical.yylval.ival=lexical.tokenId;
 
         lexical.buffer = "";
     }

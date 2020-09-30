@@ -2,19 +2,14 @@ import javax.swing.*;
 
 
 import AnalizadorLexico.LexicalAnalyzer;
-import AnalizadorSintactico.Parser;
 import Errors.Errors;
 import SymbolTable.*;
 
-import java.io.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Enumeration;
 
 
 public class App extends JFrame{
@@ -35,69 +30,69 @@ public class App extends JFrame{
         if (valor == 0){
             return "EOF";
         }
-        else if (valor == Parser.ID){
+        else if (valor == LexicalAnalyzer.ID){
             return "IDENTIFICADOR";
         }
-        else if (valor == Parser.ENTERO){
+        else if (valor == LexicalAnalyzer.ENTERO){
             return "ENTERO";
         }
-        else if (valor == Parser.FLOTANTE){
+        else if (valor == LexicalAnalyzer.FLOTANTE){
             return "FLOTANTE";
         }
-        else if (valor == Parser.CADENA){
+        else if (valor == LexicalAnalyzer.CADENA){
             return "CADENA DE CARACTER";
         }
-        else if (valor == Parser.ASIG){
+        else if (valor == LexicalAnalyzer.ASIG){
             return "ASIGNACION";
         }
-        else if (valor == Parser.ID) {
+        else if (valor == LexicalAnalyzer.ID) {
             return "IDENTIFICADOR";
         }
 
 
 
-        else if (valor == Parser.ELSE) {
+        else if (valor ==LexicalAnalyzer.ELSE) {
             return "PALABRA RESERVADA ELSE";
         }
 
-        else if (valor == Parser.END_IF) {
+        else if (valor == LexicalAnalyzer.END_IF) {
             return "PALABRA RESERVADA END_IF";
         }
-        else if (valor == Parser.IF) {
+        else if (valor ==LexicalAnalyzer.IF) {
             return "PALABRA RESERVADA IF";
         }
-        else if (valor == Parser.INTEGER) {
+        else if (valor == LexicalAnalyzer.INTEGER) {
             return "PALABRA RESERVADA INTEGER";
         }
-        else if (valor == Parser.LET) {
+        else if (valor == LexicalAnalyzer.LET) {
             return "PALABRA RESERVADA LET";
         }
 
-        else if (valor == Parser.MUT) {
+        else if (valor == LexicalAnalyzer.MUT) {
             return "PALABRA RESERVADA MUT";
         }
 
-        else if (valor == Parser.LOOP) {
+        else if (valor == LexicalAnalyzer.LOOP) {
             return "PALABRA RESERVADA LOOP";
         }
-        else if (valor == Parser.UNTIL) {
+        else if (valor == LexicalAnalyzer.UNTIL) {
             return "PALABRA RESERVADA UNTIL";
         }
 
-        else if (valor == Parser.PRINT) {
+        else if (valor == LexicalAnalyzer.PRINT) {
             return "PALABRA RESERVADA PRINT";
         }
 
-        else if (valor == Parser.SINGLE) {
+        else if (valor == LexicalAnalyzer.SINGLE) {
             return "PALABRA RESERVADA SINGLE";
         }
-        else if (valor == Parser.MAYIG) {
+        else if (valor == LexicalAnalyzer.MAYIG) {
             return "OPERADOR MAYOR IGUAL";
         }
-        else if (valor == Parser.MENIG) {
+        else if (valor == LexicalAnalyzer.MENIG) {
             return "OPERADOR MENOR IGUAL";
         }
-        else if (valor == Parser.DIST) {
+        else if (valor == LexicalAnalyzer.DIST) {
             return "DISTINTO";
         }
 
@@ -124,7 +119,7 @@ public class App extends JFrame{
         errors = new Errors();
         final SymbolTable st = new SymbolTable();
         final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
-        final Parser par = new Parser(lexical,st,errors);
+       // final Parser par = new Parser(lexical,st,errors);
 
         add(panel1);
         setSize(700,500);
@@ -136,7 +131,7 @@ public class App extends JFrame{
         genArchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                par.run();
+             //   par.run();
 
                 try{ Thread.sleep(100); } catch (InterruptedException e1) {
                     e1.printStackTrace();
@@ -144,12 +139,12 @@ public class App extends JFrame{
 
 
                 outFile.tlFile(st, "tablaSimbolos.txt");
-                outFile.tokenFile(par, "token.txt");
-                outFile.structFile(par, "estructurasReconocidas.txt");
+             //   outFile.tokenFile(par, "token.txt");
+             //   outFile.structFile(par, "estructurasReconocidas.txt");
                 outFile.errorFiles(errors, "errores.txt");
 
                // optimizaTercetos(par.listaTercetos);
-                outFile.tercetoFile(par, "terceto.txt");
+             //   outFile.tercetoFile(par, "terceto.txt");
                // genAssembler = new GeneradorAssembler(par, st);
                // genAssembler.optimizaTercetos();
 

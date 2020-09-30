@@ -2,9 +2,6 @@ package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
 
-import AnalizadorSintactico.Parser;
-import AnalizadorSintactico.ParserVal;
-
 public class AS_Entero_Start extends SemanticAction{
 
     public AS_Entero_Start(LexicalAnalyzer lexicalAnalyzer) {
@@ -13,7 +10,7 @@ public class AS_Entero_Start extends SemanticAction{
 
     @Override
     public void Action(Character symbol) {
-        lexical.tokenId = Parser.ENTERO;
+        lexical.tokenId = LexicalAnalyzer.ENTERO;
         lexical.buffer+= symbol;// no agrega el '
 
       /*  lexical.yylval = new ParserVal();

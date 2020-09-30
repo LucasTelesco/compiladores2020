@@ -1,8 +1,6 @@
 package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
-import AnalizadorSintactico.Parser;
-import AnalizadorSintactico.ParserVal;
 import Errors.*;
 
 public class AS_Entero_End extends SemanticAction{
@@ -25,7 +23,7 @@ public class AS_Entero_End extends SemanticAction{
                 num = lexical.MAX_INT_SIZE;
             }
         }
-        lexical.symbolTable.setSymbol(String.valueOf(num)+"_i"/*lexical.buffer+symbol*/, Parser.ENTERO);
+        lexical.symbolTable.setSymbol(String.valueOf(num)+"_i"/*lexical.buffer+symbol*/, LexicalAnalyzer.ENTERO);
         lexical.symbolTable.setAtributo(String.valueOf(num)+"_i"/*lexical.buffer+symbol*/,"=>","CTE ENTERO");
 
         //PARA LOS IDENTIFICADORES DE ESTE TIPO EN LA GRAMATICA VA ESTO MISMO
@@ -33,7 +31,7 @@ public class AS_Entero_End extends SemanticAction{
 
         lexical.lastSymbol=String.valueOf(num)+"_i"; // no se usa mas
 
-        lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num)+"_i");
+        //lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num)+"_i");
 
         lexical.buffer = "";
         lexical.column++;
