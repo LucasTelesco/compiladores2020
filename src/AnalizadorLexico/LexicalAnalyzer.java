@@ -116,8 +116,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 0, 'f', 1, id_start );
         StateMachine.addTransition( 0, '"', 2, cadena_start);
         StateMachine.addTransition( 0, 'C', StateMachine.ERROR_STATE,not_lexema);
-        StateMachine.addTransition(0,'m',1, id_start); //minuscula
-        StateMachine.addTransition(0,'M',15, next); //mayuscula
+        StateMachine.addTransition(0,'a',1, id_start); //minuscula
+        StateMachine.addTransition(0,'A',15, next); //mayuscula
         StateMachine.addTransition( 0, ' ', 0, next_espace);
 
 
@@ -144,8 +144,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 1, 'f', 1, next );
         StateMachine.addTransition( 1, '"', StateMachine.FINAL_STATE, id_end);
         StateMachine.addTransition( 1, 'C', StateMachine.ERROR_STATE,id_end);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(1,'a',1, next);
+        StateMachine.addTransition(1,'A', StateMachine.FINAL_STATE, id_end);
         StateMachine.addTransition( 1, ' ', StateMachine.FINAL_STATE, next_espace);
 
 
@@ -172,8 +172,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 2, 'f', StateMachine.FINAL_STATE,tokenAscii );
         StateMachine.addTransition( 2, '"', StateMachine.FINAL_STATE,tokenAscii);
         StateMachine.addTransition( 2, 'C', StateMachine.FINAL_STATE,tokenAscii);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(2,'a',StateMachine.FINAL_STATE, tokenAscii);
+        StateMachine.addTransition(2,'A',StateMachine.FINAL_STATE, tokenAscii);
         StateMachine.addTransition( 2, ' ', StateMachine.FINAL_STATE,tokenAscii);
 
 
@@ -200,8 +200,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 3, 'f', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 3, '"', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 3, 'C', StateMachine.ERROR_STATE, not_lexema);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(3,'a',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(3,'A',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 3, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
@@ -228,8 +228,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 4, 'f', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 4, '"', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 4, 'C', StateMachine.ERROR_STATE, not_lexema);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(4,'a',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(4,'A',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 4, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
@@ -256,8 +256,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 5, 'f', 5, next);
         StateMachine.addTransition( 5, '"', 5, next);
         StateMachine.addTransition( 5, 'C', 5, next);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(5,'a',5, next);
+        StateMachine.addTransition(5,'A',5, next);
         StateMachine.addTransition( 5, ' ', 5, next);
 
 
@@ -285,8 +285,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 6, 'f', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 6, '"', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 6, 'C', StateMachine.ERROR_STATE, not_lexema);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(6,'a',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(6,'A',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 6, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
@@ -313,8 +313,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 7, 'f', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 7, '"', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 7, 'C', StateMachine.ERROR_STATE, not_lexema);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(7,'a',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(7,'A',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 7, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
@@ -341,8 +341,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 8, 'f',9, next );
         StateMachine.addTransition( 8, '"', StateMachine.FINAL_STATE,flotante_end);
         StateMachine.addTransition( 8, 'C', StateMachine.FINAL_STATE,flotante_end);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(8,'a',StateMachine.FINAL_STATE, flotante_end);
+        StateMachine.addTransition(8,'A',StateMachine.FINAL_STATE, flotante_end);
         StateMachine.addTransition( 8, ' ', StateMachine.FINAL_STATE,flotante_end);
 
 
@@ -369,8 +369,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 9, 'f', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 9, '"', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 9, 'C', StateMachine.ERROR_STATE, not_lexema);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(9,'a',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(9,'A',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 9, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
@@ -400,8 +400,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 10, 'f', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 10, '"', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 10, 'C', StateMachine.ERROR_STATE, not_lexema);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(10,'a',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(10,'A',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 10, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
@@ -431,8 +431,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 11, 'f',9, next );
         StateMachine.addTransition( 11, '"', StateMachine.FINAL_STATE,flotante_end);
         StateMachine.addTransition( 11, 'C', StateMachine.FINAL_STATE,flotante_end);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(11,'a',StateMachine.FINAL_STATE, flotante_end);
+        StateMachine.addTransition(11,'A',StateMachine.FINAL_STATE, flotante_end);
         StateMachine.addTransition( 11, ' ', StateMachine.FINAL_STATE,flotante_end);
 
 
@@ -460,8 +460,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 12, 'f', 12, next);
         StateMachine.addTransition( 12, '"', StateMachine.FINAL_STATE, cadena_end);
         StateMachine.addTransition( 12, 'C', 12, next);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(12,'a',12, next);
+        StateMachine.addTransition(12,'A',12, next);
         StateMachine.addTransition( 12, ' ', 12, next);
 
 
@@ -488,8 +488,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 13, 'f', 12, next);
         StateMachine.addTransition( 13, '"', StateMachine.FINAL_STATE, cadena_end);
         StateMachine.addTransition( 13, 'C', 12, next);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(13,'a',12, next);
+        StateMachine.addTransition(13,'A',12, next);
         StateMachine.addTransition( 13, ' ', 12, next);
 
         StateMachine.addTransition( 14, 'l', 12, next);
@@ -515,8 +515,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 14, 'f', 12, next);
         StateMachine.addTransition( 14, '"', StateMachine.FINAL_STATE, cadena_end);
         StateMachine.addTransition( 14, 'C', 12, next);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(14,'a',12, next);
+        StateMachine.addTransition(14,'A',12, next);
         StateMachine.addTransition( 14, ' ', 12, next);
 
 
@@ -543,8 +543,8 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 15, 'f',  StateMachine.FINAL_STATE, palabra_reservada);
         StateMachine.addTransition( 15, '"',  StateMachine.FINAL_STATE, palabra_reservada);
         StateMachine.addTransition( 15, 'C',  StateMachine.FINAL_STATE, palabra_reservada);
-        //letra minima?
-        //letra may??
+        StateMachine.addTransition(15,'a',StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition(15,'A',15, next);
         StateMachine.addTransition( 15, ' ',  StateMachine.FINAL_STATE, palabra_reservada);
     }
     private void addReservedWord() {
