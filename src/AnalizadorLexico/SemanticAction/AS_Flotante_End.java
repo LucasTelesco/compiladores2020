@@ -12,20 +12,28 @@ public class AS_Flotante_End extends SemanticAction{
     @Override
     public void Action(Character symbol) {
 
-        if (lexical.buffer.contains("f")){
-            lexical.buffer=lexical.buffer.replace('f','e');
+        if (lexical.buffer.length() == 1 && lexical.buffer.contains(".")){
+            lexical.buffer = "";
+            lexical.tokenId = 250;
         }
 
-        float num = Float.valueOf(lexical.buffer);
 
-        if (num != 0.0) {
-            if (num < lexical.MIN_FLOAT_SIZE) {
-                lexical.errors.setError(lexical.row, lexical.column, Errors.ERROR_RANGE);
-                num = lexical.MIN_FLOAT_SIZE;
-            } else if (num > lexical.MAX_FLOAT_SIZE) {
-                lexical.errors.setError(lexical.row, lexical.column, Errors.ERROR_RANGE);
-                num = lexical.MAX_FLOAT_SIZE;
+        if (lexical.buffer.contains("f")) {
+            lexical.buffer = lexical.buffer.replace('f', 'e');
+            float num = Float.valueOf(lexical.buffer);
+
+
+            if (num != 0.0) {
+                if (num < lexical.MIN_FLOAT_SIZE) {
+                    lexical.errors.setError(lexical.row, lexical.column, Errors.ERROR_RANGE);
+                    num = lexical.MIN_FLOAT_SIZE;
+                } else if (num > lexical.MAX_FLOAT_SIZE) {
+                    lexical.errors.setError(lexical.row, lexical.column, Errors.ERROR_RANGE);
+                    num = lexical.MAX_FLOAT_SIZE;
+                }
             }
+            lexical.buffer = "";
+            lexical.tokenId = LexicalAnalyzer.FLOTANTE;
         }
         // ver que onda, convertir a 2020
 //        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
@@ -37,7 +45,6 @@ public class AS_Flotante_End extends SemanticAction{
 
 
 
-        lexical.buffer = "";
-        lexical.tokenId = LexicalAnalyzer.FLOTANTE;
+
     }
 }
