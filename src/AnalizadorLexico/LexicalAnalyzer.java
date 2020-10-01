@@ -48,6 +48,7 @@ public class LexicalAnalyzer {
     public final static short ENTERO=275;
     public final static short FLOTANTE=276;
     public final static short YYERRCODE=256;
+    public final static short COMENTARIO=999;
 
     public String srcCode;
     // nos sirve para decir en donde ocurre un error

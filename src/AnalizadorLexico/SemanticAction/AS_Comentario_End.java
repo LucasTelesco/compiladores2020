@@ -11,7 +11,11 @@ public class AS_Comentario_End  extends SemanticAction{
 
 
     public void Action(Character symbol) {
+        System.out.println("Se reconocio correctamente un comentario: "+ lexical.buffer);
 
+        lexical.buffer = "";
+        lexical.index++;
+        lexical.column++;
     }
 
 }

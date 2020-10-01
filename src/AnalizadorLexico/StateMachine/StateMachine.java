@@ -20,16 +20,18 @@ public final class StateMachine {
         if (asciiChar==11 || asciiChar==9)
             return ' ';
 
-        if ((asciiChar>=65 && asciiChar<=69)||(asciiChar>=71 && asciiChar<=90)||(asciiChar>=97 && asciiChar<=104)||(asciiChar>=106 && asciiChar<=122)){
-            //{universo de letras minusculas y mayusculas} - {i} -{F}
+        if ((asciiChar>=97 && asciiChar<=99)||(asciiChar==101)||(asciiChar>=103 && asciiChar<=107)||(asciiChar>=109 && asciiChar<=122)){
+            //{universo de letras minusculas} - {l} -{f} -{d}
             return 'a';
+        }
+        if ((asciiChar>=65 && asciiChar<=66)||(asciiChar>=68 && asciiChar<=90)){
+            //{universo de letras mayusculas} - {C}
+            return 'A';
         }
         if (asciiChar>= 48 && asciiChar<=57){
             //numero de 0-9
-            return '1';
+            return 'd';
         }
-
-
 
         return c;
     }
