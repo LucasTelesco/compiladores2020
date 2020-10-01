@@ -9,6 +9,8 @@ public class AS_Numero_Start extends SemanticAction {
     }
 
     public void Action(Character symbol) {
-
+        lexical.buffer+= symbol;// no agrega el '
+        lexical.index++;
+        lexical.column++;
     }
 }

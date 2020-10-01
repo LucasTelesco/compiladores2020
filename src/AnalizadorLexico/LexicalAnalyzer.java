@@ -602,6 +602,7 @@ public class LexicalAnalyzer {
 
             while (state != StateMachine.FINAL_STATE) {
                 if (index >= srcCode.length()) {
+                    System.out.println("el token es cero");
                     return 0;
                 }
                 symbol = srcCode.charAt(index);

@@ -27,12 +27,17 @@ public class AS_Flotante_End extends SemanticAction{
                 num = lexical.MAX_FLOAT_SIZE;
             }
         }
-        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
-        lexical.symbolTable.setAtributo(String.valueOf(num),"=>","CTE FLOTANTE");
-        //lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num));
+        // ver que onda, convertir a 2020
+//        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
+//        lexical.symbolTable.setAtributo(String.valueOf(num),"=>","CTE FLOTANTE");
+//        //lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num));
+//
+//        //PARA LOS IDENTIFICADORES DE ESTE TIPO EN LA GRAMATICA VA ESTO MISMO
+//        lexical.symbolTable.getSymbol(String.valueOf(num)).setTipoVar("single");
 
-        //PARA LOS IDENTIFICADORES DE ESTE TIPO EN LA GRAMATICA VA ESTO MISMO
-        lexical.symbolTable.getSymbol(String.valueOf(num)).setTipoVar("single");
+
+
         lexical.buffer = "";
+        lexical.tokenId = LexicalAnalyzer.FLOTANTE;
     }
 }

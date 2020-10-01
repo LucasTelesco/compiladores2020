@@ -120,8 +120,13 @@ public class App extends JFrame{
         final SymbolTable st = new SymbolTable();
         final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
        // final Parser par = new Parser(lexical,st,errors);
-        System.out.println("El token encontrado es : "+lexical.getNextToken());
-        System.out.println("El token encontrado es : "+lexical.getNextToken());
+
+       // Consumidor de Token
+        int token = lexical.getNextToken();
+        while (token!=-1 && token!=0){
+            System.out.println("Token encontrado: "+token);
+            token = lexical.getNextToken();
+        }
 
         add(panel1);
         setSize(700,500);

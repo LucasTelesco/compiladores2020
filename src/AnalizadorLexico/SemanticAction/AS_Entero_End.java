@@ -23,18 +23,20 @@ public class AS_Entero_End extends SemanticAction{
                 num = lexical.MAX_INT_SIZE;
             }
         }
-        lexical.symbolTable.setSymbol(String.valueOf(num)+"_i"/*lexical.buffer+symbol*/, LexicalAnalyzer.ENTERO);
-        lexical.symbolTable.setAtributo(String.valueOf(num)+"_i"/*lexical.buffer+symbol*/,"=>","CTE ENTERO");
 
-        //PARA LOS IDENTIFICADORES DE ESTE TIPO EN LA GRAMATICA VA ESTO MISMO
-        lexical.symbolTable.getSymbol(String.valueOf(num)+"_i").setTipoVar("integer");
-
-        lexical.lastSymbol=String.valueOf(num)+"_i"; // no se usa mas
+        /// ESTO VA PERO HAY QUE ACOMODARLO! PARA QUE SEA COMPATIBLE 2020
+//        lexical.symbolTable.setSymbol(String.valueOf(num)+"_i"/*lexical.buffer+symbol*/, LexicalAnalyzer.ENTERO);
+//        lexical.symbolTable.setAtributo(String.valueOf(num)+"_i"/*lexical.buffer+symbol*/,"=>","CTE ENTERO");
+//        //PARA LOS IDENTIFICADORES DE ESTE TIPO EN LA GRAMATICA VA ESTO MISMO
+//        lexical.symbolTable.getSymbol(String.valueOf(num)+"_i").setTipoVar("integer");
+//        lexical.lastSymbol=String.valueOf(num)+"_i"; // no se usa mas
 
         //lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num)+"_i");
 
         lexical.buffer = "";
         lexical.column++;
         lexical.index++;
+        System.out.println("ENTERO FIN");
+        lexical.tokenId = LexicalAnalyzer.ENTERO;
     }
 }
