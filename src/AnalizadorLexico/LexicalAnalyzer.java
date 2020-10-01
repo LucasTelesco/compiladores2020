@@ -47,6 +47,12 @@ public class LexicalAnalyzer {
     public final static short MUT=274;
     public final static short ENTERO=275;
     public final static short FLOTANTE=276;
+    public final static short THEN=277;
+    public final static short OUT=278;
+    public final static short FUNC=279;
+    public final static short RETURN=280;
+    public final static short LONGINT=281;
+
     public final static short YYERRCODE=256;
     public final static short COMENTARIO=999;
 
@@ -550,15 +556,15 @@ public class LexicalAnalyzer {
     }
     private void addReservedWord() {
         reservedWords.put("if", (int) IF);
-       // reservedWords.put("then", (int) THEN);
+        reservedWords.put("then", (int) THEN);
         reservedWords.put("else", (int) ELSE);
         reservedWords.put("end_if", (int) END_IF);
-        //reservedWords.put("out", (int) OUT);
-        //reservedWords.put("func", (int) FUNC);
-        //reservedWords.put("return", (int) RETURN);
+        reservedWords.put("out", (int) OUT);
+        reservedWords.put("func", (int) FUNC);
+        reservedWords.put("return", (int) RETURN);
         reservedWords.put("loop", (int) LOOP);
         reservedWords.put("until", (int) UNTIL);
-        //reservedWords.put("longint", (int) LONGINT);
+        reservedWords.put("longint", (int) LONGINT);
     }
 
         public int getRow () {

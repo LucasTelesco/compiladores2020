@@ -12,8 +12,8 @@ public class AS_Flotante_End extends SemanticAction{
     @Override
     public void Action(Character symbol) {
 
-        if (lexical.buffer.contains("F")){
-            lexical.buffer=lexical.buffer.replace('F','e');
+        if (lexical.buffer.contains("f")){
+            lexical.buffer=lexical.buffer.replace('f','e');
         }
 
         float num = Float.valueOf(lexical.buffer);
