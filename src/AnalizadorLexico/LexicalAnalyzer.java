@@ -52,6 +52,7 @@ public class LexicalAnalyzer {
     public final static short FUNC=279;
     public final static short RETURN=280;
     public final static short LONGINT=281;
+    public final static short FLOAT=282;
 
     public final static short YYERRCODE=256;
     public final static short COMENTARIO=999;
@@ -565,6 +566,7 @@ public class LexicalAnalyzer {
         reservedWords.put("loop", (int) LOOP);
         reservedWords.put("until", (int) UNTIL);
         reservedWords.put("longint", (int) LONGINT);
+        reservedWords.put("longint", (int) FLOAT);
     }
 
         public int getRow () {
