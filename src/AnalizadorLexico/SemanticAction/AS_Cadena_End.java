@@ -10,7 +10,7 @@ public class AS_Cadena_End extends SemanticAction{
 
     @Override
     public void Action(Character symbol) {
-        lexical.symbolTable.setSymbol(lexical.buffer, LexicalAnalyzer.CADENA);
+        lexical.symbolTable.setSymbol(lexical.buffer, LexicalAnalyzer.CADENA_MULTINEA);
         lexical.symbolTable.setAtributo(lexical.buffer,"=>","CADENA");
         //System.out.println(lexical.buffer);
         lexical.lastSymbol=lexical.buffer; // guardo el simbolo viejo

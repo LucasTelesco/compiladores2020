@@ -10,7 +10,7 @@ public class AS_Comentario_Start extends SemanticAction {
 
     public void Action(Character symbol) {
         lexical.tokenId = LexicalAnalyzer.COMENTARIO;
-        //lexical.buffer+= symbol;
+        lexical.buffer+= symbol;
 
         lexical.index++;
         lexical.column++;

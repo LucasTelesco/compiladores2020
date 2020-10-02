@@ -12,13 +12,16 @@ public class AS_Flotante_End extends SemanticAction{
     @Override
     public void Action(Character symbol) {
 
-        if (lexical.buffer.length() == 1 && lexical.buffer.contains(".")){
+        /*if (lexical.buffer.length() == 1 && lexical.buffer.contains(".")){
             lexical.buffer = "";
             lexical.tokenId = 250;
-        }
+        }*/
 
 
         if (lexical.buffer.contains("f")) {
+            if (lexical.buffer.charAt(0) == '.' ){
+                lexical.buffer = "0" + lexical.buffer;
+            }
             lexical.buffer = lexical.buffer.replace('f', 'e');
             float num = Float.valueOf(lexical.buffer);
 

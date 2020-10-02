@@ -39,7 +39,7 @@ public class App extends JFrame{
         else if (valor == LexicalAnalyzer.FLOTANTE){
             return "FLOTANTE";
         }
-        else if (valor == LexicalAnalyzer.CADENA){
+        else if (valor == LexicalAnalyzer.CADENA_MULTINEA){
             return "CADENA DE CARACTER";
         }
         else if (valor == LexicalAnalyzer.ASIG){
@@ -121,6 +121,7 @@ public class App extends JFrame{
         final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
        // final Parser par = new Parser(lexical,st,errors);
 
+
        // Consumidor de Token
         int token = lexical.getNextToken();
         while (token!=-1 && token!=0){
@@ -128,6 +129,7 @@ public class App extends JFrame{
             token = lexical.getNextToken();
         }
 
+        System.out.println(errors.getAll());
         add(panel1);
         setSize(700,500);
         textArea2.append(archivo);// muestra archivo

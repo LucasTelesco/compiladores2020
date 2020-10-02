@@ -33,7 +33,7 @@ public class LexicalAnalyzer {
     public final static short INTEGER=260;
     public final static short ID=261;
     public final static short CTE=262;
-    public final static short CADENA=263;
+    public final static short CADENA_MULTINEA=263;
     public final static short ASIG=264;
     public final static short MAYIG=265;
     public final static short MENIG=266;
@@ -117,12 +117,12 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 0, ')', StateMachine.FINAL_STATE,tokenAscii );
         StateMachine.addTransition( 0, ',', StateMachine.FINAL_STATE,tokenAscii );
         StateMachine.addTransition( 0, ';', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 0, '%', 4,comentario_start );
+        StateMachine.addTransition( 0, '%', 4,next );
         StateMachine.addTransition( 0, '\n', 0, next_line );
         StateMachine.addTransition( 0, '.', 8, flotante_start );
         StateMachine.addTransition( 0, '_', StateMachine.ERROR_STATE,not_lexema);
         StateMachine.addTransition( 0, 'f', 1, id_start );
-        StateMachine.addTransition( 0, '"', 2, cadena_start);
+        StateMachine.addTransition( 0, '"', 12, cadena_start);
         StateMachine.addTransition( 0, 'C', StateMachine.ERROR_STATE,not_lexema);
         StateMachine.addTransition(0,'a',1, id_start); //minuscula
         StateMachine.addTransition(0,'A',15, next); //mayuscula
@@ -229,7 +229,7 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 4, ')', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 4, ',', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 4, ';', StateMachine.ERROR_STATE, not_lexema);
-        StateMachine.addTransition( 4, '%', 5, next);
+        StateMachine.addTransition( 4, '%', 5, comentario_start);
         StateMachine.addTransition( 4, '\n', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 4, '.', StateMachine.ERROR_STATE, not_lexema );
         StateMachine.addTransition( 4, '_', StateMachine.ERROR_STATE, not_lexema);
@@ -494,7 +494,7 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 13, '.', 12, next );
         StateMachine.addTransition( 13, '_', 12, next);
         StateMachine.addTransition( 13, 'f', 12, next);
-        StateMachine.addTransition( 13, '"', StateMachine.FINAL_STATE, cadena_end);
+        StateMachine.addTransition( 13, '"', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 13, 'C', 12, next);
         StateMachine.addTransition(13,'a',12, next);
         StateMachine.addTransition(13,'A',12, next);

@@ -11,7 +11,7 @@ public class AS_NextLine extends SemanticAction {
     @Override
     public void Action(Character symbol) {
         // Se usa para los saltos de linea
-        lexical.index++; //nose xq
+        lexical.index++;
         lexical.row++;
         lexical.column = 1;
     }
