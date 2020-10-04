@@ -33,10 +33,6 @@ f
 6src/AnalizadorLexico/SemanticAction/AS_TokenAscii.java,5/6/561db2a5da5e14572650069699bcbaa44f9699e3
 g
 7src/AnalizadorLexico/SemanticAction/SemanticAction.java,e/e/ee47c11e1b0290b9e32e42769cd706cce93fba22
-T
-$src/AnalizadorSintactico/Parser.java,9/d/9dda008b5efc7f3dcc25536d6a7b9f2ebde1d109
-W
-'src/AnalizadorSintactico/ParserVal.java,c/0/c0e2c67f623878663e9c4015de87f1ab1744729a
 Y
 )src/AnalizadorLexico/LexicalAnalyzer.java,6/e/6ecf84f1e542cb1987a4c14494651de958ea63e2
 <
@@ -61,3 +57,13 @@ d
 4src/AnalizadorLexico/SemanticAction/AS_NextLine.java,5/e/5e7579e8381e1e8ff98bbdae6c64ba1ff153bb62
 j
 :src/AnalizadorLexico/SemanticAction/AS_NextLineCadena.java,a/1/a1a06bdfbca79e1733cf4bfe93c0123be6a8c2bb
+h
+8src/AnalizadorLexico/SemanticAction/AS_Numero_Start.java,6/b/6b2c96588f55b457bc807e2e0e16f2bdc76fd7b4
+d
+4src/AnalizadorLexico/SemanticAction/AS_Id_Start.java,4/2/42108db324ca95f2f094013c4a5d6e12a82ee2e7
+B
+gramaticaGrupo10.y,7/d/7d8198711c546530c5c839aae531c4cde08bc60c
+i
+9src/AnalizadorLexico/SemanticAction/AS_Vaciar_Buffer.java,8/b/8b2b96ea83a9b69c523e5cc5045e596e9ff0c4b3
+A
+tablaSimbolos.txt,5/3/53b9aded56cbcc636dce457b8794d60f489ad012

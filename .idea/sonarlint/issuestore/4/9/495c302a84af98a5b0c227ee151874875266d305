@@ -1,46 +1,45 @@
 
-^	java:S125¢"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Ÿ„İîÊ.
-S
-java:S1854¬"<Remove this useless assignment to local variable "ptlink32".(‘Œæ
-I
-java:S1481§"-Remove this unused "ptlink32" local variable.(˜æ£…ıÿÿÿÿ
-D
-java:S1604ˆ"(Make this anonymous inner class a lambda(Ì–Èùÿÿÿÿ
-V	java:S110"<This class has 6 parents which is greater than 5 authorized.(¦ØŠµùÿÿÿÿ
+^	java:S125"<This block of commented-out lines of code should be removed.(²§óñûÿÿÿÿ8¡ò¢Î.
+T	java:S106²"9Replace this use of System.out or System.err by a logger.(·ŠäÁúÿÿÿÿ
+Y	java:S125›"<This block of commented-out lines of code should be removed.(˜–¡¬8‰«ÜîÊ.
+
+java:S2681t"|This line will not be executed in a loop; only the first line of this 2-line block will be. The rest will execute only once.(Ï¿ÈÇÿÿÿÿÿ8ÜÃÿÚÎ.
+]
+java:S2142‘"FEither re-interrupt this method or rethrow the "InterruptedException".(øì£Ó
+9
+java:S1643s"Use a StringBuilder instead.(í­€Ö8ÜÃÿÚÎ.
 >
-java:S1948")Make "outFile" transient or serializable.(Ù‡«
-š
-java:S18625"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(Ê‰­`
-g
-java:S2095t"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µ×µ·üÿÿÿÿ
-2
-java:S1643x"Use a StringBuilder instead.(í­€Ö
+java:S1948")Make "outFile" transient or serializable.(Ù‡«
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ãê
+^	java:S125—"<This block of commented-out lines of code should be removed.(»ÇÑÑıÿÿÿÿ8¡ò¢Î.
+S
+java:S1854°"<Remove this useless assignment to local variable "ptlink32".(‘Œæ
+Z
+java:S1117n"8Rename "file" which hides the field declared at line 21.(ûåîØúÿÿÿÿ8ÜÃÿÚÎ.
+V	java:S110"<This class has 6 parents which is greater than 5 authorized.(¦ØŠµùÿÿÿÿ
+X	java:S125z"<This block of commented-out lines of code should be removed.(ëèƒı8ÜÃÿÚÎ.
+V	java:S106„"9Replace this use of System.out or System.err by a logger.(€À¯“8ÜÃÿÚÎ.
+W
+java:S1854¯";Remove this useless assignment to local variable "ptasm32".(›« áûÿÿÿÿ
+e
+java:S3252Š"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ
+¢
+java:S18620"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(ê¤î8ÜÃÿÚÎ.
 0
 java:S1220""Move this file to a named package.
-e
-java:S3252†"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ
-W
-java:S1854«";Remove this useless assignment to local variable "ptasm32".(›« áûÿÿÿÿ
-T	java:S106®"9Replace this use of System.out or System.err by a logger.(·ŠäÁúÿÿÿÿ
-S
-java:S1117s"8Rename "file" which hides the field declared at line 26.(ûåîØúÿÿÿÿ
-X	java:S125"<This block of commented-out lines of code should be removed.(‰ß£8€›­‹Ê.
-—
-java:S2681y"|This line will not be executed in a loop; only the first line of this 2-line block will be. The rest will execute only once.(Ï¿ÈÇÿÿÿÿÿ
-O
-java:S1128"2Remove this unused import 'java.util.Enumeration'.(»îÜ®8´„ØîÊ.
+D
+java:S1604Œ"(Make this anonymous inner class a lambda(Ì–Èùÿÿÿÿ
 >
-java:S1948"(Make "errors" transient or serializable.(àÅû£
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8´„ØîÊ.
-H
-java:S1481¦",Remove this unused "ptasm32" local variable.(•ìˆ©úÿÿÿÿ
-Y	java:S125™"<This block of commented-out lines of code should be removed.(¿Á‰è8‰«ÜîÊ.
-X	java:S125œ"<This block of commented-out lines of code should be removed.(óÍçf8Ÿ„İîÊ.
+java:S1948"(Make "errors" transient or serializable.(àÅû£
 C
-java:S1068"(Remove this unused "file" private field.(å¥øüøÿÿÿÿ
-h
-java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ãê
-]
-java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(øì£Ó
-Y	java:S125—"<This block of commented-out lines of code should be removed.(˜–¡¬8õ´ÑîÊ.
+java:S1068"(Remove this unused "file" private field.(å¥øüøÿÿÿÿ
+I
+java:S1481«"-Remove this unused "ptlink32" local variable.(˜æ£…ıÿÿÿÿ
+H
+java:S1481ª",Remove this unused "ptasm32" local variable.(•ìˆ©úÿÿÿÿ
+n
+java:S2095o"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µ×µ·üÿÿÿÿ8ÜÃÿÚÎ.
+[	java:S106€"9Replace this use of System.out or System.err by a logger.(Ø‹í³şÿÿÿÿ8ÜÃÿÚÎ.
+X	java:S125"<This block of commented-out lines of code should be removed.(‰ß£8€›­‹Ê.
+X	java:S125 "<This block of commented-out lines of code should be removed.(óÍçf8Ÿ„İîÊ.
