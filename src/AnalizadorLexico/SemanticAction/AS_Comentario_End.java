@@ -15,7 +15,9 @@ public class AS_Comentario_End  extends SemanticAction{
 
         lexical.buffer = "";
         lexical.index++;
-        lexical.column++;
+//        LEXICAL.COLUMN++;
+        lexical.row++;
+        lexical.column = 1;
     }
 
 }
