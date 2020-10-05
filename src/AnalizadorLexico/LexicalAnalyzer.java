@@ -23,13 +23,12 @@ public class LexicalAnalyzer {
     //por lo que verifico del 0..10 y el sintactico se va a ocupar del 10, ya que la unica
     //forma que venga 10 es siendo negativo. Por que si viene un -9 negativo lo va a aceptar asi que es
     //como verificar el 9 positivo
-    public final int MAX_INT_SIZE = (int)Math.pow(2,15);
+    public final int MAX_INT_SIZE = (int)Math.pow(2,31);
     public final float MIN_FLOAT_SIZE = (float) Math.pow(1.17549435,-38);
     public final float MAX_FLOAT_SIZE = (float) Math.pow(3.40282347,38);
 
     public final static short IF=257;
     public final static short ELSE=258;
-    public final static short PRINT=259;
     public final static short INTEGER=260;
     public final static short ID=261;
     public final static short CTE=262;
@@ -39,13 +38,9 @@ public class LexicalAnalyzer {
     public final static short MENIG=266;
     public final static short DIST=267;
     public final static short FIN=268;
-    public final static short SINGLE=269;
     public final static short END_IF=270;
     public final static short LOOP=271;
     public final static short UNTIL=272;
-    public final static short LET=273;
-    public final static short MUT=274;
-    public final static short ENTERO=275;
     public final static short FLOTANTE=276;
     public final static short THEN=277;
     public final static short OUT=278;
@@ -556,17 +551,17 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 15, ' ',  StateMachine.FINAL_STATE, palabra_reservada);
     }
     private void addReservedWord() {
-        reservedWords.put("if", (int) IF);
-        reservedWords.put("then", (int) THEN);
-        reservedWords.put("else", (int) ELSE);
-        reservedWords.put("end_if", (int) END_IF);
-        reservedWords.put("out", (int) OUT);
-        reservedWords.put("func", (int) FUNC);
-        reservedWords.put("return", (int) RETURN);
-        reservedWords.put("loop", (int) LOOP);
-        reservedWords.put("until", (int) UNTIL);
-        reservedWords.put("longint", (int) LONGINT);
-        reservedWords.put("longint", (int) FLOAT);
+        reservedWords.put("IF", (int) IF);
+        reservedWords.put("THEN", (int) THEN);
+        reservedWords.put("ELSE", (int) ELSE);
+        reservedWords.put("END_IF", (int) END_IF);
+        reservedWords.put("OUT", (int) OUT);
+        reservedWords.put("FUNC", (int) FUNC);
+        reservedWords.put("RETURN", (int) RETURN);
+        reservedWords.put("LOOP", (int) LOOP);
+        reservedWords.put("UNTIL", (int) UNTIL);
+        reservedWords.put("LONGINT", (int) LONGINT);
+        reservedWords.put("FLOAT", (int) FLOAT);
     }
 
         public int getRow () {

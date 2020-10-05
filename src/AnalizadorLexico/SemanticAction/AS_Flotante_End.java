@@ -19,10 +19,12 @@ public class AS_Flotante_End extends SemanticAction{
 
 
         if (lexical.buffer.contains("f")) {
+            lexical.buffer = lexical.buffer.replace('f', 'e');
+        }
             if (lexical.buffer.charAt(0) == '.' ){
                 lexical.buffer = "0" + lexical.buffer;
             }
-            lexical.buffer = lexical.buffer.replace('f', 'e');
+
             float num = Float.valueOf(lexical.buffer);
 
 
@@ -37,7 +39,7 @@ public class AS_Flotante_End extends SemanticAction{
             }
             lexical.buffer = "";
             lexical.tokenId = LexicalAnalyzer.FLOTANTE;
-        }
+
         // ver que onda, convertir a 2020
 //        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
 //        lexical.symbolTable.setAtributo(String.valueOf(num),"=>","CTE FLOTANTE");

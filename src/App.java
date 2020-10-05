@@ -33,8 +33,8 @@ public class App extends JFrame{
         else if (valor == LexicalAnalyzer.ID){
             return "IDENTIFICADOR";
         }
-        else if (valor == LexicalAnalyzer.ENTERO){
-            return "ENTERO";
+        else if (valor == LexicalAnalyzer.LONGINT){
+            return "ENTERO LARGO";
         }
         else if (valor == LexicalAnalyzer.FLOTANTE){
             return "FLOTANTE";
@@ -49,8 +49,6 @@ public class App extends JFrame{
             return "IDENTIFICADOR";
         }
 
-
-
         else if (valor ==LexicalAnalyzer.ELSE) {
             return "PALABRA RESERVADA ELSE";
         }
@@ -64,13 +62,6 @@ public class App extends JFrame{
         else if (valor == LexicalAnalyzer.INTEGER) {
             return "PALABRA RESERVADA INTEGER";
         }
-        else if (valor == LexicalAnalyzer.LET) {
-            return "PALABRA RESERVADA LET";
-        }
-
-        else if (valor == LexicalAnalyzer.MUT) {
-            return "PALABRA RESERVADA MUT";
-        }
 
         else if (valor == LexicalAnalyzer.LOOP) {
             return "PALABRA RESERVADA LOOP";
@@ -79,13 +70,6 @@ public class App extends JFrame{
             return "PALABRA RESERVADA UNTIL";
         }
 
-        else if (valor == LexicalAnalyzer.PRINT) {
-            return "PALABRA RESERVADA PRINT";
-        }
-
-        else if (valor == LexicalAnalyzer.SINGLE) {
-            return "PALABRA RESERVADA SINGLE";
-        }
         else if (valor == LexicalAnalyzer.MAYIG) {
             return "OPERADOR MAYOR IGUAL";
         }

@@ -10,7 +10,7 @@ public class AS_Entero_Start extends SemanticAction{
 
     @Override
     public void Action(Character symbol) {
-        lexical.tokenId = LexicalAnalyzer.ENTERO;
+        lexical.tokenId = LexicalAnalyzer.LONGINT;
         lexical.buffer+= symbol;// no agrega el '
 
       /*  lexical.yylval = new ParserVal();

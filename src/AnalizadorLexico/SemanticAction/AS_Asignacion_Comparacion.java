@@ -9,21 +9,21 @@ public class AS_Asignacion_Comparacion extends SemanticAction {
     }
 
     public void Action(Character symbol) {
-       /* lexical.yylval.sval=lexical.buffer+"=";
+        //lexical.yylval.sval=lexical.buffer+"=";
         switch (lexical.buffer) {
             case "!":
-                lexical.tokenId = Parser.DIST;
+                lexical.tokenId = LexicalAnalyzer.DIST;
                 break;
             case "<":
-                lexical.tokenId = Parser.MENIG;
+                lexical.tokenId = LexicalAnalyzer.MENIG;
                 break;
             case ">":
-                lexical.tokenId = Parser.MAYIG;
+                lexical.tokenId = LexicalAnalyzer.MAYIG;
                 break;
-            case ":":
-                lexical.tokenId = Parser.ASIG;
+            case "=":
+                lexical.tokenId = LexicalAnalyzer.ASIG;
                 break;
-        }*/
+        }
 
         lexical.index++; // avanzo el cursor porque use el caracter
         lexical.column++;

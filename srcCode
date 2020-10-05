@@ -1,2 +1,73 @@
-%%holaa
-5_l
+%%caso de pruebas identificadores
+
+compilador_2020
+
+%%caso de pruebas identificadores - errores lexicos ANDAN
+
+%%Compilador_2020
+%%_compilador2020
+%%compilador_2020_compilador_2020
+
+%%operadores artimeticos
+
++-*/
+
+%%caso de pruebas asignacion de comparadores NO ANDAN
+%%<=
+%%<
+%%!=
+%%==
+
+%%caso de pruebas simbolos
+{}(),;
+
+%%caso de pruebas palabras reservadas
+
+THEN
+ELSE
+
+%%caso de pruebas palabras reservadas - errores lexicos
+
+then
+else
+
+%%caso de pruebas comentarios de 1 linea - errores lexicos
+
+%
+
+
+%%caso de pruebas Enteros largos primero dentro del rango
+
+2147483647_l
+
+%%caso de pruebas Enteros largos primero fuera  del rango
+
+2147483647_l
+
+%%caso de pruebas Flotantes
+
+1.
+
+12.2
+
+3.f-2
+3.f+5
+
+0.0
+
+%%caso de pruebas Flotantes - errores lexicos
+
+1.f
+
+
+%%caso de pruebas Cadenas Multilinea
+
+"compiladores-
+"
+
+%%caso de pruebas Cadenas Multilinea - erroes lexicos
+
+"compiladores-"
+
+
+

@@ -13,15 +13,25 @@ public class AS_Entero_End extends SemanticAction{
     public void Action(Character symbol) {
         //saca el _ para quedarse con solo el numero
         int num;
-        if (lexical.buffer.length()>7){ //supero digitos el string
+        if (lexical.buffer.length()>11){ //supero digitos el string
             lexical.errors.setError(lexical.row,lexical.column,Errors.ERROR_RANGE);
             num = lexical.MAX_INT_SIZE;
         }else {
+           /* try{
+                num = Integer.valueOf(lexical.buffer.substring(0, lexical.buffer.length() - 1));
+            }
+            catch (NumberFormatException e){
+
+                    lexical.errors.setError(lexical.row, lexical.column, Errors.ERROR_RANGE);
+                    num = lexical.MAX_INT_SIZE;
+
+            }*/
             num = Integer.valueOf(lexical.buffer.substring(0, lexical.buffer.length() - 1));
             if (num > lexical.MAX_INT_SIZE) {
                 lexical.errors.setError(lexical.row, lexical.column, Errors.ERROR_RANGE);
                 num = lexical.MAX_INT_SIZE;
             }
+
         }
 
         /// ESTO VA PERO HAY QUE ACOMODARLO! PARA QUE SEA COMPATIBLE 2020
@@ -36,7 +46,7 @@ public class AS_Entero_End extends SemanticAction{
         lexical.buffer = "";
         lexical.column++;
         lexical.index++;
-        System.out.println("ENTERO FIN");
-        lexical.tokenId = LexicalAnalyzer.ENTERO;
+        System.out.println("ENTERO LARGO FIN");
+        lexical.tokenId = LexicalAnalyzer.LONGINT;
     }
 }
