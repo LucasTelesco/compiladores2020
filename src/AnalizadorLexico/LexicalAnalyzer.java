@@ -38,16 +38,16 @@ public class LexicalAnalyzer {
     public final static short MENIG=266;
     public final static short DIST=267;
     public final static short FIN=268;
-    public final static short END_IF=270;
-    public final static short LOOP=271;
-    public final static short UNTIL=272;
-    public final static short FLOTANTE=276;
-    public final static short THEN=277;
-    public final static short OUT=278;
-    public final static short FUNC=279;
-    public final static short RETURN=280;
-    public final static short LONGINT=281;
-    public final static short FLOAT=282;
+    public final static short END_IF=269;
+    public final static short LOOP=270;
+    public final static short UNTIL=271;
+    public final static short FLOTANTE=272;
+    public final static short THEN=273;
+    public final static short OUT=274;
+    public final static short FUNC=275;
+    public final static short RETURN=276;
+    public final static short LONGINT=277;
+    public final static short FLOAT=278;
 
     public final static short YYERRCODE=256;
     public final static short COMENTARIO=999;

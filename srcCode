@@ -33,8 +33,6 @@ else
 
 %%caso de pruebas comentarios de 1 linea - errores lexicos
 
-%
-
 
 %%caso de pruebas Enteros largos primero dentro del rango
 
@@ -46,28 +44,11 @@ else
 
 %%caso de pruebas Flotantes
 
-1.
-
+12
 12.2
-
-3.f-2
-3.f+5
-
-0.0
-
-%%caso de pruebas Flotantes - errores lexicos
-
-1.f
+.f+12
 
 
-%%caso de pruebas Cadenas Multilinea
-
-"compiladores-
-"
-
-%%caso de pruebas Cadenas Multilinea - erroes lexicos
-
-"compiladores-"
 
 
 
