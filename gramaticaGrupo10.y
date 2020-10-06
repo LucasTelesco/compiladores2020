@@ -1,11 +1,11 @@
 /* Declaraciones */
 
 %{
+package AnalizadorSintactico;
 
 import AnalizadorLexico.LexicalAnalyzer;
 import Errors.Errors;
 import SymbolTable.*;
-import Tercetos.*;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.Stack;
@@ -166,7 +166,7 @@ else_: ELSE {//#### aca hacemos el salto incondicional, debimos inventar este no
 
 condicion_salto: '(' condicion ')' {
     $$=$1;
-    $$.obj = t;
+    //$$.obj = t;
 };
 
 condicion: expresion '>' expresion {

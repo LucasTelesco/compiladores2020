@@ -6,6 +6,7 @@ import java.util.Hashtable;
 
 import AnalizadorLexico.SemanticAction.*;
 import AnalizadorLexico.StateMachine.StateMachine;
+import AnalizadorSintactico.ParserVal;
 import Errors.*;
 import SymbolTable.*;
 
@@ -14,7 +15,7 @@ public class LexicalAnalyzer {
 
 
 
-    //public static ParserVal yylval = null;
+    public static ParserVal yylval = null;
     //############  puntero a la tabla de simbolos? #######
 
     public String lastSymbol;
