@@ -13,7 +13,7 @@ import java.util.Stack;
 
 /* Lista de tokens */
 
-%token IF ELSE PRINT INTEGER ID CTE CADENA ASIG MAYIG MENIG DIST FIN SINGLE END_IF LOOP UNTIL LET MUT ENTERO FLOTANTE LONGINT FLOAT
+%token IF ELSE ID CTE CADENA ASIG MAYIG MENIG DIST FIN  END_IF LOOP UNTIL FLOTANTE LONGINT FLOAT OUT FUNC RETURN PROC NS NA
 
 /* Reglas */
 
@@ -48,7 +48,7 @@ lista_id: ID {//  id.add( ((Symbol)($1.obj)).getLexema() );
 	
 
 	| ID ',' lista_id {//id.add(((Symbol)($1.obj)).getLexema());
-                     Vector<ParserVal> vect = (Vector<ParserVal>)($3.obj); //$3 me trae el vector original primero y desp aumenta
+                    Vector<ParserVal> vect = (Vector<ParserVal>)($3.obj); //$3 me trae el vector original primero y desp aumenta
                     vect.add($1);//ver si anda, hay que castear a Symbol? .obj
                     $$.obj = vect;
 	}
@@ -56,7 +56,7 @@ lista_id: ID {//  id.add( ((Symbol)($1.obj)).getLexema() );
     | ID lista_id{yyerror("Se esperaba ';' ",$1.getFila(),$1.getColumna());}
     ;
 
-tipo: LONGINT {$$.sval="integer";}
+tipo: LONGINT {$$.sval="longint";}
 	| FLOAT {$$.sval="float";}
 	| error ','{yyerror("Tipo indefinido",$1.getFila(),$1.getColumna());}
 	;
@@ -67,88 +67,39 @@ lista_ejecutable: ejecutable {}
 
 ejecutable: asignacion ';'{}
           | bloque {//#######Solo llego aca si termino un if o un loop
-        Integer i = p.pop();
-        if (listaTercetos.get(i).getOperador() == "BI")
-        {
-        listaTercetos.get(i).setOperando1(contadorTerceto);
+          }
+;
 
-            }
-        if (listaTercetos.get(i).getOperador() == "BF")
-            {	listaTercetos.get(i).setOperando2(contadorTerceto);
-            }
-//podriamos hacer un terceto fin aca que sea a donde apunte el salto, este terceto no haria nada solo funcionaria de label del salto
+expresion: termino '+' expresion {            
+                $$=$1;
+               // $$.obj = t;
+}
+	     | termino '-' expresion {			    
+            $$=$1;
+            //$$.obj = t;
+}
+	     | termino {$$=$1;
+         $$.obj=$1.obj; //VER
 }
 ;
 
-expresion: termino '+' expresion {
-								Terceto t = new T_Suma_Resta(contadorTerceto,"+",$1.obj,$3.obj,st);
-                                //st es la tabla de simbolos, paso lexema porque lo uso para buscar en la tabla de simbolos
-                                t.setVariableAux(contaAux);
-                                contaAux++;
-                                for(int i=0; i< t.errores.size();i++){
-                                          yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-                                      ;}
-                                contadorTerceto ++;
-                                listaTercetos.add(t);
-                     System.out.println(t.toString());
-                $$=$1;
-                $$.obj = t;
-}
-	| termino '-' expresion {
-						     Terceto t = new T_Suma_Resta(contadorTerceto,"-",$1.obj,$3.obj,st);
-                             //st es la tabla de simbolos, paso lexema porque lo uso para buscar en la tabla de simbolos
-                            t.setVariableAux(contaAux);
-                            contadorVarAux++;
-                            for(int i=0; i< t.errores.size();i++){
-                                       yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-                                   ;}
-                            contadorTerceto ++;
-                            listaTercetos.add(t);
-                     System.out.println(t.toString());
-                     $$=$1;
-            $$.obj = t;
-}
-	| termino {$$=$1;
-    $$.obj=$1.obj; //creo que es necesario para que no se pierdan los lexemas, si quieren reveanlo
-}
-        ;
-
 
 termino: factor '/' termino {
-                Terceto t = new T_Mult_Div(contadorTerceto,"/",$1.obj,$3.obj,st);
-                t.setVariableAux(contadorVarAux);
-                contadorVarAux++;
-                for(int i=0; i< t.errores.size();i++){
-                           yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-                       ;}
-                contadorTerceto ++;
-                listaTercetos.add(t);
-                     System.out.println(t.toString());
 $$=$1;
-$$.obj = t;
+//$$.obj = t;
 
 }
 	| factor '*' termino{
-                Terceto t = new T_Mult_Div(contadorTerceto,"*",$1.obj,$3.obj,st);
-                t.setVariableAux(contadorVarAux);
-                contadorVarAux++;
-                for(int i=0; i< t.errores.size();i++){
-                           yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-                       ;}
-                contadorTerceto ++;
-                listaTercetos.add(t);
-                     System.out.println(t.toString());
+              
 $$=$1;
-$$.obj = t;
+//$$.obj = t;
     }
     | factor {$$=$1;
-			  // terceto
-			  $$.obj=$1.obj;
+			 // $$.obj=$1.obj;
 			 }
 	;
-// integer y single son tipos de las varibles
-// estero y flotante son las constantes
-factor: ENTERO {$$=$1;}
+// LONGINT y FLOAT 
+factor: LONGINT {$$=$1;}
 	| FLOTANTE {$$=$1;}
 	| ID {if(!((Symbol)($1.obj)).isUsada()){
 			//error
@@ -156,95 +107,28 @@ factor: ENTERO {$$=$1;}
 			}
 			 $$=$1;
 	}
-	| '-' ENTERO {    /** Revisar sino pierdo el puntero al elemento qe necesito **/
+	| '-' LONGINT {
 					  $$=$2;
-                      //Symbol aux = st.getSymbol(lex.lastSymbol);
                       st.addcambiarSigno(((Symbol)($2.obj)));  //((Symbol))($2.obj))
  		              }
-	|'-' FLOTANTE{			/** Revisar sino pierdo el puntero al elemento qe necesito **/
+	|'-' FLOTANTE{	
 		             $$=$2;
-					 // Antes qedaban atributos sin setear
-                    // Symbol aux = st.getSymbol(lex.lastSymbol);
                      st.addcambiarSigno(((Symbol)($2.obj)));  //((Symbol))($2.obj))
                     }
 	;
 
-asignacion: ID ASIG  expresion{		//necesito el tipo de la expresion
-if (!((Symbol)($1.obj)).isUsada()){
-    yyerror("La variable no esta definida ",$1.getFila(),$1.getColumna());
-}else{if (!((Symbol)($1.obj)).getEsMutable()){
-    yyerror("La variable no es mutable ",$1.getFila(),$1.getColumna());
-}}
-                Terceto t = new T_Asignacion(contadorTerceto,":=",$1.obj,$3.obj,st);
-                t.setVariableAux(contadorVarAux);//casi seguro que si hay que crearla aca
-                contadorVarAux++;//
-                for(int i=0; i< t.errores.size();i++){
-                           yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-                       ;}
-                contadorTerceto ++;
-                listaTercetos.add(t);
-                System.out.println(t.toString());
-                $$=$1;
-                $$.obj = t;
-	estructuras.add("Asignacion "+" fila "+$1.getFila()+" columna "+$1.getColumna());}
+asignacion: ID ASIG  expresion{
 
-    | LET tipo '*'ID ASIG '&' ID  { // Estoy definiendo una variable
-    if (((Symbol)($4.obj)).isUsada()){
-        yyerror("La variable ya esta definida ",$1.getFila(),$1.getColumna());
-    }else{
-        Symbol s = ((Symbol)($4.obj));
-        s.setUsada(true);
-        s.setEsMutable(false);
-        s.setEspuntero(true);
-        s.setTipoVar($2.sval);
-        // faltaria mutabilidad de lo apuntado
+            if (!((Symbol)($1.obj)).isUsada()){
+                yyerror("La variable no esta definida ",$1.getFila(),$1.getColumna());
+            }
+            $$=$1;
+            //$$.obj = t;
+            //estructuras.add("Asignacion "+" fila "+$1.getFila()+" columna "+$1.getColumna()); 
     }
-    if (!((Symbol)($7.obj)).isUsada()){
-        yyerror("La variable no esta definida, &ID ",$1.getFila(),$1.getColumna());
-    }else{
-        Symbol s = ((Symbol)($7.obj));
-        Symbol sy = ((Symbol)($4.obj));
-        if (s.isEsPuntero())
-            yyerror("No se permiten punteros multiples ",$1.getFila(),$1.getColumna());
-                                }
-	  Terceto t = new T_Asignacion(contadorTerceto,"&",$4.obj,$7.obj,st);
-    t.setVariableAux(contadorVarAux);
-    contadorVarAux++;
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
-    $$=$1;
-    $$.obj = t;
-    estructuras.add("Asignacion de puntero "+" fila "+$1.getFila()+" columna "+$1.getColumna());}
-    | LET tipo ID ASIG expresion  {//Estoy definiendo una variable
-        if (((Symbol)($3.obj)).isUsada()){
-            yyerror("La variable ya esta definida ",$1.getFila(),$1.getColumna());
-        }else{
-            Symbol s = ((Symbol)($3.obj));
-            s.setUsada(true);
-            s.setEsMutable(false);
-            s.setEspuntero(false);
-            s.setTipoVar($2.sval);
-            // faltaria mutabilidad de lo apuntado                                }
-      Terceto t = new T_Asignacion(contadorTerceto,":=",$3.obj,$5.obj,st);
-    t.setVariableAux(contadorVarAux);
-    contadorVarAux++;
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
-    $$=$1;
-    $$.obj = t;
-}
-    estructuras.add("Asignacion "+" fila "+$1.getFila()+" columna "+$1.getColumna());}
-	| ASIG expresion  {yyerror("Falta elemento de asignacion y palabra reservada 'let'",$1.getFila(),$1.getColumna());}
+	| ASIG expresion  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
 	| ID ASIG  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
-	| ID error  {yyerror("no se encontro ':=' ",$1.getFila(),$1.getColumna());}
+	| ID error  {yyerror("no se encontro '=' ",$1.getFila(),$1.getColumna());}
 	;
 
 
@@ -269,112 +153,47 @@ cuerpo: ejecutable {}
 	| error lista_ejecutable '}' {yyerror("LInea  Omision de la palabra reservada '{' ",$1.getFila(),$1.getColumna());}
 	;
 
-loop_: LOOP {//#### unica forma de marcar donde comienza el loop y ver donde salto (no diferenciamos bloque de loop)
-        p.push(contadorTerceto);}
+loop_: LOOP {System.out.println("Encontro LOOP");}
 ;
 
 
 else_: ELSE {//#### aca hacemos el salto incondicional, debimos inventar este no terminal porque no diferenciamos bloque else de bloque if
         //aca ya hicimos el pop cuando termino el cuerpo del if
-        Terceto t = new T_BI(contadorTerceto,"BI","trampita","trampita",st);
-        contadorTerceto ++;
-        listaTercetos.add(t);
-        Integer i = p.pop();
-        if (listaTercetos.get(i).getOperador() == "BF")
-            listaTercetos.get(i).setOperando2(contadorTerceto);
-        else
-            listaTercetos.get(i).setOperando1(contadorTerceto);
-        p.push(contadorTerceto-1);
-//podriamos hacer un terceto fin aca que sea a donde apunte el salto, este terceto no haria nada solo funcionaria de label del salto
-    System.out.println(t.toString());
     $$=$1;
-    $$.obj = t;
-															}
+    //$$.obj = t;														}
 ;
 
-condicion_salto: '(' condicion ')' {    //#### aca hacemos lo del salto para no repetirlo en todas las condiciones
-    p.push(contadorTerceto);
-    Terceto t = new T_BF(contadorTerceto,"BF",$2.obj,"trampita",st);//##use trampita por las dudas, ya por deporte, no parece que sea necesario
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
+condicion_salto: '(' condicion ')' {
     $$=$1;
     $$.obj = t;
-
 };
 
 condicion: expresion '>' expresion {
-  Terceto t = new T_Comparador(contadorTerceto,">",$1.obj,$3.obj,st);
-   // t.setVariableAux(contadorVarAux);//revisar, creo que aca no va
-   // contadorVarAux++;//osea una comparacion SI TIENE RESULTADO, pero no necesito el tipo del resultado?, nose
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
     $$=$1;
-    $$.obj = t;
-    									}
+   // $$.obj = t;
+   	}
 	| expresion '<' expresion {
-  Terceto t = new T_Comparador(contadorTerceto,"<",$1.obj,$3.obj,st);
-   // t.setVariableAux(contadorVarAux);//revisar, creo que aca no va
-   // contadorVarAux++;//osea una comparacion SI TIENE RESULTADO, pero no necesito el tipo del resultado?, nose
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
     $$=$1;
-    $$.obj = t;										}
-	| expresion '=' expresion {  Terceto t = new T_Comparador(contadorTerceto,"=",$1.obj,$3.obj,st);
-   // t.setVariableAux(contadorVarAux);//revisar, creo que aca no va
-   // contadorVarAux++;//osea una comparacion SI TIENE RESULTADO, pero no necesito el tipo del resultado?, nose
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
+   // $$.obj = t;										
+   }
+	| expresion '=' expresion {
+
     $$=$1;
-    $$.obj = t;										}
+    //$$.obj = t;										
+    }
 	| expresion DIST expresion {
-  Terceto t = new T_Comparador(contadorTerceto,"!=",$1.obj,$3.obj,st);
-   // t.setVariableAux(contadorVarAux);//revisar, creo que aca no va
-   // contadorVarAux++;//osea una comparacion SI TIENE RESULTADO, pero no necesito el tipo del resultado?, nose
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
+
     $$=$1;
-    $$.obj = t;										}
+   // $$.obj = t;										
+   }
 	| expresion MAYIG expresion {
-  Terceto t = new T_Comparador(contadorTerceto,">=",$1.obj,$3.obj,st);
-   // t.setVariableAux(contadorVarAux);//revisar, creo que aca no va
-   // contadorVarAux++;//osea una comparacion SI TIENE RESULTADO, pero no necesito el tipo del resultado?, nose
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
     $$=$1;
-    $$.obj = t;										}
+    //$$.obj = t;										
+    }
 	| expresion MENIG expresion {
-  Terceto t = new T_Comparador(contadorTerceto,"<=",$1.obj,$3.obj,st);
-   // t.setVariableAux(contadorVarAux);//revisar, creo que aca no va
-   // contadorVarAux++;//osea una comparacion SI TIENE RESULTADO, pero no necesito el tipo del resultado?, nose
-    for(int i=0; i< t.errores.size();i++){
-               yyerror(t.errores.elementAt(i),$1.getFila(),$1.getColumna());
-           ;}
-    contadorTerceto ++;
-    listaTercetos.add(t);
-    System.out.println(t.toString());
     $$=$1;
-    $$.obj = t;										}
+    //$$.obj = t;										
+    }
 	| '>' expresion {yyerror("Linea  se esperaba una expresion y se encontro '>'",$1.getFila(),$1.getColumna());}
 	| '<' expresion {yyerror("Linea  se esperaba una expresion y se encontro '<'",$1.getFila(),$1.getColumna());}
 	| MAYIG expresion {yyerror("Linea  se esperaba una expresion y se encontro '>='",$1.getFila(),$1.getColumna());}
@@ -389,10 +208,10 @@ condicion: expresion '>' expresion {
   public ArrayList<String> estructuras=new ArrayList<>();
   public ArrayList<String> tokens = new ArrayList<>();
   public ArrayList<String> id = new ArrayList<>();
-  public ArrayList<Terceto> listaTercetos = new ArrayList<>();
+
   public Stack<Integer> p = new Stack<Integer>();
   int contadorVarAux=0;
-  int contadorTerceto=0;
+
 
     int yylex(){
 
