@@ -2,6 +2,7 @@ import javax.swing.*;
 
 
 import AnalizadorLexico.LexicalAnalyzer;
+import AnalizadorSintactico.Parser;
 import Errors.Errors;
 import SymbolTable.*;
 
@@ -22,7 +23,7 @@ public class App extends JFrame{
     String archivo="";
     private Errors errors;
     private OutFile outFile = new OutFile();
-  //private GeneradorAssembler genAssembler;
+    //private GeneradorAssembler genAssembler;
     //este metodo es solo para mostrar el contenido de manera prolija
     //al momento de apretar el boton "token"
     public String mostrarToken(int valor){
@@ -103,17 +104,17 @@ public class App extends JFrame{
         errors = new Errors();
         final SymbolTable st = new SymbolTable();
         final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
-       // final Parser par = new Parser(lexical,st,errors);
+        final Parser par = new Parser(lexical,st,errors);
 
 
        // Consumidor de Token
-        int token = lexical.getNextToken();
+       /* int token = lexical.getNextToken();
         while (token!=-1 && token!=0){
             System.out.println("Token encontrado: "+token);
             token = lexical.getNextToken();
         }
 
-        System.out.println(errors.getAll());
+        System.out.println(errors.getAll());*/
         add(panel1);
         setSize(700,500);
         textArea2.append(archivo);// muestra archivo
@@ -124,7 +125,7 @@ public class App extends JFrame{
         genArchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             //   par.run();
+                par.run();
 
                 try{ Thread.sleep(100); } catch (InterruptedException e1) {
                     e1.printStackTrace();
@@ -132,13 +133,13 @@ public class App extends JFrame{
 
 
                 outFile.tlFile(st, "tablaSimbolos.txt");
-             //   outFile.tokenFile(par, "token.txt");
-             //   outFile.structFile(par, "estructurasReconocidas.txt");
+                //outFile.tokenFile(par, "token.txt");
+                //outFile.structFile(par, "estructurasReconocidas.txt");
                 outFile.errorFiles(errors, "errores.txt");
 
                // optimizaTercetos(par.listaTercetos);
              //   outFile.tercetoFile(par, "terceto.txt");
-               // genAssembler = new GeneradorAssembler(par, st);
+              //  genAssembler = new GeneradorAssembler(par, st);
                // genAssembler.optimizaTercetos();
 
 //                outFile.tercetoFile(genAssembler.getTercetosOptimizado(),"tercetoOptimizado.txt");

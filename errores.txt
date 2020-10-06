@@ -1,1 +1,8 @@
+syntax error fila 2 columna 1
+Declaracion mal definida  fila 22 columna 4
+Tipo indefinido fila 0 columna 0
+lexema no valido null fila 47 columna 3
+Declaracion mal definida  fila 48 columna 5
+Declaracion mal definida  fila 49 columna 6
+Declaracion mal definida  fila 56 columna 1
 
