@@ -1,4 +1,2 @@
-compilador_2020   tipo :   261 => IDENTIFICADOR
-then   tipo :   261 => IDENTIFICADOR
-else   tipo :   261 => IDENTIFICADOR
+varlongint   tipo :   259 => IDENTIFICADOR
 

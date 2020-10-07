@@ -33,7 +33,7 @@ public class LexicalAnalyzer {
     public final static short ID=259;
     public final static short CTE=260;
     public final static short CADENA_MULTINEA=261;
-    public final static short ASIG=262;
+    public final static short ESIGUAL=262;
     public final static short MAYIG=263;
     public final static short MENIG=264;
     public final static short DIST=265;
@@ -157,32 +157,32 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 1, ' ', StateMachine.FINAL_STATE, next_espace);
 
 
-        StateMachine.addTransition( 2, 'l',  StateMachine.FINAL_STATE, tokenAscii);
-        StateMachine.addTransition( 2, 'd',StateMachine.FINAL_STATE, tokenAscii);
-        StateMachine.addTransition( 2, '+', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '-', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '*', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '/', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '<', StateMachine.FINAL_STATE,tokenAscii);
-        StateMachine.addTransition( 2, '>', StateMachine.FINAL_STATE,tokenAscii );
+        StateMachine.addTransition( 2, 'l',  StateMachine.FINAL_STATE, asignacion_Comparacion);
+        StateMachine.addTransition( 2, 'd',StateMachine.FINAL_STATE, asignacion_Comparacion);
+        StateMachine.addTransition( 2, '+', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '-', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '*', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '/', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '<', StateMachine.FINAL_STATE,asignacion_Comparacion);
+        StateMachine.addTransition( 2, '>', StateMachine.FINAL_STATE,asignacion_Comparacion );
         StateMachine.addTransition( 2, '=', StateMachine.FINAL_STATE,asignacion_Comparacion  );
-        StateMachine.addTransition( 2, '!', StateMachine.FINAL_STATE,tokenAscii  );
-        StateMachine.addTransition( 2, '{', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '}', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '(', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, ')', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, ',', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, ';', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '%', StateMachine.FINAL_STATE,tokenAscii  );
-        StateMachine.addTransition( 2, '\n', StateMachine.FINAL_STATE,tokenAscii  );
-        StateMachine.addTransition( 2, '.', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '_', StateMachine.FINAL_STATE,tokenAscii);
-        StateMachine.addTransition( 2, 'f', StateMachine.FINAL_STATE,tokenAscii );
-        StateMachine.addTransition( 2, '"', StateMachine.FINAL_STATE,tokenAscii);
-        StateMachine.addTransition( 2, 'C', StateMachine.FINAL_STATE,tokenAscii);
-        StateMachine.addTransition(2,'a',StateMachine.FINAL_STATE, tokenAscii);
-        StateMachine.addTransition(2,'A',StateMachine.FINAL_STATE, tokenAscii);
-        StateMachine.addTransition( 2, ' ', StateMachine.FINAL_STATE,tokenAscii);
+        StateMachine.addTransition( 2, '!', StateMachine.FINAL_STATE,asignacion_Comparacion  );
+        StateMachine.addTransition( 2, '{', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '}', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '(', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, ')', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, ',', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, ';', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '%', StateMachine.FINAL_STATE,asignacion_Comparacion  );
+        StateMachine.addTransition( 2, '\n', StateMachine.FINAL_STATE,asignacion_Comparacion  );
+        StateMachine.addTransition( 2, '.', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '_', StateMachine.FINAL_STATE,asignacion_Comparacion);
+        StateMachine.addTransition( 2, 'f', StateMachine.FINAL_STATE,asignacion_Comparacion );
+        StateMachine.addTransition( 2, '"', StateMachine.FINAL_STATE,asignacion_Comparacion);
+        StateMachine.addTransition( 2, 'C', StateMachine.FINAL_STATE,asignacion_Comparacion);
+        StateMachine.addTransition(2,'a',StateMachine.FINAL_STATE, asignacion_Comparacion);
+        StateMachine.addTransition(2,'A',StateMachine.FINAL_STATE, asignacion_Comparacion);
+        StateMachine.addTransition( 2, ' ', StateMachine.FINAL_STATE,asignacion_Comparacion);
 
 
         StateMachine.addTransition( 3, 'l', StateMachine.ERROR_STATE, not_lexema);

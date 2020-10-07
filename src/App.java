@@ -41,8 +41,8 @@ public class App extends JFrame{
         else if (valor == LexicalAnalyzer.CADENA_MULTINEA){
             return "CADENA DE CARACTER";
         }
-        else if (valor == LexicalAnalyzer.ASIG){
-            return "ASIGNACION";
+        else if (valor == LexicalAnalyzer.ESIGUAL){
+            return "ESIGUAL";
         }
         else if (valor == LexicalAnalyzer.ID) {
             return "IDENTIFICADOR";

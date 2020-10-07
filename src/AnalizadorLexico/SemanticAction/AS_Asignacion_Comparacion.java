@@ -21,7 +21,10 @@ public class AS_Asignacion_Comparacion extends SemanticAction {
                 lexical.tokenId = LexicalAnalyzer.MAYIG;
                 break;
             case "=":
-                lexical.tokenId = LexicalAnalyzer.ASIG;
+                lexical.tokenId = LexicalAnalyzer.ESIGUAL;
+                break;
+            default:
+                lexical.tokenId = (int)lexical.buffer.charAt(lexical.buffer.length()-1);
                 break;
         }
 

@@ -13,7 +13,7 @@ import java.util.Stack;
 
 /* Lista de tokens */
 
-%token IF ELSE ID CTE CADENA_MULTINEA ASIG MAYIG MENIG DIST FIN  END_IF LOOP UNTIL FLOTANTE LONGINT FLOAT OUT FUNC RETURN PROC NS NA THEN CTELONGINT CTEFLOAT
+%token IF ELSE ID CTE CADENA_MULTINEA ESIGUAL MAYIG MENIG DIST FIN  END_IF LOOP UNTIL FLOTANTE LONGINT FLOAT OUT FUNC RETURN PROC NS NA THEN CTELONGINT CTEFLOAT
 
 /* Reglas */
 
@@ -130,17 +130,16 @@ factor: CTELONGINT {$$=$1;}
                     }
 	;
 
-asignacion: ID ASIG  expresion{
-
-            if (!((Symbol)($1.obj)).isUsada()){
-                yyerror("La variable no esta definida ",$1.getFila(),$1.getColumna());
-            }
+asignacion: ID '=' expresion{
+            // if (!((Symbol)($1.obj)).isUsada()){
+            //     yyerror("La variable no esta definida ",$1.getFila(),$1.getColumna());
+            // }
             $$=$1;
             //$$.obj = t;
             //estructuras.add("Asignacion "+" fila "+$1.getFila()+" columna "+$1.getColumna()); 
     }
-	| ASIG expresion  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
-	| ID ASIG  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
+	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
+	| ID '='  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
 	| ID error  {yyerror("no se encontro '=' ",$1.getFila(),$1.getColumna());}
 	;
 

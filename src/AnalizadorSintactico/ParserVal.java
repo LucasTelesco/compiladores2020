@@ -51,8 +51,8 @@ public class ParserVal {
       return "FLOTANTE";
     } else if (valor == LexicalAnalyzer.CADENA_MULTINEA) {
       return "CADENA DE CARACTER";
-    } else if (valor == LexicalAnalyzer.ASIG) {
-      return "ASIGNACION";
+    } else if (valor == LexicalAnalyzer.ESIGUAL) {
+      return "ESIGUAL";
     } else if (valor == LexicalAnalyzer.ID) {
       return "IDENTIFICADOR";
     } else if (valor == LexicalAnalyzer.ELSE) {
@@ -118,13 +118,12 @@ public class ParserVal {
   /**
    * Compilador 2020 ids de tokens
    **/
-
   public final static short IF=257;
   public final static short ELSE=258;
   public final static short ID=259;
   public final static short CTE=260;
   public final static short CADENA_MULTINEA=261;
-  public final static short ASIG=262;
+  public final static short ESIGUAL=262;
   public final static short MAYIG=263;
   public final static short MENIG=264;
   public final static short DIST=265;
@@ -142,10 +141,9 @@ public class ParserVal {
   public final static short NS=277;
   public final static short NA=278;
   public final static short THEN=279;
-  public final static short YYERRCODE = 256;
-  public final static short COMENTARIO = 999;
   public final static short CTELONGINT=280;
   public final static short CTEFLOAT=281;
+  public final static short YYERRCODE=256;
 
   public enum TipoToken {
 
@@ -192,7 +190,7 @@ public class ParserVal {
     MAYIG(ParserVal.MAYIG),
     MENIG(ParserVal.MENIG),
     DIST(ParserVal.DIST),
-    ASIG(ParserVal.ASIG),
+    ESIGUAL(ParserVal.ESIGUAL),
     FIN(0),
     YYERRCODE(ParserVal.YYERRCODE);
 

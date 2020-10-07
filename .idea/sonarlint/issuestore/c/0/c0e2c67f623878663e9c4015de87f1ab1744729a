@@ -1,0 +1,92 @@
+
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(•êùÅ8£‘‚şÏ.
+b
+java:S1124‚"EReorder the modifiers to comply with the Java Language Specification.(£ï´58£‘‚şÏ.
+c
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Æ„•ô8£‘‚şÏ.
+a
+java:S1124z"EReorder the modifiers to comply with the Java Language Specification.(‹ªV8£‘‚şÏ.
+f
+java:S1104"PMake ival a static final constant or non-public and provide accessors if needed.(ïş˜­
+c
+java:S1124„"EReorder the modifiers to comply with the Java Language Specification.(­°ôß8£‘‚şÏ.
+c
+java:S1124ˆ"EReorder the modifiers to comply with the Java Language Specification.(şÑŒº8£‘‚şÏ.
+Z
+java:S3066Ñ"<Lower the visibility of this setter or remove it altogether.(ôºŞİ8£‘‚şÏ.
+D
+java:S1905®"'Remove this unnecessary cast to "char".(ƒ÷Än8£‘‚şÏ.
+D
+java:S1905±"'Remove this unnecessary cast to "char".(¸¥äG8£‘‚şÏ.
+h
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(±öìäşÿÿÿÿ8£‘‚şÏ.
+J
+java:S1905¶"'Remove this unnecessary cast to "char".(®œû¬ÿÿÿÿÿ8£‘‚şÏ.
+g
+java:S1124~"EReorder the modifiers to comply with the Java Language Specification.(•ä½şÿÿÿÿ8£‘‚şÏ.
+c
+java:S1124…"EReorder the modifiers to comply with the Java Language Specification.(ïúƒô8£‘‚şÏ.
+J
+java:S1905¯"'Remove this unnecessary cast to "char".(éŠ‰Äüÿÿÿÿ8£‘‚şÏ.
+g
+java:S1124{"EReorder the modifiers to comply with the Java Language Specification.(Òê…Ãúÿÿÿÿ8£‘‚şÏ.
+c
+java:S1124€"EReorder the modifiers to comply with the Java Language Specification.(šå÷â8£‘‚şÏ.
+h
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ÒÚããşÿÿÿÿ8£‘‚şÏ.
+j
+java:S1104 "OMake obj a static final constant or non-public and provide accessors if needed.(”’ğ®úÿÿÿÿ
+J
+java:S1905°"'Remove this unnecessary cast to "char".(á–àûÿÿÿÿ8£‘‚şÏ.
+h
+java:S1124‡"EReorder the modifiers to comply with the Java Language Specification.(÷Âùıÿÿÿÿ8£‘‚şÏ.
+J
+java:S1905·"'Remove this unnecessary cast to "char".(éÕ©–úÿÿÿÿ8£‘‚şÏ.
+J
+java:S1905³"'Remove this unnecessary cast to "char".(Á¡„©úÿÿÿÿ8£‘‚şÏ.
+o
+java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ãê8şşâıÏ.
+h
+java:S1124Œ"EReorder the modifiers to comply with the Java Language Specification.(™‹×şıÿÿÿÿ8£‘‚şÏ.
+J
+java:S1905´"'Remove this unnecessary cast to "char".(ÎíşĞÿÿÿÿÿ8£‘‚şÏ.
+E
+java:S1905­"'Remove this unnecessary cast to "char".(»ƒ¤Á8£‘‚şÏ.
+c
+java:S1124†"EReorder the modifiers to comply with the Java Language Specification.(ºçÕÙ8£‘‚şÏ.
+b
+java:S1124ƒ"EReorder the modifiers to comply with the Java Language Specification.(äßàZ8£‘‚şÏ.
+c
+java:S1124‰"EReorder the modifiers to comply with the Java Language Specification.(ˆÖ” 8£‘‚şÏ.
+¢
+java:S18628"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements( ûéº8öİèıÏ.
+h
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(äƒĞşÿÿÿÿ8£‘‚şÏ.
+J
+java:S1905²"'Remove this unnecessary cast to "char".(ôÓ®ûÿÿÿÿ8£‘‚şÏ.
+J
+java:S1905µ"'Remove this unnecessary cast to "char".(·¥‘½şÿÿÿÿ8£‘‚şÏ.
+E
+java:S1905¸"'Remove this unnecessary cast to "char".(¤Çåà8£‘‚şÏ.
+h
+java:S1124‹"EReorder the modifiers to comply with the Java Language Specification.(èøéÓşÿÿÿÿ8£‘‚şÏ.
+E
+java:S1905¹"'Remove this unnecessary cast to "char".(Ùèé¦8£‘‚şÏ.
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÁÄßŒùÿÿÿÿ8¨ê¨ıÏ.
+f
+java:S1104"PMake dval a static final constant or non-public and provide accessors if needed.(°ú
+h
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Î³—Œÿÿÿÿÿ8£‘‚şÏ.
+k
+java:S1104"PMake sval a static final constant or non-public and provide accessors if needed.(õ‹Ğûÿÿÿÿ
+g
+java:S1124|"EReorder the modifiers to comply with the Java Language Specification.(é¸ãøÿÿÿÿ8£‘‚şÏ.
+E
+java:S1905º"'Remove this unnecessary cast to "char".(´´¶å8£‘‚şÏ.
+K
+java:S1068×"(Remove this unused "tipo" private field.(½³õÿÿÿÿÿ8·†¥şÏ.
+g
+java:S1124}"EReorder the modifiers to comply with the Java Language Specification.(é±µ”ûÿÿÿÿ8£‘‚şÏ.
+c
+java:S1124Š"EReorder the modifiers to comply with the Java Language Specification.(²ÊË•8£‘‚şÏ.
