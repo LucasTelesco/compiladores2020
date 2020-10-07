@@ -599,9 +599,9 @@ public class LexicalAnalyzer {
             state = StateMachine.INITIAL_STATE;
             Character symbol;
 
-           // yylval = new ParserVal();
-          //  yylval.setColumna(column);
-          //  yylval.setFila(row);
+            yylval = new ParserVal();
+            yylval.setColumna(column);
+            yylval.setFila(row);
 
             while (state != StateMachine.FINAL_STATE) {
                 if (index >= srcCode.length()) {
@@ -614,13 +614,13 @@ public class LexicalAnalyzer {
                 StateMachine.getSemanticAction(old, symbol).Action(symbol);
 
                 if (state == StateMachine.INITIAL_STATE) {
-                  //  yylval.setColumna(column);
-                 //   yylval.setFila(row);
+                    yylval.setColumna(column);
+                    yylval.setFila(row);
                 }
 
             }
 
-
+            System.out.println("El Id token es: "+tokenId);
             return tokenId;
         }
 

@@ -38,17 +38,17 @@ sentencia: ejecutable {}
 declaracion: tipo lista_id ';' {
         System.out.println("Encontro declaracion ");
 		}
-	| control{}
+
         | error {yyerror("Declaracion mal definida ");}
         ;
 
-control: PROC ID '(' tipo lista_id ')' {
-       System.out.println("Encontro un control ");
-       }
-        | error {yyerror("Control mal definida ");
+// control: PROC ID '(' tipo lista_id ')' {
+//        System.out.println("Encontro un control ");
+//        }
+//         | error {yyerror("Control mal definida ");
 
-        }
-       ;
+//         }
+//        ;
 
 
 
@@ -79,7 +79,7 @@ lista_ejecutable: ejecutable {}
 ejecutable: asignacion ';'{}
           | bloque {//#######Solo llego aca si termino un if o un loop
           }
-          | exp_print ','{}
+          // | exp_print ','{}
 
 ;
 
@@ -145,12 +145,12 @@ asignacion: ID ASIG  expresion{
 	;
 
 
-exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila()+" columna "+$1.getColumna());
-		$$=$1;
-}
-		| OUT error {yyerror("Linea  Error en la construccion del out",$1.getFila(),$1.getColumna());
-		}
-               ;
+// exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila()+" columna "+$1.getColumna());
+// 		$$=$1;
+// }
+// 		| OUT error {yyerror("Linea  Error en la construccion del out",$1.getFila(),$1.getColumna());
+// 		}
+//                ;
 
 bloque: sent_if {}
 	| sent_loop {}
