@@ -14,18 +14,13 @@ public class AS_Id_End extends SemanticAction{
         if (lexical.buffer.length() > lexical.MAX_WORD_SIZE){
             lexical.errors.setError(lexical.row,lexical.column,Errors.ERROR_MAX_WORD_SIZE);
             lexical.buffer = lexical.buffer.substring(0,lexical.MAX_WORD_SIZE);
-            //siempre acota a 25 caracteres
+
         }
 
         lexical.symbolTable.setSymbol(lexical.buffer, LexicalAnalyzer.ID);
         lexical.symbolTable.setAtributo(lexical.buffer,"=>","IDENTIFICADOR");
-        //agrega en la tabla de simbolo ya que es de tipo ID
 
-        // ######## ASEGURARNOS DE QUE ESTAMOS CONSTRUYENDO EL PARSER VAL CON UN PUNTERO A LA TABLA DE SYMBOLOS
-
-       // lexical.yylval.obj=lexical.symbolTable.getSymbol(lexical.buffer);
-
-        lexical.lastSymbol=lexical.buffer; // guardo el simbolo viejo
+        lexical.lastSymbol=lexical.buffer;
         lexical.buffer = "";
     }
 }

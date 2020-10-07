@@ -52,13 +52,13 @@ declaracion: tipo lista_id ';' {
 
 
 
-lista_id: ID {//  id.add( ((Symbol)($1.obj)).getLexema() );
+lista_id: ID {
                 Vector<ParserVal> vect = new Vector<ParserVal>();//$1 es el parser val con el symbolo de ese ID
                 vect.add($1);//ver si anda, hay que castear a Symbol?
                 $$.obj = vect; }
 	
 
-	| ID ',' lista_id {//id.add(((Symbol)($1.obj)).getLexema());
+	| ID ',' lista_id {
                     Vector<ParserVal> vect = (Vector<ParserVal>)($3.obj); //$3 me trae el vector original primero y desp aumenta
                     vect.add($1);//ver si anda, hay que castear a Symbol? .obj
                     $$.obj = vect;
@@ -77,19 +77,18 @@ lista_ejecutable: ejecutable {}
 	;
 
 ejecutable: asignacion ';'{}
-          | bloque {//#######Solo llego aca si termino un if o un loop
+          | bloque {
           }
-          // | exp_print ','{}
 
 ;
 
 expresion: termino '+' expresion {            
                 $$=$1;
-               // $$.obj = t;
+               
 }
 	     | termino '-' expresion {			    
             $$=$1;
-            //$$.obj = t;
+        
 }
 	     | termino {$$=$1;
          $$.obj=$1.obj; //VER
@@ -99,16 +98,16 @@ expresion: termino '+' expresion {
 
 termino: factor '/' termino {
 $$=$1;
-//$$.obj = t;
+
 
 }
 	| factor '*' termino{
               
 $$=$1;
-//$$.obj = t;
+
     }
     | factor {$$=$1;
-			 // $$.obj=$1.obj;
+
 			 }
 	;
 // LONGINT y FLOAT 
@@ -131,39 +130,28 @@ factor: CTELONGINT {$$=$1;}
 	;
 
 asignacion: ID '=' expresion{
-            // if (!((Symbol)($1.obj)).isUsada()){
-            //     yyerror("La variable no esta definida ",$1.getFila(),$1.getColumna());
-            // }
             $$=$1;
-            //$$.obj = t;
-            //estructuras.add("Asignacion "+" fila "+$1.getFila()+" columna "+$1.getColumna()); 
+
     }
 	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
 	| ID '='  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
 	| ID error  {yyerror("no se encontro '=' ",$1.getFila(),$1.getColumna());}
 	;
-
-
-// exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila()+" columna "+$1.getColumna());
-// 		$$=$1;
-// }
-// 		| OUT error {yyerror("Linea  Error en la construccion del out",$1.getFila(),$1.getColumna());
-// 		}
-//                ;
+              ;
 
 bloque: sent_if {}
 	| sent_loop {}
 	;
 
 
-sent_if: IF condicion_salto cuerpo else_ cuerpo END_IF{estructuras.add("Sentencia IF Else" +" fila "+$1.getFila()+" columna "+$1.getColumna());}
-        |IF condicion_salto cuerpo END_IF{estructuras.add("Sentencia IF " +" fila "+$1.getFila()+" columna "+$1.getColumna());}
+sent_if: IF condicion_salto cuerpo else_ cuerpo END_IF{}
+        |IF condicion_salto cuerpo END_IF{}
 	|  condicion_salto cuerpo else_ cuerpo {yyerror(" falta la palabra reservada IF",$1.getFila(),$1.getColumna());}
 	| IF error else_ {yyerror(" Error en la construccion de la sentencia IF ",$1.getFila(),$1.getColumna());}
 	| IF condicion_salto cuerpo cuerpo {yyerror(" Falta la palabra reservada ELSE ",$1.getFila(),$1.getColumna());}
 	;
 
-sent_loop: loop_ cuerpo UNTIL condicion_salto {estructuras.add("Sentencia Loop " +" fila "+$1.getFila()+" columna "+$1.getColumna());}
+sent_loop: loop_ cuerpo UNTIL condicion_salto {}
 	| loop_ cuerpo condicion_salto {yyerror("Linea  Falta palabra reservada UNTIL",$1.getFila(),$1.getColumna());}
 	;
 
@@ -176,43 +164,39 @@ loop_: LOOP {System.out.println("Encontro LOOP");}
 ;
 
 
-else_: ELSE {//#### aca hacemos el salto incondicional, debimos inventar este no terminal porque no diferenciamos bloque else de bloque if
-        //aca ya hicimos el pop cuando termino el cuerpo del if
+else_: ELSE {
     $$=$1;
-    //$$.obj = t;														
     }
 ;
 
 condicion_salto: '(' condicion ')' {
     $$=$1;
-    //$$.obj = t;
 };
 
 condicion: expresion '>' expresion {
     $$=$1;
-   // $$.obj = t;
    	}
 	| expresion '<' expresion {
     $$=$1;
-   // $$.obj = t;										
+									
    }
 	| expresion '=' expresion {
 
     $$=$1;
-    //$$.obj = t;										
+									
     }
 	| expresion DIST expresion {
 
     $$=$1;
-   // $$.obj = t;										
+							
    }
 	| expresion MAYIG expresion {
     $$=$1;
-    //$$.obj = t;										
+								
     }
 	| expresion MENIG expresion {
     $$=$1;
-    //$$.obj = t;										
+										
     }
 	| '>' expresion {yyerror("Linea  se esperaba una expresion y se encontro '>'",$1.getFila(),$1.getColumna());}
 	| '<' expresion {yyerror("Linea  se esperaba una expresion y se encontro '<'",$1.getFila(),$1.getColumna());}
@@ -225,7 +209,6 @@ condicion: expresion '>' expresion {
   LexicalAnalyzer lex;
   SymbolTable st;
   Errors errors;
-  public ArrayList<String> estructuras=new ArrayList<>();
   public ArrayList<String> tokens = new ArrayList<>();
   public ArrayList<String> id = new ArrayList<>();
 

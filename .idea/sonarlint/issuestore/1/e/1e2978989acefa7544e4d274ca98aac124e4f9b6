@@ -1,8 +1,8 @@
 
-†
-java:S13194"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‡Ÿâ˜
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ð¦ÝØøÿÿÿÿ
+†
+java:S13191"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‡Ÿâ˜
 q
 java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ã¸©þýÿÿÿÿ
 o
-java:S22935"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž‹ÿû
+java:S22932"YReplace the type specification in this constructor call with the diamond operator ("<>").(ž‹ÿû

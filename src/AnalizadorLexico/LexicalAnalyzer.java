@@ -16,14 +16,11 @@ public class LexicalAnalyzer {
 
 
     public static ParserVal yylval = null;
-    //############  puntero a la tabla de simbolos? #######
 
     public String lastSymbol;
     public final int MAX_WORD_SIZE = 25;
-    public final int MIN_INT_SIZE = 0; // -10 .. 9 pero no puedo reconocer -10 -9
-    //por lo que verifico del 0..10 y el sintactico se va a ocupar del 10, ya que la unica
-    //forma que venga 10 es siendo negativo. Por que si viene un -9 negativo lo va a aceptar asi que es
-    //como verificar el 9 positivo
+    public final int MIN_INT_SIZE = 0;
+
     public final int MAX_INT_SIZE = (int)Math.pow(2,31);
     public final float MIN_FLOAT_SIZE = (float) Math.pow(1.17549435,-38);
     public final float MAX_FLOAT_SIZE = (float) Math.pow(3.40282347,38);
@@ -58,13 +55,13 @@ public class LexicalAnalyzer {
     public final static short COMENTARIO=999;
 
     public String srcCode;
-    // nos sirve para decir en donde ocurre un error
+
     public int row; //controla cada \n del string
     public int column;
     public SymbolTable symbolTable;
     public String buffer;
     public int state;
-    public int index; //cursor para seguir el string que viene de forma lineal _a = 6; \n if..
+    public int index;
     public int tokenId;
     public Errors errors;
     public Hashtable<String,Integer> reservedWords;
@@ -93,12 +90,6 @@ public class LexicalAnalyzer {
         SemanticAction numero_start = new AS_Numero_Start(this);
         SemanticAction comentario_start = new AS_Comentario_Start(this);
         SemanticAction comentario_end = new AS_Comentario_End(this);
-
-
-
-
-
-
 
 
         StateMachine.addTransition( 0, 'l',  1, id_start);
@@ -414,8 +405,6 @@ public class LexicalAnalyzer {
 
 
 
-
-
         StateMachine.addTransition( 11, 'l',  StateMachine.FINAL_STATE, flotante_end);
         StateMachine.addTransition( 11, 'd', 11, next);
         StateMachine.addTransition( 11, '+', StateMachine.FINAL_STATE, flotante_end );
@@ -526,7 +515,6 @@ public class LexicalAnalyzer {
         StateMachine.addTransition(14,'a',12, next);
         StateMachine.addTransition(14,'A',12, next);
         StateMachine.addTransition( 14, ' ', 12, next);
-
 
         StateMachine.addTransition( 15, 'l', StateMachine.FINAL_STATE, palabra_reservada);
         StateMachine.addTransition( 15, 'd',  StateMachine.FINAL_STATE, palabra_reservada);

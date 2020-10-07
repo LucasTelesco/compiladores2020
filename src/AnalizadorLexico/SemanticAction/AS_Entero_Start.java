@@ -11,11 +11,8 @@ public class AS_Entero_Start extends SemanticAction{
     @Override
     public void Action(Character symbol) {
         lexical.tokenId = LexicalAnalyzer.CTELONGINT;
-        lexical.buffer+= symbol;// no agrega el '
+        lexical.buffer+= symbol;
 
-      /*  lexical.yylval = new ParserVal();
-        lexical.yylval.setColumna(lexical.column);
-        lexical.yylval.setFila(lexical.row);*/
         lexical.index++;
         lexical.column++;
     }

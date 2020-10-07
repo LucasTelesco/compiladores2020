@@ -1,0 +1,3 @@
+syntax error fila 2 columna 1
+Declaracion mal definida  fila 2 columna 1
+

@@ -1,17 +1,3 @@
 
-g	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(£ý¼«ýÿÿÿÿ
-K
-java:S2209"5Change this instance-reference to a static reference.(ôñƒ›
-P
-java:S2209"5Change this instance-reference to a static reference.(ížÚÞÿÿÿÿÿ
-K
-java:S2209"5Change this instance-reference to a static reference.(åáËû
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(£ý¼«ýÿÿÿÿ
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘Û¬‚
-N
-java:S1128"8Remove this unused import 'AnalizadorSintactico.Parser'.(¸žã³
-P
-java:S2209"5Change this instance-reference to a static reference.(ŒÑµÕúÿÿÿÿ
-J
-java:S2209"5Change this instance-reference to a static reference.(œÙ¼\
-Q
-java:S2696"6Make the enclosing method "static" or remove this set.(ížÚÞÿÿÿÿÿ

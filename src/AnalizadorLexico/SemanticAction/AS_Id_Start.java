@@ -10,7 +10,7 @@ public class AS_Id_Start extends SemanticAction
     }
 
     @Override
-    //comienza a ser un tipo ID y avanza para empezar a reconocer el lexema
+
     public void Action(Character symbol) {
         lexical.tokenId = LexicalAnalyzer.ID;
         lexical.buffer+= symbol;

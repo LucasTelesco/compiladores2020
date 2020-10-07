@@ -17,7 +17,7 @@ public class Main {
 
         App a = null;
         try {
-            a = new App(/*Args[0]*/); // Eliminar
+            a = new App(Args[0]); // Eliminar
             a.setVisible(true);
         } catch (IOException e) {
             System.out.println("No se puede crear ejecutable, revise estructura de errores ");

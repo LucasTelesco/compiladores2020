@@ -8,14 +8,8 @@ public class AS_Flotante_End extends SemanticAction{
     public AS_Flotante_End(LexicalAnalyzer lexicalAnalyzer) {
         super(lexicalAnalyzer);
     }
-    //deja el tipo asignado en Start
     @Override
     public void Action(Character symbol) {
-
-        /*if (lexical.buffer.length() == 1 && lexical.buffer.contains(".")){
-            lexical.buffer = "";
-            lexical.tokenId = 250;
-        }*/
 
 
         if (lexical.buffer.contains("f")) {
@@ -39,17 +33,6 @@ public class AS_Flotante_End extends SemanticAction{
             }
             lexical.buffer = "";
             lexical.tokenId = LexicalAnalyzer.CTEFLOAT;
-
-        // ver que onda, convertir a 2020
-//        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
-//        lexical.symbolTable.setAtributo(String.valueOf(num),"=>","CTE FLOTANTE");
-//        //lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num));
-//
-//        //PARA LOS IDENTIFICADORES DE ESTE TIPO EN LA GRAMATICA VA ESTO MISMO
-//        lexical.symbolTable.getSymbol(String.valueOf(num)).setTipoVar("single");
-
-
-
 
     }
 }

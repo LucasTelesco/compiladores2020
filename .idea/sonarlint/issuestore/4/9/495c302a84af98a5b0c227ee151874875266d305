@@ -1,40 +1,26 @@
 
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(€À¯“8—Ö¢Ğ.
+c
+java:S2142@"FEither re-interrupt this method or rethrow the "InterruptedException".(øì£Ó8—Ö¢Ğ.
+J
+java:S1068"(Remove this unused "file" private field.(å¥øüøÿÿÿÿ8—Ö¢Ğ.
+n
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µ×µ·üÿÿÿÿ8—Ö¢Ğ.
+E
+java:S1948"(Make "errors" transient or serializable.(àÅû£8—Ö¢Ğ.
+Z
+java:S1117"8Rename "file" which hides the field declared at line 21.(ûåîØúÿÿÿÿ8—Ö¢Ğ.
+
+java:S2681#"|This line will not be executed in a loop; only the first line of this 2-line block will be. The rest will execute only once.(Ï¿ÈÇÿÿÿÿÿ8—Ö¢Ğ.
+J
+java:S1604;"(Make this anonymous inner class a lambda(Ì–Èùÿÿÿÿ8—Ö¢Ğ.
+9
+java:S1643""Use a StringBuilder instead.(í­€Ö8—Ö¢Ğ.
 0
 java:S1220""Move this file to a named package.
-n
-java:S2095`"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µ×µ·üÿÿÿÿ8—Ö¢Ğ.
-¢
-java:S18621"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(ê¤î8—Ö¢Ğ.
+E
+java:S1948")Make "outFile" transient or serializable.(Ù‡«8—Ö¢Ğ.
 ]	java:S110"<This class has 6 parents which is greater than 5 authorized.(¦ØŠµùÿÿÿÿ8—Ö¢Ğ.
-9
-java:S1643d"Use a StringBuilder instead.(í­€Ö8—Ö¢Ğ.
-J
-java:S1604}"(Make this anonymous inner class a lambda(Ì–Èùÿÿÿÿ8—Ö¢Ğ.
-
-java:S2681e"|This line will not be executed in a loop; only the first line of this 2-line block will be. The rest will execute only once.(Ï¿ÈÇÿÿÿÿÿ8—Ö¢Ğ.
-E
-java:S1948"(Make "errors" transient or serializable.(àÅû£8—Ö¢Ğ.
-E
-java:S1948")Make "outFile" transient or serializable.(Ù‡«8—Ö¢Ğ.
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ãê8—Ö¢Ğ.
-Z
-java:S1117_"8Rename "file" which hides the field declared at line 22.(ûåîØúÿÿÿÿ8—Ö¢Ğ.
-Z	java:S106q"9Replace this use of System.out or System.err by a logger.(Ø‹í³şÿÿÿÿ8—Ö¢Ğ.
-U	java:S106u"9Replace this use of System.out or System.err by a logger.(€À¯“8—Ö¢Ğ.
 k
-java:S3252{"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8—Ö¢Ğ.
-d
-java:S2142‚"FEither re-interrupt this method or rethrow the "InterruptedException".(øì£Ó8—Ö¢Ğ.
-J
-java:S1068"(Remove this unused "file" private field.(å¥øüøÿÿÿÿ8—Ö¢Ğ.
-X	java:S125"<This block of commented-out lines of code should be removed.(‰ß£8—Ö¢Ğ.
-X	java:S125k"<This block of commented-out lines of code should be removed.(ëèƒı8—Ö¢Ğ.
-^	java:S125€"<This block of commented-out lines of code should be removed.(²§óñûÿÿÿÿ8—Ö¢Ğ.
-^	java:S125ˆ"<This block of commented-out lines of code should be removed.(»ÇÑÑıÿÿÿÿ8—Ö¢Ğ.
-Y	java:S125Œ"<This block of commented-out lines of code should be removed.(˜–¡¬8—Ö¢Ğ.
-X	java:S125‘"<This block of commented-out lines of code should be removed.(óÍçf8—Ö¢Ğ.
-^	java:S125—"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8—Ö¢Ğ.
-X	java:S125™"<This block of commented-out lines of code should be removed.(·òø8—Ö¢Ğ.
-^	java:S125"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8—Ö¢Ğ.
-Y	java:S125 "<This block of commented-out lines of code should be removed.(’«ñæ8—Ö¢Ğ.
+java:S32529"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Õû»öşÿÿÿÿ8—Ö¢Ğ.
+X	java:S125-"<This block of commented-out lines of code should be removed.(×İº8…Ä¥Ğ.
