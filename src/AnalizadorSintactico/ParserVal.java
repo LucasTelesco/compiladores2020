@@ -119,29 +119,33 @@ public class ParserVal {
    * Compilador 2020 ids de tokens
    **/
 
-  public final static short IF = 257;
-  public final static short ELSE = 258;
-  public final static short INTEGER = 260;
-  public final static short ID = 261;
-  public final static short CTE = 262;
-  public final static short CADENA_MULTINEA = 263;
-  public final static short ASIG = 264;
-  public final static short MAYIG = 265;
-  public final static short MENIG = 266;
-  public final static short DIST = 267;
-  public final static short FIN = 268;
-  public final static short END_IF = 269;
-  public final static short LOOP = 270;
-  public final static short UNTIL = 271;
-  public final static short FLOTANTE = 272;
-  public final static short THEN = 273;
-  public final static short OUT = 274;
-  public final static short FUNC = 275;
-  public final static short RETURN = 276;
-  public final static short LONGINT = 277;
-  public final static short FLOAT = 278;
+  public final static short IF=257;
+  public final static short ELSE=258;
+  public final static short ID=259;
+  public final static short CTE=260;
+  public final static short CADENA_MULTINEA=261;
+  public final static short ASIG=262;
+  public final static short MAYIG=263;
+  public final static short MENIG=264;
+  public final static short DIST=265;
+  public final static short FIN=266;
+  public final static short END_IF=267;
+  public final static short LOOP=268;
+  public final static short UNTIL=269;
+  public final static short FLOTANTE=270;
+  public final static short LONGINT=271;
+  public final static short FLOAT=272;
+  public final static short OUT=273;
+  public final static short FUNC=274;
+  public final static short RETURN=275;
+  public final static short PROC=276;
+  public final static short NS=277;
+  public final static short NA=278;
+  public final static short THEN=279;
   public final static short YYERRCODE = 256;
   public final static short COMENTARIO = 999;
+  public final static short CTELONGINT=280;
+  public final static short CTEFLOAT=281;
 
   public enum TipoToken {
 
@@ -155,8 +159,6 @@ public class ParserVal {
     IF(ParserVal.IF),
     ELSE(ParserVal.ELSE),
     END_IF(ParserVal.END_IF),
-
-    INTEGER(ParserVal.INTEGER),
 
     LOOP(ParserVal.LOOP),
     UNTIL(ParserVal.UNTIL),

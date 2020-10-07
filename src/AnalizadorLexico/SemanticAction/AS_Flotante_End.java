@@ -38,7 +38,7 @@ public class AS_Flotante_End extends SemanticAction{
                 }
             }
             lexical.buffer = "";
-            lexical.tokenId = LexicalAnalyzer.FLOTANTE;
+            lexical.tokenId = LexicalAnalyzer.CTEFLOAT;
 
         // ver que onda, convertir a 2020
 //        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);

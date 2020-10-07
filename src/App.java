@@ -23,9 +23,7 @@ public class App extends JFrame{
     String archivo="";
     private Errors errors;
     private OutFile outFile = new OutFile();
-    //private GeneradorAssembler genAssembler;
-    //este metodo es solo para mostrar el contenido de manera prolija
-    //al momento de apretar el boton "token"
+
     public String mostrarToken(int valor){
 
         if (valor == 0){
@@ -137,31 +135,6 @@ public class App extends JFrame{
                 //outFile.structFile(par, "estructurasReconocidas.txt");
                 outFile.errorFiles(errors, "errores.txt");
 
-
-             //   outFile.tercetoFile(par, "terceto.txt");
-              //  genAssembler = new GeneradorAssembler(par, st);
-               // genAssembler.optimizaTercetos();
-
-//                outFile.tercetoFile(genAssembler.getTercetosOptimizado(),"tercetoOptimizado.txt");
-//                if (errors.getAll().length() == 0){
-//                    //optimizaTercetos(par.listaTercetos);
-//                    outFile.assemblerFile(genAssembler.getCodigoAssembler(), "assembler.asm");
-//                    outFile.tercetoFile(genAssembler.getTercetosOptimizado(),"tercetoOptimizado.txt");
-//
-//                }
-
-//                String comc = "C:\\masm32\\bin\\ml /c /Zd /coff assembler.asm ";
-//                String coml = "C:\\masm32\\bin\\Link /SUBSYSTEM:CONSOLE assembler.obj ";
-//                Process ptasm32 = null;
-//                Process ptlink32 = null;
-
-//                try {
-                    // Para generar
-//                    ptasm32 = Runtime.getRuntime().exec(comc);
-//                    ptlink32 = Runtime.getRuntime().exec(coml);
-//                } catch (IOException e1) {
- //                   System.out.println("No se puede crear ejecutable, revise estructura de errores ");
-  //              }
             }
         });
 

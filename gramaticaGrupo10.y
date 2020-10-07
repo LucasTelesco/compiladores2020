@@ -13,7 +13,7 @@ import java.util.Stack;
 
 /* Lista de tokens */
 
-%token IF ELSE ID CTE CADENA_MULTINEA ASIG MAYIG MENIG DIST FIN  END_IF LOOP UNTIL FLOTANTE LONGINT FLOAT OUT FUNC RETURN PROC NS NA
+%token IF ELSE ID CTE CADENA_MULTINEA ASIG MAYIG MENIG DIST FIN  END_IF LOOP UNTIL FLOTANTE LONGINT FLOAT OUT FUNC RETURN PROC NS NA THEN CTELONGINT CTEFLOAT
 
 /* Reglas */
 
@@ -112,19 +112,19 @@ $$=$1;
 			 }
 	;
 // LONGINT y FLOAT 
-factor: LONGINT {$$=$1;}
-	| FLOTANTE {$$=$1;}
+factor: CTELONGINT {$$=$1;}
+	| CTEFLOAT {$$=$1;}
 	| ID {if(!((Symbol)($1.obj)).isUsada()){
 			//error
 			yyerror("variable no declarada",$1.getFila(),$1.getColumna());
 			}
 			 $$=$1;
 	}
-	| '-' LONGINT {
+	| '-' CTELONGINT {
 					  $$=$2;
                       st.addcambiarSigno(((Symbol)($2.obj)));  //((Symbol))($2.obj))
  		              }
-	|'-' FLOTANTE{	
+	|'-' CTEFLOAT{	
 		             $$=$2;
                      st.addcambiarSigno(((Symbol)($2.obj)));  //((Symbol))($2.obj))
                     }

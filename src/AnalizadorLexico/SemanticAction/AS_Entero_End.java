@@ -46,7 +46,6 @@ public class AS_Entero_End extends SemanticAction{
         lexical.buffer = "";
         lexical.column++;
         lexical.index++;
-        System.out.println("ENTERO LARGO FIN");
-        lexical.tokenId = LexicalAnalyzer.LONGINT;
+        lexical.tokenId = LexicalAnalyzer.CTELONGINT;
     }
 }

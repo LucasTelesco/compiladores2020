@@ -11,7 +11,7 @@ public class AS_Flotante_Start extends SemanticAction {
     //deja el tipo asignado en Start
     @Override
     public void Action(Character symbol) {
-        lexical.tokenId = LexicalAnalyzer.FLOTANTE;
+        lexical.tokenId = LexicalAnalyzer.CTEFLOAT;
         lexical.buffer+= symbol;
 
 
