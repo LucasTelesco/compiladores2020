@@ -61,8 +61,6 @@ public class ParserVal {
       return "PALABRA RESERVADA END_IF";
     } else if (valor == LexicalAnalyzer.IF) {
       return "PALABRA RESERVADA IF";
-    } else if (valor == LexicalAnalyzer.INTEGER) {
-      return "PALABRA RESERVADA INTEGER";
     } else if (valor == LexicalAnalyzer.LOOP) {
       return "PALABRA RESERVADA LOOP";
     } else if (valor == LexicalAnalyzer.UNTIL) {

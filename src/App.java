@@ -60,9 +60,6 @@ public class App extends JFrame{
         else if (valor ==LexicalAnalyzer.IF) {
             return "PALABRA RESERVADA IF";
         }
-        else if (valor == LexicalAnalyzer.INTEGER) {
-            return "PALABRA RESERVADA INTEGER";
-        }
 
         else if (valor == LexicalAnalyzer.LOOP) {
             return "PALABRA RESERVADA LOOP";
@@ -79,6 +76,9 @@ public class App extends JFrame{
         }
         else if (valor == LexicalAnalyzer.DIST) {
             return "DISTINTO";
+        }
+        else if (valor == LexicalAnalyzer.FUNC) {
+            return "PALABRA RESERVADA FUNC";
         }
 
         else if (valor < 255) {
@@ -104,17 +104,17 @@ public class App extends JFrame{
         errors = new Errors();
         final SymbolTable st = new SymbolTable();
         final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
-        final Parser par = new Parser(lexical,st,errors);
+        //final Parser par = new Parser(lexical,st,errors);
 
 
        // Consumidor de Token
-       /* int token = lexical.getNextToken();
+        int token = lexical.getNextToken();
         while (token!=-1 && token!=0){
             System.out.println("Token encontrado: "+token);
             token = lexical.getNextToken();
         }
 
-        System.out.println(errors.getAll());*/
+        System.out.println(errors.getAll());
         add(panel1);
         setSize(700,500);
         textArea2.append(archivo);// muestra archivo
@@ -125,7 +125,7 @@ public class App extends JFrame{
         genArchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                par.run();
+                //par.run();
 
                 try{ Thread.sleep(100); } catch (InterruptedException e1) {
                     e1.printStackTrace();
@@ -150,18 +150,18 @@ public class App extends JFrame{
 //
 //                }
 
-                String comc = "C:\\masm32\\bin\\ml /c /Zd /coff assembler.asm ";
-                String coml = "C:\\masm32\\bin\\Link /SUBSYSTEM:CONSOLE assembler.obj ";
-                Process ptasm32 = null;
-                Process ptlink32 = null;
+//                String comc = "C:\\masm32\\bin\\ml /c /Zd /coff assembler.asm ";
+//                String coml = "C:\\masm32\\bin\\Link /SUBSYSTEM:CONSOLE assembler.obj ";
+//                Process ptasm32 = null;
+//                Process ptlink32 = null;
 
-                try {
+//                try {
                     // Para generar
-                    ptasm32 = Runtime.getRuntime().exec(comc);
-                    ptlink32 = Runtime.getRuntime().exec(coml);
-                } catch (IOException e1) {
-                    System.out.println("No se puede crear ejecutable, revise estructura de errores ");
-                }
+//                    ptasm32 = Runtime.getRuntime().exec(comc);
+//                    ptlink32 = Runtime.getRuntime().exec(coml);
+//                } catch (IOException e1) {
+ //                   System.out.println("No se puede crear ejecutable, revise estructura de errores ");
+  //              }
             }
         });
 

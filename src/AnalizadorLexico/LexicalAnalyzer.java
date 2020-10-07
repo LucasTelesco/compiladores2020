@@ -30,7 +30,6 @@ public class LexicalAnalyzer {
 
     public final static short IF=257;
     public final static short ELSE=258;
-    public final static short INTEGER=260;
     public final static short ID=261;
     public final static short CTE=262;
     public final static short CADENA_MULTINEA=263;
@@ -546,7 +545,7 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 15, '_', 15, next);
         StateMachine.addTransition( 15, 'f',  StateMachine.FINAL_STATE, palabra_reservada);
         StateMachine.addTransition( 15, '"',  StateMachine.FINAL_STATE, palabra_reservada);
-        StateMachine.addTransition( 15, 'C',  StateMachine.FINAL_STATE, palabra_reservada);
+        StateMachine.addTransition( 15, 'C',  15, next);
         StateMachine.addTransition(15,'a',StateMachine.FINAL_STATE, palabra_reservada);
         StateMachine.addTransition(15,'A',15, next);
         StateMachine.addTransition( 15, ' ',  StateMachine.FINAL_STATE, palabra_reservada);
