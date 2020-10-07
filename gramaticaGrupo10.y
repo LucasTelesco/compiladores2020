@@ -13,7 +13,7 @@ import java.util.Stack;
 
 /* Lista de tokens */
 
-%token IF ELSE ID CTE CADENA ASIG MAYIG MENIG DIST FIN  END_IF LOOP UNTIL FLOTANTE LONGINT FLOAT OUT FUNC RETURN PROC NS NA
+%token IF ELSE ID CTE CADENA_MULTINEA ASIG MAYIG MENIG DIST FIN  END_IF LOOP UNTIL FLOTANTE LONGINT FLOAT OUT FUNC RETURN PROC NS NA
 
 /* Reglas */
 
@@ -38,8 +38,19 @@ sentencia: ejecutable {}
 declaracion: tipo lista_id ';' {
         System.out.println("Encontro declaracion ");
 		}
+	| control{}
         | error {yyerror("Declaracion mal definida ");}
         ;
+
+control: PROC ID '(' tipo lista_id ')' {
+       System.out.println("Encontro un control ");
+       }
+        | error {yyerror("Control mal definida ");
+
+        }
+       ;
+
+
 
 lista_id: ID {//  id.add( ((Symbol)($1.obj)).getLexema() );
                 Vector<ParserVal> vect = new Vector<ParserVal>();//$1 es el parser val con el symbolo de ese ID
@@ -68,6 +79,8 @@ lista_ejecutable: ejecutable {}
 ejecutable: asignacion ';'{}
           | bloque {//#######Solo llego aca si termino un if o un loop
           }
+          | exp_print ','{}
+
 ;
 
 expresion: termino '+' expresion {            
@@ -131,6 +144,13 @@ asignacion: ID ASIG  expresion{
 	| ID error  {yyerror("no se encontro '=' ",$1.getFila(),$1.getColumna());}
 	;
 
+
+exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila()+" columna "+$1.getColumna());
+		$$=$1;
+}
+		| OUT error {yyerror("Linea  Error en la construccion del out",$1.getFila(),$1.getColumna());
+		}
+               ;
 
 bloque: sent_if {}
 	| sent_loop {}
