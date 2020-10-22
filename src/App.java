@@ -105,38 +105,14 @@ public class App extends JFrame{
         final Parser par = new Parser(lexical,st,errors);
 
 
-       // Consumidor de Token
-//        int token = lexical.getNextToken();
-//        while (token!=-1 && token!=0){
-//            System.out.println("Token encontrado: "+token);
-//            token = lexical.getNextToken();
-//        }
-
         System.out.println(errors.getAll());
-        add(panel1);
-        setSize(700,500);
-        textArea2.append(archivo);// muestra archivo
 
+        par.run();
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        genArchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                par.run();
-
-                try{ Thread.sleep(100); } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                }
-
-
-                outFile.tlFile(st, "tablaSimbolos.txt");
-                //outFile.tokenFile(par, "token.txt");
-                //outFile.structFile(par, "estructurasReconocidas.txt");
-                outFile.errorFiles(errors, "errores.txt");
-
-            }
-        });
+        outFile.tlFile(st, "tablaSimbolos.txt");
+        //outFile.tokenFile(par, "token.txt");
+        //outFile.structFile(par, "estructurasReconocidas.txt");
+        outFile.errorFiles(errors, "errores.txt");
 
     }
 }
