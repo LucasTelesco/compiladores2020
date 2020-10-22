@@ -9,7 +9,7 @@ public class AS_TokenAscii extends SemanticAction {
     }
 
     public void Action(Character symbol) {
-        System.out.println("buffer EN ascii: "+lexical.buffer);
+
         lexical.tokenId = (int)symbol;
         lexical.index++;
         lexical.column++;

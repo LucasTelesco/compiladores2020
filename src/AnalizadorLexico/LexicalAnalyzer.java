@@ -1,14 +1,18 @@
 package AnalizadorLexico;
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Hashtable;
+import java.util.Vector;
 
 import AnalizadorLexico.SemanticAction.*;
 import AnalizadorLexico.StateMachine.StateMachine;
 import AnalizadorSintactico.ParserVal;
 import Errors.*;
 import SymbolTable.*;
+
 
 public class LexicalAnalyzer {
 
@@ -68,6 +72,7 @@ public class LexicalAnalyzer {
     public int tokenId;
     public Errors errors;
     public Hashtable<String,Integer> reservedWords;
+    private OutFile outFile = new OutFile();
     private void create(){
 
         //
@@ -611,7 +616,8 @@ public class LexicalAnalyzer {
             while (state != StateMachine.FINAL_STATE) {
                 if (index >= srcCode.length()) {
                     System.out.println("el token es cero");
-                    return 0;
+                    outFile.errorView(errors);
+                   return 0;
                 }
                 symbol = srcCode.charAt(index);
                 int old = state;
@@ -624,12 +630,157 @@ public class LexicalAnalyzer {
                 }
 
             }
-            System.out.println("El Id token es: "+tokenId);
+
             if (tokenId==999){
                 tokenId=this.getNextToken();
             }
+            System.out.println("El Id token es: "+tokenId+"  "+this.mostrarToken(tokenId));
             return tokenId;
         }
 
+    public String mostrarToken(int valor){
+
+        if (valor == 0){
+            return "EOF";
+        }
+        else if (valor == LexicalAnalyzer.ID){
+            return "IDENTIFICADOR";
+        }
+        else if (valor == LexicalAnalyzer.LONGINT){
+            return "ENTERO LARGO";
+        }
+        else if (valor == LexicalAnalyzer.FLOTANTE){
+            return "FLOTANTE";
+        }
+        else if (valor == LexicalAnalyzer.CADENA_MULTINEA){
+            return "CADENA DE CARACTER";
+        }
+        else if (valor == LexicalAnalyzer.ESIGUAL){
+            return "ESIGUAL";
+        }
+        else if (valor == LexicalAnalyzer.ID) {
+            return "IDENTIFICADOR";
+        }
+
+        else if (valor ==LexicalAnalyzer.ELSE) {
+            return "PALABRA RESERVADA ELSE";
+        }
+
+        else if (valor == LexicalAnalyzer.END_IF) {
+            return "PALABRA RESERVADA END_IF";
+        }
+        else if (valor ==LexicalAnalyzer.IF) {
+            return "PALABRA RESERVADA IF";
+        }
+
+        else if (valor == LexicalAnalyzer.LOOP) {
+            return "PALABRA RESERVADA LOOP";
+        }
+        else if (valor == LexicalAnalyzer.UNTIL) {
+            return "PALABRA RESERVADA UNTIL";
+        }
+
+        else if (valor == LexicalAnalyzer.MAYIG) {
+            return "OPERADOR MAYOR IGUAL";
+        }
+        else if (valor == LexicalAnalyzer.MENIG) {
+            return "OPERADOR MENOR IGUAL";
+        }
+        else if (valor == LexicalAnalyzer.DIST) {
+            return "DISTINTO";
+        }
+        else if (valor == LexicalAnalyzer.FUNC) {
+            return "PALABRA RESERVADA FUNC";
+        }
+        else if (valor == LexicalAnalyzer.CTELONGINT) {
+            return "CONSTANTE ENTERO LARGO";
+        }
+        else if (valor == LexicalAnalyzer.CTEFLOAT) {
+            return "CONSTANTE FLOTANTE";
+        }
+
+        else if (valor < 255) {
+            return "SIMBOLO "+(char)valor;
+        }
+        return "";
     }
+
+    public static class OutFile {
+
+        private void crear(String in,String ruta){
+            FileWriter fichero = null;
+            PrintWriter pw = null;
+            try {
+                fichero = new FileWriter(ruta);
+                pw = new PrintWriter(fichero);
+                pw.println(in);
+
+            } catch (IOException ee) {
+                ee.printStackTrace();
+            } finally {
+                try {
+                    // Nuevamente aprovechamos el finally para
+                    // asegurarnos que se cierra el fichero.
+                    if (null != fichero)
+                        fichero.close();
+                } catch (Exception e2) {
+                    e2.printStackTrace();
+                }
+            }
+        }
+
+        /*public void tokenFile(Parser par,String ruta){
+            String out = new String();
+            for(String s :par.tokens){
+                out+=s+"\n";
+            }
+            this.crear(out,ruta);
+        }*/
+
+        public void tlFile(SymbolTable st,String ruta){
+            String out = new String();
+            while (!st.isEmpty()) {
+                out+=st.getAtributosNextLexema() + "\n";
+            }
+            this.crear(out,ruta);
+        }
+
+       /* public void structFile(Parser par, String ruta){
+            String out = new String();
+            for(String pv : par.estructuras){
+                out+=pv+"\n";
+            }
+            this.crear(out,ruta);
+        }*/
+
+       /* public void tercetoFile(Parser par, String ruta){
+            String out = new String();
+            for(Terceto t : par.listaTercetos){
+                out+=t.toString()+"\n";
+            }
+            this.crear(out,ruta);
+        }
+
+        public void tercetoFile(ArrayList<Terceto> tercetos, String ruta){
+            String out = new String();
+            for(Terceto t : tercetos){
+                out+=t.toString()+"\n";
+            }
+            this.crear(out,ruta);
+        }*/
+
+        public void assemblerFile(Vector<String> vec, String ruta){
+            String out = new String();
+            for(String s : vec){
+                out+=s+"\n";
+            }
+            this.crear(out,ruta);
+        }
+
+        public void errorView(Errors errors){
+            System.out.println("Estructura de Errores");
+            System.out.println(errors.getAll());
+        }
+    }
+}
 

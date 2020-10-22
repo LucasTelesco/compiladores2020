@@ -6,8 +6,6 @@ import AnalizadorSintactico.Parser;
 import Errors.Errors;
 import SymbolTable.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,7 +20,7 @@ public class App extends JFrame{
     private JFileChooser file = new JFileChooser();
     String archivo="";
     private Errors errors;
-    private OutFile outFile = new OutFile();
+    private LexicalAnalyzer.OutFile outFile = new LexicalAnalyzer.OutFile();
 
     public String mostrarToken(int valor){
 
@@ -104,15 +102,13 @@ public class App extends JFrame{
         final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
         final Parser par = new Parser(lexical,st,errors);
 
-
-        System.out.println(errors.getAll());
-
         par.run();
 
-        outFile.tlFile(st, "tablaSimbolos.txt");
+      //  outFile.errorView(errors);
+       // outFile.tlFile(st, "tablaSimbolos.txt");
         //outFile.tokenFile(par, "token.txt");
         //outFile.structFile(par, "estructurasReconocidas.txt");
-        outFile.errorFiles(errors, "errores.txt");
+
 
     }
 }

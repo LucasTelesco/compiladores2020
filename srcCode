@@ -1,4 +1,4 @@
 LONGINT varlongint;
-varlongint = 5_l;
+varlongint = 5_l
 
 
