@@ -105,6 +105,7 @@ public class App extends JFrame{
         par.run();
 
         outFile.errorView(errors);
+        outFile.tlFile(st);
         
 
       //  outFile.errorView(errors);

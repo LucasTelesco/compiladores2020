@@ -764,12 +764,13 @@ public class LexicalAnalyzer {
             this.crear(out,ruta);
         }*/
 
-        public void tlFile(SymbolTable st,String ruta){
+        public void tlFile(SymbolTable st){
+            System.out.println("TABLA DE SIMBOLOS: ");
             String out = new String();
             while (!st.isEmpty()) {
                 out+=st.getAtributosNextLexema() + "\n";
             }
-            this.crear(out,ruta);
+            System.out.println(out);
         }
 
        /* public void structFile(Parser par, String ruta){

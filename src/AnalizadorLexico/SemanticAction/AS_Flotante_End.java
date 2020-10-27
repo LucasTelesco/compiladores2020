@@ -40,6 +40,8 @@ public class AS_Flotante_End extends SemanticAction{
             lexical.buffer = "";
             lexical.tokenId = LexicalAnalyzer.CTEFLOAT;
 
+          lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
+          lexical.symbolTable.setAtributo(String.valueOf(num),"=>","CTE FLOTANTE");
         // ver que onda, convertir a 2020
 //        lexical.symbolTable.setSymbol(String.valueOf(num), LexicalAnalyzer.FLOTANTE);
 //        lexical.symbolTable.setAtributo(String.valueOf(num),"=>","CTE FLOTANTE");

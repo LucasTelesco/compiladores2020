@@ -15,6 +15,8 @@ public class AS_Entero_End extends SemanticAction{
         int num;
         try{
             num = Integer.valueOf(lexical.buffer.substring(0, lexical.buffer.length() - 1));
+            lexical.symbolTable.setSymbol(lexical.buffer + "l", LexicalAnalyzer.ID);
+            lexical.symbolTable.setAtributo(lexical.buffer + "l","=>","CTE ENTERO LARGO");
         }
         catch (NumberFormatException e) {
             num = lexical.MAX_INT_SIZE;
