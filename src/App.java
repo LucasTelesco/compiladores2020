@@ -104,6 +104,9 @@ public class App extends JFrame{
 
         par.run();
 
+        outFile.errorView(errors);
+        
+
       //  outFile.errorView(errors);
        // outFile.tlFile(st, "tablaSimbolos.txt");
         //outFile.tokenFile(par, "token.txt");

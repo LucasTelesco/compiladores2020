@@ -23,7 +23,6 @@ import java.util.Stack;
   %}
 %%
 programa : lista_sentencia{}
-	 | FIN {yyerror("No hay sentencia");}
      | error {yyerror("No hay sentencia");} FIN{}
 	 ;
 
