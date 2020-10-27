@@ -124,7 +124,7 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 0, ';', StateMachine.FINAL_STATE,tokenAscii );
         StateMachine.addTransition( 0, '%', 4,next );
         StateMachine.addTransition( 0, '\n', 0, next_line );
-        StateMachine.addTransition( 0, '.', 8, flotante_start );
+        StateMachine.addTransition( 0, '.', 16, flotante_start );
         StateMachine.addTransition( 0, '_', StateMachine.ERROR_STATE,not_lexema);
         StateMachine.addTransition( 0, 'f', 1, id_start );
         StateMachine.addTransition( 0, '"', 12, cadena_start);
@@ -559,6 +559,33 @@ public class LexicalAnalyzer {
         StateMachine.addTransition(15,'a',StateMachine.FINAL_STATE, palabra_reservada);
         StateMachine.addTransition(15,'A',15, next);
         StateMachine.addTransition( 15, ' ',  StateMachine.FINAL_STATE, palabra_reservada);
+
+        StateMachine.addTransition( 16, 'l', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, 'd', 8, next);
+        StateMachine.addTransition( 16, '+', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '-', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '*', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '/', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '<', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '>', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '=', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '!', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '{', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '}', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '(', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, ')', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, ',', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, ';', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '%', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, '\n', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 16, '.', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 16, '_', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 16, 'f', StateMachine.ERROR_STATE, not_lexema );
+        StateMachine.addTransition( 16, '"', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, 'C', StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(16,'a',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition(16,'A',StateMachine.ERROR_STATE, not_lexema);
+        StateMachine.addTransition( 16, ' ', StateMachine.ERROR_STATE, not_lexema);
     }
     private void addReservedWord() {
         reservedWords.put("IF", (int) IF);
