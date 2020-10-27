@@ -263,7 +263,7 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 5, ',', 5, next);
         StateMachine.addTransition( 5, ';', 5, next);
         StateMachine.addTransition( 5, '%', 5, next);
-        StateMachine.addTransition( 5, '\n', StateMachine.FINAL_STATE, comentario_end );
+        StateMachine.addTransition( 5, '\n', 0, comentario_end );
         StateMachine.addTransition( 5, '.', 5, next );
         StateMachine.addTransition( 5, '_', 5, next);
         StateMachine.addTransition( 5, 'f', 5, next);
