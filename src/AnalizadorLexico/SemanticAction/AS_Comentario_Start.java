@@ -13,6 +13,5 @@ public class AS_Comentario_Start extends SemanticAction {
         lexical.buffer+= symbol;
 
         lexical.index++;
-        lexical.column++;
     }
 }

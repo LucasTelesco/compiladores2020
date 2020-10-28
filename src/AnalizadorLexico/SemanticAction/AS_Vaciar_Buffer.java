@@ -11,7 +11,6 @@ public class AS_Vaciar_Buffer extends SemanticAction{
     //caso en que empieza a leer un comentario, por eso usa nextSpace y ademas no le importa el buffer
     public void Action(Character symbol) {
         lexical.index++;
-        lexical.column++;
         lexical.buffer = "";
 
     }

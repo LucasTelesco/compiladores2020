@@ -12,7 +12,6 @@ public class AS_Next extends SemanticAction{
         //Avanza y guarda caracter en buffer
             lexical.buffer+= symbol;
             lexical.index++;
-            lexical.column++;
     }
 
 }

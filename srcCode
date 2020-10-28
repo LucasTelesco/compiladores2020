@@ -1,2 +1,2 @@
-LONGINT varlongint;
-varlongint = 5_l
+LONGINT varlongint
+varlongint = 5_l;

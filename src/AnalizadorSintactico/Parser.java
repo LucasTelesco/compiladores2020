@@ -439,7 +439,7 @@ final static String yyrule[] = {
     }else{
       yylval = new ParserVal();
     }
-    tokens.add(yylval.toString()+" fila: "+yylval.getFila()+" columna: "+yylval.getColumna());
+    tokens.add(yylval.toString()+" fila: "+yylval.getFila());
     return a;
   }
 
@@ -451,10 +451,10 @@ final static String yyrule[] = {
 }
 
 void yyerror(String s){
-    errors.setError(lex.row, lex.column,s);
+    errors.setError(lex.row,s);
   }
-void yyerror(String s,int row,int column){
-      errors.setError(row,column,s);
+void yyerror(String s,int row){
+      errors.setError(row,s);
   }
 //#line 388 "Parser.java"
 //###############################################################
@@ -665,7 +665,7 @@ case 11:
 break;
 case 12:
 //#line 66 "gramaticaGrupo10.y"
-{yyerror("Se esperaba ';' ",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Se esperaba ';' ",val_peek(1).getFila());}
 break;
 case 13:
 //#line 69 "gramaticaGrupo10.y"
@@ -677,7 +677,7 @@ case 14:
 break;
 case 15:
 //#line 71 "gramaticaGrupo10.y"
-{yyerror("Tipo indefinido",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Tipo indefinido",val_peek(1).getFila());}
 break;
 case 16:
 //#line 74 "gramaticaGrupo10.y"
@@ -750,7 +750,7 @@ case 28:
 //#line 116 "gramaticaGrupo10.y"
 {if(!((Symbol)(val_peek(0).obj)).isUsada()){
 			/*error*/
-			yyerror("variable no declarada",val_peek(0).getFila(),val_peek(0).getColumna());
+			yyerror("variable no declarada",val_peek(0).getFila());
 			}
 			 yyval=val_peek(0);
 	}
@@ -773,24 +773,24 @@ case 31:
 //#line 132 "gramaticaGrupo10.y"
 {
             /* if (!((Symbol)($1.obj)).isUsada()){*/
-            /*     yyerror("La variable no esta definida ",$1.getFila(),$1.getColumna());*/
+            /*     yyerror("La variable no esta definida ",$1.getFila());*/
             /* }*/
             yyval=val_peek(2);
             /*$$.obj = t;*/
-            /*estructuras.add("Asignacion "+" fila "+$1.getFila()+" columna "+$1.getColumna()); */
+            /*estructuras.add("Asignacion "+" fila "+$1.getFila());*/
     }
 break;
 case 32:
 //#line 140 "gramaticaGrupo10.y"
-{yyerror("Falta elemento de asignacion ",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
 break;
 case 33:
 //#line 141 "gramaticaGrupo10.y"
-{yyerror("Falta elemento de asignacion ",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
 break;
 case 34:
 //#line 142 "gramaticaGrupo10.y"
-{yyerror("no se encontro '=' ",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("no se encontro '=' ",val_peek(1).getFila());}
 break;
 case 35:
 //#line 153 "gramaticaGrupo10.y"
@@ -802,31 +802,31 @@ case 36:
 break;
 case 37:
 //#line 158 "gramaticaGrupo10.y"
-{estructuras.add("Sentencia IF Else" +" fila "+val_peek(5).getFila()+" columna "+val_peek(5).getColumna());}
+{estructuras.add("Sentencia IF Else" +" fila "+val_peek(5).getFila());}
 break;
 case 38:
 //#line 159 "gramaticaGrupo10.y"
-{estructuras.add("Sentencia IF " +" fila "+val_peek(3).getFila()+" columna "+val_peek(3).getColumna());}
+{estructuras.add("Sentencia IF " +" fila "+val_peek(3).getFila());}
 break;
 case 39:
 //#line 160 "gramaticaGrupo10.y"
-{yyerror(" falta la palabra reservada IF",val_peek(3).getFila(),val_peek(3).getColumna());}
+{yyerror(" falta la palabra reservada IF",val_peek(3).getFila());}
 break;
 case 40:
 //#line 161 "gramaticaGrupo10.y"
-{yyerror(" Error en la construccion de la sentencia IF ",val_peek(2).getFila(),val_peek(2).getColumna());}
+{yyerror(" Error en la construccion de la sentencia IF ",val_peek(2).getFila());}
 break;
 case 41:
 //#line 162 "gramaticaGrupo10.y"
-{yyerror(" Falta la palabra reservada ELSE ",val_peek(3).getFila(),val_peek(3).getColumna());}
+{yyerror(" Falta la palabra reservada ELSE ",val_peek(3).getFila());}
 break;
 case 42:
 //#line 165 "gramaticaGrupo10.y"
-{estructuras.add("Sentencia Loop " +" fila "+val_peek(3).getFila()+" columna "+val_peek(3).getColumna());}
+{estructuras.add("Sentencia Loop " +" fila "+val_peek(3).getFila());}
 break;
 case 43:
 //#line 166 "gramaticaGrupo10.y"
-{yyerror("Linea  Falta palabra reservada UNTIL",val_peek(2).getFila(),val_peek(2).getColumna());}
+{yyerror("Linea  Falta palabra reservada UNTIL",val_peek(2).getFila());}
 break;
 case 44:
 //#line 169 "gramaticaGrupo10.y"
@@ -838,7 +838,7 @@ case 45:
 break;
 case 46:
 //#line 171 "gramaticaGrupo10.y"
-{yyerror("LInea  Omision de la palabra reservada '{' ",val_peek(2).getFila(),val_peek(2).getColumna());}
+{yyerror("LInea  Omision de la palabra reservada '{' ",val_peek(2).getFila());}
 break;
 case 47:
 //#line 174 "gramaticaGrupo10.y"
@@ -905,19 +905,19 @@ case 55:
 break;
 case 56:
 //#line 216 "gramaticaGrupo10.y"
-{yyerror("Linea  se esperaba una expresion y se encontro '>'",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Linea  se esperaba una expresion y se encontro '>'",val_peek(1).getFila());}
 break;
 case 57:
 //#line 217 "gramaticaGrupo10.y"
-{yyerror("Linea  se esperaba una expresion y se encontro '<'",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Linea  se esperaba una expresion y se encontro '<'",val_peek(1).getFila());}
 break;
 case 58:
 //#line 218 "gramaticaGrupo10.y"
-{yyerror("Linea  se esperaba una expresion y se encontro '>='",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Linea  se esperaba una expresion y se encontro '>='",val_peek(1).getFila());}
 break;
 case 59:
 //#line 219 "gramaticaGrupo10.y"
-{yyerror("Linea  se esperaba una expresion y se encontro '<='",val_peek(1).getFila(),val_peek(1).getColumna());}
+{yyerror("Linea  se esperaba una expresion y se encontro '<='",val_peek(1).getFila());}
 break;
 //#line 846 "Parser.java"
 //########## END OF USER-SUPPLIED ACTIONS ##########

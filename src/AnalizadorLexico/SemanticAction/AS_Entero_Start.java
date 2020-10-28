@@ -17,6 +17,5 @@ public class AS_Entero_Start extends SemanticAction{
         lexical.yylval.setColumna(lexical.column);
         lexical.yylval.setFila(lexical.row);*/
         lexical.index++;
-        lexical.column++;
     }
 }

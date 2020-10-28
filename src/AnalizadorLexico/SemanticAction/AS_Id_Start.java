@@ -16,6 +16,5 @@ public class AS_Id_Start extends SemanticAction
         lexical.buffer+= symbol;
 
         lexical.index++;
-        lexical.column++;
     }
 }

@@ -12,7 +12,7 @@ public class AS_Id_End extends SemanticAction{
     @Override
     public void Action(Character symbol) {
         if (lexical.buffer.length() > lexical.MAX_WORD_SIZE){
-            lexical.errors.setError(lexical.row,lexical.column,Errors.ERROR_MAX_WORD_SIZE);
+            lexical.errors.setError(lexical.row,Errors.ERROR_MAX_WORD_SIZE);
             lexical.buffer = lexical.buffer.substring(0,lexical.MAX_WORD_SIZE);
             //siempre acota a 25 caracteres
         }

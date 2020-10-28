@@ -13,6 +13,5 @@ public class AS_NextLine extends SemanticAction {
         // Se usa para los saltos de linea
         lexical.index++;
         lexical.row++;
-        lexical.column = 1;
     }
 }

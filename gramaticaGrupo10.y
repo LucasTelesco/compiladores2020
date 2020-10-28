@@ -63,12 +63,12 @@ lista_id: ID {//  id.add( ((Symbol)($1.obj)).getLexema() );
                     $$.obj = vect;
 	}
 	
-    | ID lista_id{yyerror("Se esperaba ';' ",$1.getFila(),$1.getColumna());}
+    | ID lista_id{yyerror("Se esperaba ';' ",$1.getFila());}
     ;
 
 tipo: LONGINT {$$.sval="longint";}
 	| FLOAT {$$.sval="float";}
-	| error ','{yyerror("Tipo indefinido",$1.getFila(),$1.getColumna());}
+	| error ','{yyerror("Tipo indefinido",$1.getFila());}
 	;
 
 lista_ejecutable: ejecutable {}
@@ -115,7 +115,7 @@ factor: CTELONGINT {$$=$1;}
 	| CTEFLOAT {$$=$1;}
 	| ID {if(!((Symbol)($1.obj)).isUsada()){
 			//error
-			yyerror("variable no declarada",$1.getFila(),$1.getColumna());
+			yyerror("variable no declarada",$1.getFila());
 			}
 			 $$=$1;
 	}
@@ -131,22 +131,22 @@ factor: CTELONGINT {$$=$1;}
 
 asignacion: ID '=' expresion{
             // if (!((Symbol)($1.obj)).isUsada()){
-            //     yyerror("La variable no esta definida ",$1.getFila(),$1.getColumna());
+            //     yyerror("La variable no esta definida ",$1.getFila());
             // }
             $$=$1;
             //$$.obj = t;
-            //estructuras.add("Asignacion "+" fila "+$1.getFila()+" columna "+$1.getColumna()); 
+            //estructuras.add("Asignacion "+" fila "+$1.getFila());
     }
-	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
-	| ID '='  {yyerror("Falta elemento de asignacion ",$1.getFila(),$1.getColumna());}
-	| ID error  {yyerror("no se encontro '=' ",$1.getFila(),$1.getColumna());}
+	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila());}
+	| ID '='  {yyerror("Falta elemento de asignacion ",$1.getFila());}
+	| ID error  {yyerror("no se encontro '=' ",$1.getFila());}
 	;
 
 
-// exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila()+" columna "+$1.getColumna());
+// exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila());
 // 		$$=$1;
 // }
-// 		| OUT error {yyerror("Linea  Error en la construccion del out",$1.getFila(),$1.getColumna());
+// 		| OUT error {yyerror("Linea  Error en la construccion del out",$1.getFila());
 // 		}
 //                ;
 
@@ -155,20 +155,20 @@ bloque: sent_if {}
 	;
 
 
-sent_if: IF condicion_salto cuerpo else_ cuerpo END_IF{estructuras.add("Sentencia IF Else" +" fila "+$1.getFila()+" columna "+$1.getColumna());}
-        |IF condicion_salto cuerpo END_IF{estructuras.add("Sentencia IF " +" fila "+$1.getFila()+" columna "+$1.getColumna());}
-	|  condicion_salto cuerpo else_ cuerpo {yyerror(" falta la palabra reservada IF",$1.getFila(),$1.getColumna());}
-	| IF error else_ {yyerror(" Error en la construccion de la sentencia IF ",$1.getFila(),$1.getColumna());}
-	| IF condicion_salto cuerpo cuerpo {yyerror(" Falta la palabra reservada ELSE ",$1.getFila(),$1.getColumna());}
+sent_if: IF condicion_salto cuerpo else_ cuerpo END_IF{estructuras.add("Sentencia IF Else" +" fila "+$1.getFila());}
+        |IF condicion_salto cuerpo END_IF{estructuras.add("Sentencia IF " +" fila "+$1.getFila());}
+	|  condicion_salto cuerpo else_ cuerpo {yyerror(" falta la palabra reservada IF",$1.getFila());}
+	| IF error else_ {yyerror(" Error en la construccion de la sentencia IF ",$1.getFila());}
+	| IF condicion_salto cuerpo cuerpo {yyerror(" Falta la palabra reservada ELSE ",$1.getFila());}
 	;
 
-sent_loop: loop_ cuerpo UNTIL condicion_salto {estructuras.add("Sentencia Loop " +" fila "+$1.getFila()+" columna "+$1.getColumna());}
-	| loop_ cuerpo condicion_salto {yyerror("Linea  Falta palabra reservada UNTIL",$1.getFila(),$1.getColumna());}
+sent_loop: loop_ cuerpo UNTIL condicion_salto {estructuras.add("Sentencia Loop " +" fila "+$1.getFila());}
+	| loop_ cuerpo condicion_salto {yyerror("Linea  Falta palabra reservada UNTIL",$1.getFila());}
 	;
 
 cuerpo: ejecutable {}
 	| '{' lista_ejecutable '}'{}
-	| error lista_ejecutable '}' {yyerror("LInea  Omision de la palabra reservada '{' ",$1.getFila(),$1.getColumna());}
+	| error lista_ejecutable '}' {yyerror("LInea  Omision de la palabra reservada '{' ",$1.getFila());}
 	;
 
 loop_: LOOP {System.out.println("Encontro LOOP");}
@@ -213,10 +213,10 @@ condicion: expresion '>' expresion {
     $$=$1;
     //$$.obj = t;										
     }
-	| '>' expresion {yyerror("Linea  se esperaba una expresion y se encontro '>'",$1.getFila(),$1.getColumna());}
-	| '<' expresion {yyerror("Linea  se esperaba una expresion y se encontro '<'",$1.getFila(),$1.getColumna());}
-	| MAYIG expresion {yyerror("Linea  se esperaba una expresion y se encontro '>='",$1.getFila(),$1.getColumna());}
-	| MENIG expresion {yyerror("Linea  se esperaba una expresion y se encontro '<='",$1.getFila(),$1.getColumna());}
+	| '>' expresion {yyerror("Linea  se esperaba una expresion y se encontro '>'",$1.getFila());}
+	| '<' expresion {yyerror("Linea  se esperaba una expresion y se encontro '<'",$1.getFila());}
+	| MAYIG expresion {yyerror("Linea  se esperaba una expresion y se encontro '>='",$1.getFila());}
+	| MENIG expresion {yyerror("Linea  se esperaba una expresion y se encontro '<='",$1.getFila());}
 	;
 
 %%
@@ -242,7 +242,7 @@ condicion: expresion '>' expresion {
     }else{
       yylval = new ParserVal();
     }
-    tokens.add(yylval.toString()+" fila: "+yylval.getFila()+" columna: "+yylval.getColumna());
+    tokens.add(yylval.toString()+" fila: "+yylval.getFila());
     return a;
   }
 
@@ -254,8 +254,8 @@ condicion: expresion '>' expresion {
 }
 
 void yyerror(String s){
-    errors.setError(lex.row, lex.column,s);
+    errors.setError(lex.row,s);
   }
-void yyerror(String s,int row,int column){
-      errors.setError(row,column,s);
+void yyerror(String s,int row){
+      errors.setError(row,s);
   }

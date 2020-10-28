@@ -22,7 +22,7 @@ public class AS_Entero_End extends SemanticAction{
             num = lexical.MAX_INT_SIZE;
         }
         if (num == lexical.MAX_INT_SIZE) {
-            lexical.errors.setError(lexical.row, lexical.column, Errors.ERROR_RANGE);
+            lexical.errors.setError(lexical.row,  Errors.ERROR_RANGE);
             //num = lexical.MAX_INT_SIZE;
         }
         /// ESTO VA PERO HAY QUE ACOMODARLO! PARA QUE SEA COMPATIBLE 2020
@@ -35,7 +35,6 @@ public class AS_Entero_End extends SemanticAction{
         //lexical.yylval.obj=lexical.symbolTable.getSymbol(String.valueOf(num)+"_i");
 
         lexical.buffer = "";
-        lexical.column++;
         lexical.index++;
         lexical.tokenId = LexicalAnalyzer.CTELONGINT;
     }

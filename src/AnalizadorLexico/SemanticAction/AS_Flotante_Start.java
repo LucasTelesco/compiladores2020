@@ -16,6 +16,5 @@ public class AS_Flotante_Start extends SemanticAction {
 
 
         lexical.index++;
-        lexical.column++;
     }
 }

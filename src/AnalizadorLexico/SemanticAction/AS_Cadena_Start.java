@@ -14,6 +14,5 @@ public class AS_Cadena_Start extends SemanticAction{
         lexical.buffer+= symbol;
 
         lexical.index++;
-        lexical.column++;
     }
 }

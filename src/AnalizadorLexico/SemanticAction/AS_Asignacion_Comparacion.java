@@ -29,7 +29,6 @@ public class AS_Asignacion_Comparacion extends SemanticAction {
                     break;*/
             }
             lexical.index++; // avanzo el cursor porque use el caracter
-            lexical.column++;
         }
 
         else{

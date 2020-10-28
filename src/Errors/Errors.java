@@ -6,12 +6,10 @@ import java.util.Queue;
 public class Errors {
     private class Terna{
         public int row;
-        public int column;
         public String error;
 
-        public Terna(int row, int column, String error){
+        public Terna(int row,  String error){
             this.row = row;
-            this.column = column;
             this.error = error;
         }
     }
@@ -25,8 +23,8 @@ public class Errors {
         errors = new LinkedList<>();
     }
 
-    public void setError(int row, int column, String error){
-        errors.add(new Terna(row,column,error));
+    public void setError(int row, String error){
+        errors.add(new Terna(row,error));
     }
 
     public String getError(){
@@ -38,7 +36,7 @@ public class Errors {
         String out = new String();
 
         for (Terna elem : errors){
-            out += elem.error + " fila " + elem.row + " columna " + elem.column + "\n";
+            out += elem.error + " fila " + elem.row + "\n";
         }
         return out;
     }
@@ -47,9 +45,6 @@ public class Errors {
         return terna.row;
     }
 
-    public int getColumn(){
-        return terna.column;
-    }
 
     public boolean isEmpty(){
         return errors.isEmpty();

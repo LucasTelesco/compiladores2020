@@ -22,7 +22,7 @@ public class AS_Palabra_Reservada extends SemanticAction
         }else
         {
             String e= Errors.ERROR_FAIL_CHARACTER +" "+buffer;
-            lexical.errors.setError(lexical.row,lexical.column,e);
+            lexical.errors.setError(lexical.row,e);
         }
        // lexical.yylval.sval=lexical.buffer;
 

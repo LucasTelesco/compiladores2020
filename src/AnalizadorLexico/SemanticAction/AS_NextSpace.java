@@ -12,6 +12,5 @@ public class AS_NextSpace extends SemanticAction {
     public void Action(Character symbol) {
             // Avanza e ignora los espacios
             lexical.index++;
-            lexical.column++;
     }
 }

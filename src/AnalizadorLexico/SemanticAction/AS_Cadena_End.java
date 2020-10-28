@@ -22,6 +22,5 @@ public class AS_Cadena_End extends SemanticAction{
 
         lexical.buffer = "";
         lexical.index++;
-        lexical.column++;
     }
 }

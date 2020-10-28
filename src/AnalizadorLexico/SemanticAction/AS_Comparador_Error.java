@@ -28,7 +28,7 @@ public class AS_Comparador_Error extends SemanticAction {
                 break;
             default:
                 String e= Errors.ERROR_FAIL_CHARACTER+" "+buffer;
-                lexical.errors.setError(lexical.row,lexical.column,e);
+                lexical.errors.setError(lexical.row,e);
 
 //en este caso suponemos que hasta no retornar un tocken valido se sigue
         }
