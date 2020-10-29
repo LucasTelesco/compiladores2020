@@ -674,7 +674,10 @@ public class LexicalAnalyzer {
             return "IDENTIFICADOR";
         }
         else if (valor == LexicalAnalyzer.LONGINT){
-            return "ENTERO LARGO";
+            return "PALABRA RESERVADA LONGINT";
+        }
+        else if (valor == LexicalAnalyzer.FLOAT) {
+            return "PALABRA RESERVADA FLOAT";
         }
         else if (valor == LexicalAnalyzer.FLOTANTE){
             return "FLOTANTE";
@@ -687,6 +690,15 @@ public class LexicalAnalyzer {
         }
         else if (valor == LexicalAnalyzer.ID) {
             return "IDENTIFICADOR";
+        }
+        else if (valor == LexicalAnalyzer.THEN) {
+            return "PALABRA RESERVADA THEN";
+        }
+        else if (valor == LexicalAnalyzer.OUT){
+            return "PALABRA RESERVADA OUT";
+        }
+        else if (valor == LexicalAnalyzer.RETURN){
+            return "PALABRA RESERVADA RETURN";
         }
 
         else if (valor ==LexicalAnalyzer.ELSE) {
