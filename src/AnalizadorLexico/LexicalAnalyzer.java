@@ -23,7 +23,7 @@ public class LexicalAnalyzer {
     //############  puntero a la tabla de simbolos? #######
 
     public String lastSymbol;
-    public final int MAX_WORD_SIZE = 25;
+    public final int MAX_WORD_SIZE = 20;
     public final int MIN_INT_SIZE = 0; // -10 .. 9 pero no puedo reconocer -10 -9
     //por lo que verifico del 0..10 y el sintactico se va a ocupar del 10, ya que la unica
     //forma que venga 10 es siendo negativo. Por que si viene un -9 negativo lo va a aceptar asi que es
