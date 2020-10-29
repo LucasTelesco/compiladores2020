@@ -777,6 +777,7 @@ public class LexicalAnalyzer {
         }*/
 
         public void tlFile(SymbolTable st){
+            System.out.println("----------------------------------------------------------");
             System.out.println("TABLA DE SIMBOLOS: ");
             String out = new String();
             while (!st.isEmpty()) {
@@ -818,7 +819,8 @@ public class LexicalAnalyzer {
         }
 
         public void errorView(Errors errors){
-            System.out.println("Estructura de Errores");
+            System.out.println("----------------------------------------------------------");
+            System.out.println("ESTRUCTURA DE ERRORES: ");
             System.out.println(errors.getAll());
         }
     }

@@ -16,9 +16,9 @@ public class Errors {
  // table
     private Queue<Terna> errors;
     private Terna terna;
-    public final static String ERROR_MAX_WORD_SIZE = "supera el maximo permitido";
-    public final static String ERROR_FAIL_CHARACTER= "lexema no valido";
-    public final static String ERROR_RANGE= "fuera de rango";
+    public final static String ERROR_MAX_WORD_SIZE = "WARNING: supera el maximo permitido, el identificador sera truncado";
+    public final static String ERROR_FAIL_CHARACTER= "ERROR: lexema no valido";
+    public final static String ERROR_RANGE= "ERROR: fuera de rango";
     public Errors(){
         errors = new LinkedList<>();
     }

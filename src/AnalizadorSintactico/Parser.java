@@ -430,7 +430,6 @@ final static String yyrule[] = {
 
 
     int yylex(){
-
     int a = lex.getNextToken();
 
     if (lex.yylval != null){
@@ -545,7 +544,7 @@ boolean doaction;
       {
       if (yyerrflag==0)
         {
-        yyerror("syntax error");
+        yyerror("ERROR: error de sintaxis en");
         yynerrs++;
         }
       if (yyerrflag < 3) //low error count?
@@ -616,7 +615,7 @@ case 1:
 break;
 case 2:
 //#line 26 "gramaticaGrupo10.y"
-{yyerror("No hay sentencia");}
+{yyerror("ERROR: No hay sentencia en");}
 break;
 case 3:
 //#line 26 "gramaticaGrupo10.y"
@@ -646,7 +645,7 @@ case 8:
 break;
 case 9:
 //#line 41 "gramaticaGrupo10.y"
-{yyerror("Declaracion mal definida ");}
+{yyerror("ERROR: Declaracion mal definida en");}
 break;
 case 10:
 //#line 54 "gramaticaGrupo10.y"
@@ -665,7 +664,7 @@ case 11:
 break;
 case 12:
 //#line 66 "gramaticaGrupo10.y"
-{yyerror("Se esperaba ';' ",val_peek(1).getFila());}
+{yyerror("ERROR: Se esperaba ';' en",val_peek(1).getFila());}
 break;
 case 13:
 //#line 69 "gramaticaGrupo10.y"
@@ -677,7 +676,7 @@ case 14:
 break;
 case 15:
 //#line 71 "gramaticaGrupo10.y"
-{yyerror("Tipo indefinido",val_peek(1).getFila());}
+{yyerror("ERROR: Tipo indefinido en",val_peek(1).getFila());}
 break;
 case 16:
 //#line 74 "gramaticaGrupo10.y"
@@ -750,7 +749,7 @@ case 28:
 //#line 116 "gramaticaGrupo10.y"
 {if(!((Symbol)(val_peek(0).obj)).isUsada()){
 			/*error*/
-			yyerror("variable no declarada",val_peek(0).getFila());
+			yyerror("ERROR: variable no declarada en",val_peek(0).getFila());
 			}
 			 yyval=val_peek(0);
 	}
@@ -782,15 +781,15 @@ case 31:
 break;
 case 32:
 //#line 140 "gramaticaGrupo10.y"
-{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
+{yyerror("ERROR: Falta elemento de asignacion en",val_peek(1).getFila());}
 break;
 case 33:
 //#line 141 "gramaticaGrupo10.y"
-{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
+{yyerror("ERROR: Falta elemento de asignacion en",val_peek(1).getFila());}
 break;
 case 34:
 //#line 142 "gramaticaGrupo10.y"
-{yyerror("no se encontro '=' ",val_peek(1).getFila());}
+{yyerror("ERROR: no se encontro '=' en",val_peek(1).getFila());}
 break;
 case 35:
 //#line 153 "gramaticaGrupo10.y"
