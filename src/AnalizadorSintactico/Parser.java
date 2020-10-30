@@ -421,7 +421,7 @@ final static String yyrule[] = {
   LexicalAnalyzer lex;
   SymbolTable st;
   Errors errors;
-  public ArrayList<String> estructuras=new ArrayList<>();
+  public ArrayList<String> estructuras;
   public ArrayList<String> tokens = new ArrayList<>();
   public ArrayList<String> id = new ArrayList<>();
 
@@ -430,6 +430,7 @@ final static String yyrule[] = {
 
 
     int yylex(){
+
     int a = lex.getNextToken();
 
     if (lex.yylval != null){
@@ -442,11 +443,12 @@ final static String yyrule[] = {
     return a;
   }
 
-  public Parser(LexicalAnalyzer lex,SymbolTable st, Errors er)
+  public Parser(LexicalAnalyzer lex,SymbolTable st, Errors er,ArrayList<String> estrc)
 {
   this.lex = lex;
   this.st = st;
   this.errors=er;
+  this.estructuras=estrc;
 }
 
 void yyerror(String s){
@@ -455,7 +457,7 @@ void yyerror(String s){
 void yyerror(String s,int row){
       errors.setError(row,s);
   }
-//#line 388 "Parser.java"
+//#line 389 "Parser.java"
 //###############################################################
 // method: yylexdebug : check lexer state
 //###############################################################
@@ -544,7 +546,7 @@ boolean doaction;
       {
       if (yyerrflag==0)
         {
-        yyerror("ERROR: error de sintaxis en");
+        yyerror("syntax error");
         yynerrs++;
         }
       if (yyerrflag < 3) //low error count?
@@ -615,7 +617,7 @@ case 1:
 break;
 case 2:
 //#line 26 "gramaticaGrupo10.y"
-{yyerror("ERROR: No hay sentencia en");}
+{yyerror("No hay sentencia");}
 break;
 case 3:
 //#line 26 "gramaticaGrupo10.y"
@@ -645,7 +647,7 @@ case 8:
 break;
 case 9:
 //#line 41 "gramaticaGrupo10.y"
-{yyerror("ERROR: Declaracion mal definida en");}
+{yyerror("Declaracion mal definida ");}
 break;
 case 10:
 //#line 54 "gramaticaGrupo10.y"
@@ -664,7 +666,7 @@ case 11:
 break;
 case 12:
 //#line 66 "gramaticaGrupo10.y"
-{yyerror("ERROR: Se esperaba ';' en",val_peek(1).getFila());}
+{yyerror("Se esperaba ';' ",val_peek(1).getFila());}
 break;
 case 13:
 //#line 69 "gramaticaGrupo10.y"
@@ -676,7 +678,7 @@ case 14:
 break;
 case 15:
 //#line 71 "gramaticaGrupo10.y"
-{yyerror("ERROR: Tipo indefinido en",val_peek(1).getFila());}
+{yyerror("Tipo indefinido",val_peek(1).getFila());}
 break;
 case 16:
 //#line 74 "gramaticaGrupo10.y"
@@ -749,7 +751,7 @@ case 28:
 //#line 116 "gramaticaGrupo10.y"
 {if(!((Symbol)(val_peek(0).obj)).isUsada()){
 			/*error*/
-			yyerror("ERROR: variable no declarada en",val_peek(0).getFila());
+			yyerror("variable no declarada",val_peek(0).getFila());
 			}
 			 yyval=val_peek(0);
 	}
@@ -776,20 +778,20 @@ case 31:
             /* }*/
             yyval=val_peek(2);
             /*$$.obj = t;*/
-            /*estructuras.add("Asignacion "+" fila "+$1.getFila());*/
+            estructuras.add("Asignacion "+" fila "+val_peek(2).getFila());
     }
 break;
 case 32:
 //#line 140 "gramaticaGrupo10.y"
-{yyerror("ERROR: Falta elemento de asignacion en",val_peek(1).getFila());}
+{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
 break;
 case 33:
 //#line 141 "gramaticaGrupo10.y"
-{yyerror("ERROR: Falta elemento de asignacion en",val_peek(1).getFila());}
+{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
 break;
 case 34:
 //#line 142 "gramaticaGrupo10.y"
-{yyerror("ERROR: no se encontro '=' en",val_peek(1).getFila());}
+{yyerror("no se encontro '=' ",val_peek(1).getFila());}
 break;
 case 35:
 //#line 153 "gramaticaGrupo10.y"
@@ -918,7 +920,7 @@ case 59:
 //#line 219 "gramaticaGrupo10.y"
 {yyerror("Linea  se esperaba una expresion y se encontro '<='",val_peek(1).getFila());}
 break;
-//#line 846 "Parser.java"
+//#line 847 "Parser.java"
 //########## END OF USER-SUPPLIED ACTIONS ##########
     }//switch
     //#### Now let's reduce... ####

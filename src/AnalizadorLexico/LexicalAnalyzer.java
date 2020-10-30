@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Vector;
 
@@ -786,14 +787,6 @@ public class LexicalAnalyzer {
             System.out.println(out);
         }
 
-       /* public void structFile(Parser par, String ruta){
-            String out = new String();
-            for(String pv : par.estructuras){
-                out+=pv+"\n";
-            }
-            this.crear(out,ruta);
-        }*/
-
        /* public void tercetoFile(Parser par, String ruta){
             String out = new String();
             for(Terceto t : par.listaTercetos){
@@ -810,18 +803,28 @@ public class LexicalAnalyzer {
             this.crear(out,ruta);
         }*/
 
-        public void assemblerFile(Vector<String> vec, String ruta){
-            String out = new String();
-            for(String s : vec){
-                out+=s+"\n";
-            }
-            this.crear(out,ruta);
-        }
+//        public void assemblerFile(Vector<String> vec, String ruta){
+//            String out = new String();
+//            for(String s : vec){
+//                out+=s+"\n";
+//            }
+//            this.crear(out,ruta);
+//        }
 
         public void errorView(Errors errors){
             System.out.println("----------------------------------------------------------");
             System.out.println("ESTRUCTURA DE ERRORES: ");
             System.out.println(errors.getAll());
+        }
+
+        public void structOut(ArrayList<String> estructuras){
+            System.out.println("----------------------------------------------------------");
+            System.out.println("ESTRUCTURAS RECONOCIDAS: ");
+            String out = new String();
+            for(String pv : estructuras){
+                out+=pv+"\n";
+            }
+            System.out.println(out);
         }
     }
 }

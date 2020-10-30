@@ -9,6 +9,7 @@ import SymbolTable.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class App extends JFrame{
@@ -91,6 +92,7 @@ public class App extends JFrame{
        FileReader file = new FileReader(srcCode);
        BufferedReader src= new BufferedReader(file);
        String cadena;
+       ArrayList<String> estructuras=new ArrayList<>();
 
         while ((cadena = src.readLine()) != null)
           archivo += cadena+"\n";
@@ -100,13 +102,14 @@ public class App extends JFrame{
         errors = new Errors();
         final SymbolTable st = new SymbolTable();
         final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
-        final Parser par = new Parser(lexical,st,errors);
+        final Parser par = new Parser(lexical,st,errors,estructuras);
         System.out.println("----------------------------------------------------------");
         System.out.println("TOKENS RECONOCIDOS: ");
         par.run();
 
         outFile.errorView(errors);
         outFile.tlFile(st);
+        outFile.structOut(estructuras);
         
 
       //  outFile.errorView(errors);
