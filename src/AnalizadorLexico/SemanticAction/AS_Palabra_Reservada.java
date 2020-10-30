@@ -21,7 +21,7 @@ public class AS_Palabra_Reservada extends SemanticAction
             lexical.yylval.setFila(lexical.row);*/
         }else
         {
-            String e= Errors.ERROR_FAIL_CHARACTER +" "+buffer;
+            String e= Errors.ERROR_FAIL_CHARACTER +" "+lexical.buffer;
             lexical.errors.setError(lexical.row,e);
         }
        // lexical.yylval.sval=lexical.buffer;
