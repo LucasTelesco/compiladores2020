@@ -1,4 +1,12 @@
 LONGINT varlongint;
-PROC hola ( LONGINT num, LONGINT num2 ) NA = 1_l , NS = 2_l { varlongint = 5_l; };
-OUT("holaaa-
- chauu");
+%%PROC hola ( LONGINT num, LONGINT num2 ) NA = 1_l , NS = 2_l { varlongint = 5_l; };
+%%OUT("holaaa-
+%% chauu");
+
+%%primer y ultimo valor dentro del rango
+varlongint = -2147483648_l;
+%%varlongint = 214748363_l;
+
+%%primer y ultimo valor fuera del rango
+%%-2147483649_l
+%%2147483648_l

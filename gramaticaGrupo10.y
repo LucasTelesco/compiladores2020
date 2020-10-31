@@ -108,7 +108,7 @@ $$=$1;
 //$$.obj = t;
     }
     | factor {$$=$1;
-			 // $$.obj=$1.obj;
+			  $$.obj=$1.obj;
 			 }
 	;
 // LONGINT y FLOAT 
@@ -121,12 +121,14 @@ factor: CTELONGINT {$$=$1;}
 			 $$=$1;
 	}
 	| '-' CTELONGINT {
-					  $$=$2;
-                      st.addcambiarSigno(((Symbol)($2.obj)));  //((Symbol))($2.obj))
+					           $$=$2;
+                      if(!st.addcambiarSigno(((Symbol)($2.obj)))){
+                        yyerror("constante fuera de rango",$1.getFila());
+                      }  
  		              }
 	|'-' CTEFLOAT{	
 		             $$=$2;
-                     st.addcambiarSigno(((Symbol)($2.obj)));  //((Symbol))($2.obj))
+                     st.addcambiarSigno(((Symbol)($2.obj)));  
                     }
 	;
 

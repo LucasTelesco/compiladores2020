@@ -25,11 +25,11 @@ public class LexicalAnalyzer {
 
     public String lastSymbol;
     public final int MAX_WORD_SIZE = 20;
-    public final int MIN_INT_SIZE = 0; // -10 .. 9 pero no puedo reconocer -10 -9
     //por lo que verifico del 0..10 y el sintactico se va a ocupar del 10, ya que la unica
     //forma que venga 10 es siendo negativo. Por que si viene un -9 negativo lo va a aceptar asi que es
     //como verificar el 9 positivo
-    public final int MAX_INT_SIZE = (int)Math.pow(2,31);
+    public static final long MAX_INT_SIZE = (long) Math.pow(2,31);
+    public static final long MIN_INT_SIZE = -(long) Math.pow(2,31)-1;
     public final float MIN_FLOAT_SIZE = (float) Math.pow(1.17549435,-38);
     public final float MAX_FLOAT_SIZE = (float) Math.pow(3.40282347,38);
 
