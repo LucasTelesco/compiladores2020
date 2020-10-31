@@ -79,7 +79,7 @@ lista_ejecutable: ejecutable {}
 ejecutable: asignacion ';'{}
           | bloque {//#######Solo llego aca si termino un if o un loop
           }
-          // | exp_print ','{}
+          | exp_out ';'{}
 
 ;
 
@@ -144,12 +144,11 @@ asignacion: ID '=' expresion{
 	;
 
 
-// exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila());
-// 		$$=$1;
-// }
-// 		| OUT error {yyerror("Linea  Error en la construccion del out",$1.getFila());
-// 		}
-//                ;
+exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila());
+	      	$$=$1;}
+		    | OUT error {yyerror("Error en la construccion del out",$1.getFila());}
+        ;
+
 
 bloque: sent_if {}
 	| sent_loop {}
