@@ -160,7 +160,7 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 1, 'C', StateMachine.ERROR_STATE,id_end);
         StateMachine.addTransition(1,'a',1, next);
         StateMachine.addTransition(1,'A', StateMachine.FINAL_STATE, id_end);
-        StateMachine.addTransition( 1, ' ', StateMachine.INITIAL_STATE, id_end);
+        StateMachine.addTransition( 1, ' ', StateMachine.FINAL_STATE, id_end);
 
 
         StateMachine.addTransition( 2, 'l',  StateMachine.FINAL_STATE, asignacion_Comparacion);
