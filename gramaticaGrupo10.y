@@ -34,22 +34,23 @@ sentencia: ejecutable {}
 	| declaracion {}
         ;
 
-declaracion: tipo lista_id ';' {
-        System.out.println("Encontro declaracion ");
-		}
-
+declaracion: tipo lista_id ';' {System.out.println("Encontro declaracion ");}
+        | procedimiento ';'{System.out.println("Encontro UN PROCEDIMIENTO ");}
         | error {yyerror("Declaracion mal definida ");}
         ;
 
-// control: PROC ID '(' tipo lista_id ')' {
-//        System.out.println("Encontro un control ");
-//        }
-//         | error {yyerror("Control mal definida ");
+procedimiento:  PROC ID '(' lista_parametro ')' NA '=' CTELONGINT ',' NS '=' CTELONGINT '{' lista_ejecutable '}'
+                  {estructuras.add("Procedimiento "+" fila "+$1.getFila());}
+                | error {yyerror("Control mal definida ");}
+                ;
 
-//         }
-//        ;
+lista_parametro:  parametro {}
+                | parametro ',' lista_parametro {}
+                | parametro lista_parametro {yyerror("Se esperaba ',' ",$1.getFila());}
+                ;
 
-
+parametro: tipo ID {}
+         ;
 
 lista_id: ID {//  id.add( ((Symbol)($1.obj)).getLexema() );
                 Vector<ParserVal> vect = new Vector<ParserVal>();//$1 es el parser val con el symbolo de ese ID
@@ -135,7 +136,7 @@ asignacion: ID '=' expresion{
             // }
             $$=$1;
             //$$.obj = t;
-            //estructuras.add("Asignacion "+" fila "+$1.getFila());
+            estructuras.add("Asignacion "+" fila "+$1.getFila());
     }
 	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila());}
 	| ID '='  {yyerror("Falta elemento de asignacion ",$1.getFila());}
@@ -224,7 +225,7 @@ condicion: expresion '>' expresion {
   LexicalAnalyzer lex;
   SymbolTable st;
   Errors errors;
-  public ArrayList<String> estructuras=new ArrayList<>();
+  public ArrayList<String> estructuras;
   public ArrayList<String> tokens = new ArrayList<>();
   public ArrayList<String> id = new ArrayList<>();
 
@@ -246,11 +247,12 @@ condicion: expresion '>' expresion {
     return a;
   }
 
-  public Parser(LexicalAnalyzer lex,SymbolTable st, Errors er)
+  public Parser(LexicalAnalyzer lex,SymbolTable st, Errors er,ArrayList<String> estrc)
 {
   this.lex = lex;
   this.st = st;
   this.errors=er;
+  this.estructuras=estrc;
 }
 
 void yyerror(String s){

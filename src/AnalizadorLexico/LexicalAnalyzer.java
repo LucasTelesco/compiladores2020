@@ -62,6 +62,7 @@ public class LexicalAnalyzer {
     public final static short YYERRCODE=256;
     public final static short COMENTARIO=999;
 
+
     public String srcCode;
     // nos sirve para decir en donde ocurre un error
     public int row; //controla cada \n del string
@@ -594,12 +595,15 @@ public class LexicalAnalyzer {
         reservedWords.put("ELSE", (int) ELSE);
         reservedWords.put("END_IF", (int) END_IF);
         reservedWords.put("OUT", (int) OUT);
-        reservedWords.put("FUNC", (int) FUNC);
+        reservedWords.put("PROC", (int) PROC);
         reservedWords.put("RETURN", (int) RETURN);
         reservedWords.put("LOOP", (int) LOOP);
         reservedWords.put("UNTIL", (int) UNTIL);
         reservedWords.put("LONGINT", (int) LONGINT);
         reservedWords.put("FLOAT", (int) FLOAT);
+        reservedWords.put("NA", (int) NA);
+        reservedWords.put("NS", (int) NS);
+
     }
 
         public int getRow () {
@@ -737,6 +741,15 @@ public class LexicalAnalyzer {
         }
         else if (valor == LexicalAnalyzer.CTEFLOAT) {
             return "CONSTANTE FLOTANTE";
+        }
+        else if (valor == LexicalAnalyzer.PROC) {
+            return "PALABRA RESERVADA PROC";
+        }
+        else if (valor == LexicalAnalyzer.NS) {
+            return "PALABRA RESERVADA NS";
+        }
+        else if (valor == LexicalAnalyzer.NA) {
+            return "PALABRA RESERVADA NA";
         }
 
         else if (valor < 255) {

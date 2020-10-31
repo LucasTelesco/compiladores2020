@@ -160,6 +160,7 @@ public class ParserVal {
 
     LOOP(ParserVal.LOOP),
     UNTIL(ParserVal.UNTIL),
+    PROC(ParserVal.PROC),
 
 
     //No Terminales

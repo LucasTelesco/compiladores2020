@@ -1,2 +1,2 @@
-LONGINT varlongint
-varlongint = 5_l;
+LONGINT varlongint;
+PROC hola ( LONGINT num, LONGINT num2 ) NA = 1_l , NS = 2_l { varlongint = 5_l; };
