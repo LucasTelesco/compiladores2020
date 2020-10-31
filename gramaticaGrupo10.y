@@ -112,8 +112,16 @@ $$=$1;
 			 }
 	;
 // LONGINT y FLOAT 
-factor: CTELONGINT {$$=$1;}
-	| CTEFLOAT {$$=$1;}
+factor: CTELONGINT  {$$=$1;
+                      if(!st.addLongintPositiva(((Symbol)($1.obj)))){
+                        yyerror("constante fuera de rango",$1.getFila());
+                      }  
+                    }
+	| CTEFLOAT {$$=$1;
+               if(!st.addFloatPositiva(((Symbol)($1.obj)))){
+                  yyerror("constante fuera de rango",$1.getFila());
+                }  
+             }
 	| ID {if(!((Symbol)($1.obj)).isUsada()){
 			//error
 			yyerror("variable no declarada",$1.getFila());
@@ -122,13 +130,15 @@ factor: CTELONGINT {$$=$1;}
 	}
 	| '-' CTELONGINT {
 					           $$=$2;
-                      if(!st.addcambiarSigno(((Symbol)($2.obj)))){
+                      if(!st.addLongintNegativa(((Symbol)($2.obj)))){
                         yyerror("constante fuera de rango",$1.getFila());
                       }  
  		              }
 	|'-' CTEFLOAT{	
 		             $$=$2;
-                     st.addcambiarSigno(((Symbol)($2.obj)));  
+                  if(!st.addFloatNegativa(((Symbol)($2.obj)))){
+                    yyerror("constante fuera de rango",$1.getFila());
+                  }    
                     }
 	;
 

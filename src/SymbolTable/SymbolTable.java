@@ -51,12 +51,23 @@ public class SymbolTable {
         }
     }
 
+    public boolean addLongintPositiva(Symbol aux) {
+        long numtoAdd = Long.valueOf(aux.getLexema().substring(0,aux.getLexema().length()-2));
+
+        if (  numtoAdd < LexicalAnalyzer.MAX_INT_SIZE){
+            setSymbol(aux.getLexema(), aux.getTipo());
+            setAtributo(aux.getLexema(),"=>","CTE ENTERO LARGO");
+            return true;
+        }
+        return false;
+    }
+
     public ArrayList<String> getEntradas(){
         return new ArrayList<String>( tb.keySet());
     }
 
 
-    public boolean addcambiarSigno(Symbol aux){
+    public boolean addLongintNegativa(Symbol aux){
         long numtoAdd = Long.valueOf(aux.getLexema().substring(0,aux.getLexema().length()-2))*(-1);
 
         if (  numtoAdd > LexicalAnalyzer.MIN_INT_SIZE){
@@ -67,6 +78,15 @@ public class SymbolTable {
        return false;
     }
 
+    public boolean addFloatPositiva(Symbol aux) {
+
+        return false;
+    }
+
+    public boolean addFloatNegativa(Symbol aux){
+
+        return false;
+    }
 
     public void setAtributo(String lexema, String atributo, Object valor){
         if (tb.containsKey(lexema))

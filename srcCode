@@ -4,8 +4,8 @@ LONGINT varlongint;
 %% chauu");
 
 %%primer y ultimo valor dentro del rango
-varlongint = -2147483648_l;
-%%varlongint = 214748363_l;
+%%varlongint = -2147483648_l;
+varlongint = 2147483648_l;
 
 %%primer y ultimo valor fuera del rango
 %%-2147483649_l
