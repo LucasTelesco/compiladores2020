@@ -11,7 +11,7 @@ public class AS_Cadena_Start extends SemanticAction{
     @Override
     public void Action(Character symbol) {
         lexical.tokenId = LexicalAnalyzer.CADENA_MULTINEA;
-        lexical.buffer+= symbol;
+        //lexical.buffer+= symbol;
 
         lexical.index++;
     }
