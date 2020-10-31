@@ -2,6 +2,7 @@ package SymbolTable;
 
 
 import AnalizadorLexico.LexicalAnalyzer;
+import Errors.Errors;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -79,13 +80,35 @@ public class SymbolTable {
     }
 
     public boolean addFloatPositiva(Symbol aux) {
+        float floatToAdd  = Float.valueOf(aux.getLexema().substring(0,aux.getLexema().length()))*(-1);
 
+        if (floatToAdd < LexicalAnalyzer.MAX_FLOAT_SIZE) {
+            setSymbol("-"+aux.getLexema(), aux.getTipo());
+            setAtributo("-"+aux.getLexema(),"=>","CTE FLOTANTE");
+            return true;
+        }
         return false;
     }
 
     public boolean addFloatNegativa(Symbol aux){
+        float floatToAdd  = Float.valueOf(aux.getLexema().substring(0,aux.getLexema().length()))*(-1);
 
+        if (floatToAdd > LexicalAnalyzer.MIN_FLOAT_SIZE) {
+            setSymbol("-"+aux.getLexema(), aux.getTipo());
+            setAtributo("-"+aux.getLexema(),"=>","CTE FLOTANTE");
+            return true;
+        }
         return false;
+
+       /* if (num != 0.0) {
+            if (num < LexicalAnalyzer.MIN_FLOAT_SIZE) {
+                lexical.errors.setError(lexical.row,  Errors.ERROR_RANGE);
+                num = lexical.MIN_FLOAT_SIZE;
+            } else if (num > lexical.MAX_FLOAT_SIZE) {
+                lexical.errors.setError(lexical.row,  Errors.ERROR_RANGE);
+                num = lexical.MAX_FLOAT_SIZE;
+            }
+        } */
     }
 
     public void setAtributo(String lexema, String atributo, Object valor){

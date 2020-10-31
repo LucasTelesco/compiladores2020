@@ -30,8 +30,8 @@ public class LexicalAnalyzer {
     //como verificar el 9 positivo
     public static final long MAX_INT_SIZE = (long) Math.pow(2,31);
     public static final long MIN_INT_SIZE = -(long) Math.pow(2,31)-1;
-    public final float MIN_FLOAT_SIZE = (float) Math.pow(1.17549435,-38);
-    public final float MAX_FLOAT_SIZE = (float) Math.pow(3.40282347,38);
+    public static final float MIN_FLOAT_SIZE = (float) Math.pow(1.17549435,-38);
+    public static final float MAX_FLOAT_SIZE = (float) Math.pow(3.40282347,38);
 
     public final static short IF=257;
     public final static short ELSE=258;
