@@ -13,8 +13,6 @@ public class AS_TokenAscii extends SemanticAction {
         lexical.tokenId = (int)symbol;
         lexical.index++;
 
-       // lexical.yylval.ival=lexical.tokenId;
-
         lexical.buffer = "";
     }
 }

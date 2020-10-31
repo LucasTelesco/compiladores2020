@@ -1,7 +1,6 @@
 package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
-//import AnalizadorSintactico.*;
 
 public abstract class SemanticAction {
     protected LexicalAnalyzer lexical;

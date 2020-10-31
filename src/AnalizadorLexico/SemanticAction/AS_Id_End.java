@@ -8,7 +8,6 @@ public class AS_Id_End extends SemanticAction{
     public AS_Id_End(LexicalAnalyzer lexicalAnalyzer) {
         super(lexicalAnalyzer);
     }
-    //deja el tipo asignado en Start
     @Override
     public void Action(Character symbol) {
         if (lexical.buffer.length() > lexical.MAX_WORD_SIZE){
@@ -19,11 +18,6 @@ public class AS_Id_End extends SemanticAction{
 
         lexical.symbolTable.setSymbol(lexical.buffer, LexicalAnalyzer.ID);
         lexical.symbolTable.setAtributo(lexical.buffer,"=>","IDENTIFICADOR");
-        //agrega en la tabla de simbolo ya que es de tipo ID
-
-        // ######## ASEGURARNOS DE QUE ESTAMOS CONSTRUYENDO EL PARSER VAL CON UN PUNTERO A LA TABLA DE SYMBOLOS
-
-       // lexical.yylval.obj=lexical.symbolTable.getSymbol(lexical.buffer);
 
         lexical.lastSymbol=lexical.buffer; // guardo el simbolo viejo
         lexical.buffer = "";

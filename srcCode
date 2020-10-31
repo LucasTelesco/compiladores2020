@@ -10,3 +10,29 @@ varlongint = 2147483648_l;
 %%primer y ultimo valor fuera del rango
 %%-2147483649_l
 %%2147483648_l
+
+%%caso de pruebas palabras reservadas
+
+IF
+THEN
+ELSE
+END_IF
+OUT
+RETURN
+LOOP
+UNTIL
+LONGINT
+FLOAT
+
+%%caso de pruebas palabras reservadas - errores lexicos
+
+if
+then
+else
+end_if
+out
+return
+loop
+until
+longint
+float

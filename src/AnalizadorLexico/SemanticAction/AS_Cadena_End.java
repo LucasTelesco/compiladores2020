@@ -14,9 +14,6 @@ public class AS_Cadena_End extends SemanticAction{
         lexical.symbolTable.setAtributo(lexical.buffer,"=>","CADENA");
         lexical.lastSymbol=lexical.buffer; // guardo el simbolo viejo
 
-   // ######## ASEGURARNOS DE QUE ESTAMOS CONSTRUYENDO EL PARSER VAL CON UN PUNTERO A LA TABLA DE SYMBOLOS
-
-       // lexical.yylval.obj=lexical.symbolTable.getSymbol(lexical.buffer);
         lexical.symbolTable.getSymbol(lexical.buffer).setTipoVar("cadena");
         lexical.symbolTable.getSymbol(lexical.buffer).setLexema(lexical.buffer);
 

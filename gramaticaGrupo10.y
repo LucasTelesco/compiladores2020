@@ -34,8 +34,8 @@ sentencia: ejecutable {}
 	| declaracion {}
         ;
 
-declaracion: tipo lista_id ';' {System.out.println("Encontro declaracion ");}
-        | procedimiento ';'{System.out.println("Encontro UN PROCEDIMIENTO ");}
+declaracion: tipo lista_id ';' {estructuras.add("declaracion "+" fila "+$1.getFila());}
+        | procedimiento ';'{}
         | error {yyerror("Declaracion mal definida ");}
         ;
 
@@ -52,13 +52,13 @@ lista_parametro:  parametro {}
 parametro: tipo ID {}
          ;
 
-lista_id: ID {//  id.add( ((Symbol)($1.obj)).getLexema() );
+lista_id: ID {
                 Vector<ParserVal> vect = new Vector<ParserVal>();//$1 es el parser val con el symbolo de ese ID
-                vect.add($1);//ver si anda, hay que castear a Symbol?
+                vect.add($1);
                 $$.obj = vect; }
 	
 
-	| ID ',' lista_id {//id.add(((Symbol)($1.obj)).getLexema());
+	| ID ',' lista_id {
                     Vector<ParserVal> vect = (Vector<ParserVal>)($3.obj); //$3 me trae el vector original primero y desp aumenta
                     vect.add($1);//ver si anda, hay que castear a Symbol? .obj
                     $$.obj = vect;
@@ -77,7 +77,7 @@ lista_ejecutable: ejecutable {}
 	;
 
 ejecutable: asignacion ';'{}
-          | bloque {//#######Solo llego aca si termino un if o un loop
+          | bloque {
           }
           | exp_out ';'{}
 
@@ -85,11 +85,11 @@ ejecutable: asignacion ';'{}
 
 expresion: termino '+' expresion {            
                 $$=$1;
-               // $$.obj = t;
+
 }
 	     | termino '-' expresion {			    
             $$=$1;
-            //$$.obj = t;
+
 }
 	     | termino {$$=$1;
          $$.obj=$1.obj; //VER
@@ -99,13 +99,13 @@ expresion: termino '+' expresion {
 
 termino: factor '/' termino {
 $$=$1;
-//$$.obj = t;
+
 
 }
 	| factor '*' termino{
               
 $$=$1;
-//$$.obj = t;
+
     }
     | factor {$$=$1;
 			  $$.obj=$1.obj;
@@ -143,11 +143,9 @@ factor: CTELONGINT  {$$=$1;
 	;
 
 asignacion: ID '=' expresion{
-            // if (!((Symbol)($1.obj)).isUsada()){
-            //     yyerror("La variable no esta definida ",$1.getFila());
-            // }
+
             $$=$1;
-            //$$.obj = t;
+
             estructuras.add("Asignacion "+" fila "+$1.getFila());
     }
 	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila());}
@@ -187,43 +185,41 @@ loop_: LOOP {System.out.println("Encontro LOOP");}
 ;
 
 
-else_: ELSE {//#### aca hacemos el salto incondicional, debimos inventar este no terminal porque no diferenciamos bloque else de bloque if
-        //aca ya hicimos el pop cuando termino el cuerpo del if
+else_: ELSE {
     $$=$1;
-    //$$.obj = t;														
     }
 ;
 
 condicion_salto: '(' condicion ')' {
     $$=$1;
-    //$$.obj = t;
+   
 };
 
 condicion: expresion '>' expresion {
     $$=$1;
-   // $$.obj = t;
+
    	}
 	| expresion '<' expresion {
     $$=$1;
-   // $$.obj = t;										
+
    }
 	| expresion '=' expresion {
 
     $$=$1;
-    //$$.obj = t;										
+
     }
 	| expresion DIST expresion {
 
     $$=$1;
-   // $$.obj = t;										
+	
    }
 	| expresion MAYIG expresion {
     $$=$1;
-    //$$.obj = t;										
+    
     }
 	| expresion MENIG expresion {
     $$=$1;
-    //$$.obj = t;										
+
     }
 	| '>' expresion {yyerror("Linea  se esperaba una expresion y se encontro '>'",$1.getFila());}
 	| '<' expresion {yyerror("Linea  se esperaba una expresion y se encontro '<'",$1.getFila());}

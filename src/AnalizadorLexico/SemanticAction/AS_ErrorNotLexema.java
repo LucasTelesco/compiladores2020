@@ -15,7 +15,6 @@ public class AS_ErrorNotLexema extends SemanticAction{
 
         lexical.errors.setError(lexical.row,e);
         lexical.buffer = "";
-        //lexical.index++;
         lexical.row++;
     }
 }

@@ -13,7 +13,6 @@ public class AS_Comentario_End  extends SemanticAction{
     public void Action(Character symbol) {
         lexical.buffer = "";
         lexical.index++;
-//        LEXICAL.COLUMN++;
         lexical.row++;
     }
 

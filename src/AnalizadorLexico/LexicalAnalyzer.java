@@ -17,17 +17,9 @@ import SymbolTable.*;
 
 public class LexicalAnalyzer {
 
-
-
-
     public static ParserVal yylval = null;
-    //############  puntero a la tabla de simbolos? #######
-
     public String lastSymbol;
     public final int MAX_WORD_SIZE = 20;
-    //por lo que verifico del 0..10 y el sintactico se va a ocupar del 10, ya que la unica
-    //forma que venga 10 es siendo negativo. Por que si viene un -9 negativo lo va a aceptar asi que es
-    //como verificar el 9 positivo
     public static final long MAX_INT_SIZE = (long) Math.pow(2,31);
     public static final long MIN_INT_SIZE = -(long) Math.pow(2,31)-1;
     public static final float MIN_FLOAT_SIZE = (float) Math.pow(1.17549435,-38);
@@ -70,14 +62,13 @@ public class LexicalAnalyzer {
     public SymbolTable symbolTable;
     public String buffer;
     public int state;
-    public int index; //cursor para seguir el string que viene de forma lineal _a = 6; \n if..
+    public int index;
     public int tokenId;
     public Errors errors;
     public Hashtable<String,Integer> reservedWords;
     private OutFile outFile = new OutFile();
     private void create(){
 
-        //
         SemanticAction tokenAscii = new AS_TokenAscii(this);
         SemanticAction asignacion_Comparacion = new AS_Asignacion_Comparacion(this);
         SemanticAction comp_error = new AS_Comparador_Error(this);
@@ -100,12 +91,6 @@ public class LexicalAnalyzer {
         SemanticAction numero_start = new AS_Numero_Start(this);
         SemanticAction comentario_start = new AS_Comentario_Start(this);
         SemanticAction comentario_end = new AS_Comentario_End(this);
-
-
-
-
-
-
 
 
         StateMachine.addTransition( 0, 'l',  1, id_start);
@@ -389,9 +374,6 @@ public class LexicalAnalyzer {
         StateMachine.addTransition( 9, ' ', StateMachine.ERROR_STATE, not_lexema);
 
 
-//en la accion semantica de cualquier simbolo que no sea = contemplamos la historia (<>) o (!:)
-//si tiene que saltar un error o devolver un token, porque vaya al final o al error
-//la accion semantica  es la que decide
         StateMachine.addTransition( 10, 'l', StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 10, 'd', 11, next);
         StateMachine.addTransition( 10, '+', 10, next);
@@ -418,8 +400,6 @@ public class LexicalAnalyzer {
         StateMachine.addTransition(10,'a',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition(10,'A',StateMachine.ERROR_STATE, not_lexema);
         StateMachine.addTransition( 10, ' ', StateMachine.ERROR_STATE, not_lexema);
-
-
 
 
 
@@ -660,9 +640,7 @@ public class LexicalAnalyzer {
                     yylval.setColumna(column);
                     yylval.setFila(row);
                 }
-
             }
-
             if (tokenId==999){
                 tokenId=this.getNextToken();
             }
@@ -782,13 +760,6 @@ public class LexicalAnalyzer {
             }
         }
 
-        /*public void tokenFile(Parser par,String ruta){
-            String out = new String();
-            for(String s :par.tokens){
-                out+=s+"\n";
-            }
-            this.crear(out,ruta);
-        }*/
 
         public void tlFile(SymbolTable st){
             System.out.println("----------------------------------------------------------");
@@ -800,29 +771,6 @@ public class LexicalAnalyzer {
             System.out.println(out);
         }
 
-       /* public void tercetoFile(Parser par, String ruta){
-            String out = new String();
-            for(Terceto t : par.listaTercetos){
-                out+=t.toString()+"\n";
-            }
-            this.crear(out,ruta);
-        }
-
-        public void tercetoFile(ArrayList<Terceto> tercetos, String ruta){
-            String out = new String();
-            for(Terceto t : tercetos){
-                out+=t.toString()+"\n";
-            }
-            this.crear(out,ruta);
-        }*/
-
-//        public void assemblerFile(Vector<String> vec, String ruta){
-//            String out = new String();
-//            for(String s : vec){
-//                out+=s+"\n";
-//            }
-//            this.crear(out,ruta);
-//        }
 
         public void errorView(Errors errors){
             System.out.println("----------------------------------------------------------");

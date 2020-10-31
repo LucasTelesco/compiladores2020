@@ -10,7 +10,6 @@ public class AS_NextSpace extends SemanticAction {
 
     @Override
     public void Action(Character symbol) {
-            // Avanza e ignora los espacios
             lexical.index++;
     }
 }

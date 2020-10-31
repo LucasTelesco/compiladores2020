@@ -9,7 +9,7 @@ public class AS_Asignacion_Comparacion extends SemanticAction {
     }
 
     public void Action(Character symbol) {
-        //lexical.yylval.sval=lexical.buffer+"=";
+
         if(symbol.equals('=')) {
             switch (lexical.buffer) {
                 case "!":
@@ -24,18 +24,13 @@ public class AS_Asignacion_Comparacion extends SemanticAction {
                 case "=":
                     lexical.tokenId = LexicalAnalyzer.ESIGUAL;
                     break;
-                /*default:
-                    lexical.tokenId = (int) lexical.buffer.charAt(lexical.buffer.length() - 1);
-                    break;*/
+
             }
             lexical.index++; // avanzo el cursor porque use el caracter
         }
 
         else{
-
             lexical.tokenId = (int) lexical.buffer.charAt(lexical.buffer.length() - 1);
-
-
         }
 
         lexical.buffer = "";

@@ -110,13 +110,6 @@ public class App extends JFrame{
         outFile.errorView(errors);
         outFile.tlFile(st);
         outFile.structOut(estructuras);
-        
-
-      //  outFile.errorView(errors);
-       // outFile.tlFile(st, "tablaSimbolos.txt");
-        //outFile.tokenFile(par, "token.txt");
-        //outFile.structFile(par, "estructurasReconocidas.txt");
-
 
     }
 }

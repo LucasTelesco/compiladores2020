@@ -8,13 +8,6 @@ public class Symbol {
     private short tipo;
     private boolean usada=false;
 
-    public boolean isEsPuntero() {
-        return esPuntero;
-    }
-
-    private boolean esPuntero;
-    private boolean esMutable;
-    private boolean mutivalidadApuntado; //ver cuando usar!
     private Hashtable <String,Object> atributos;
 
      /** Constantes tienen tipo de token y tipo de dato
@@ -38,35 +31,6 @@ public class Symbol {
         this.lexema = lexema;
         this.tipo = (short) number;
         atributos=new Hashtable<>();
-    }
-
-    public boolean usar(){
-        return true;
-    }
-    public void setEspuntero(boolean esPuntero){
-        this.esPuntero=esPuntero;
-    }
-
-    public void setEsMutable(boolean esMutable){
-        this.esMutable=esMutable;
-    }
-    public boolean getEsMutable(){
-        return esMutable;
-    }
-    public void setAtributo(boolean esMutable,boolean esPuntero, boolean mutivalidadApuntado){
-        this.esMutable=esMutable;
-        this.esPuntero=esPuntero;
-        this.mutivalidadApuntado=mutivalidadApuntado;
-    }
-
-    public Symbol(String lexema, int number, boolean esMutable,boolean esPuntero, boolean mutivalidadApuntado) {
-        this.lexema = lexema;
-        this.tipo = (short) number;
-        this.esMutable=esMutable;
-        this.esPuntero=esPuntero;
-        this.mutivalidadApuntado=mutivalidadApuntado;
-        atributos=new Hashtable<>();
-        //System.out.println("en constructor de Symbol, el tipo es : "+this.tipo + " "+ this.tipoVar);
     }
 
     @Override
