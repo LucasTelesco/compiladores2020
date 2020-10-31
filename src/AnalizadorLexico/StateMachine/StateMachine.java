@@ -20,7 +20,7 @@ public final class StateMachine {
         if (asciiChar==11 || asciiChar==9)
             return ' ';
 
-        if ((asciiChar>=97 && asciiChar<=99)||(asciiChar==101)||(asciiChar>=103 && asciiChar<=107)||(asciiChar>=109 && asciiChar<=122)){
+        if ((asciiChar>=97 && asciiChar<=100)||(asciiChar==101)||(asciiChar>=103 && asciiChar<=107)||(asciiChar>=109 && asciiChar<=122)){
             //{universo de letras minusculas} - {l} -{f} -{d}
             return 'a';
         }
