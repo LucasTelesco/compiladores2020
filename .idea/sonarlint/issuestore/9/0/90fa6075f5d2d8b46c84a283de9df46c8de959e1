@@ -1,11 +1,7 @@
 
-Y
-java:S1854#"7Remove this useless assignment to local variable "num".(Íåãçùÿÿÿÿ8ë¿ÿÚÎ.
-]
-java:S2130";Use "Float.parseFloat" for this string-to-float conversion.(şêûÿÿÿÿ8ë¿ÿÚÎ.
-g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Û«˜¾ùÿÿÿÿ
-T
-java:S1854 "7Remove this useless assignment to local variable "num".(ŸÃòË8ë¿ÿÚÎ.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘Û¬‚
-]	java:S125"<This block of commented-out lines of code should be removed.(ùƒ™üÿÿÿÿ8ë¿ÿÚÎ.
-X	java:S125*"<This block of commented-out lines of code should be removed.(èâÈ¯8ë¿ÿÚÎ.
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Û«˜¾ùÿÿÿÿ8î¾„Ø.
+]
+java:S2130";Use "Float.parseFloat" for this string-to-float conversion.(şêûÿÿÿÿ8î¾„Ø.
+L
+java:S1128"*Remove this unused import 'Errors.Errors'.(‚ŞÄòùÿÿÿÿ8î¾„Ø.

@@ -39,7 +39,7 @@ declaracion: tipo lista_id ';' {estructuras.add("declaracion "+" fila "+$1.getFi
         | error {yyerror("Declaracion mal definida ");}
         ;
 
-procedimiento:  PROC ID '(' lista_parametro ')' NA '=' CTELONGINT ',' NS '=' CTELONGINT '{' lista_ejecutable '}'
+procedimiento:  PROC ID '(' lista_parametro ')' NA '=' CTELONGINT ',' NS '=' CTELONGINT '{' sentencia '}'
                   {estructuras.add("Procedimiento "+" fila "+$1.getFila());}
                 | error {yyerror("Control mal definida ");}
                 ;

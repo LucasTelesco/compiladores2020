@@ -1,38 +1,15 @@
+%% prueba analizador sintactico
+%% declaracion de variable
 LONGINT varlongint;
-%%PROC hola ( LONGINT num, LONGINT num2 ) NA = 1_l , NS = 2_l { varlongint = 5_l; };
-%%OUT("holaaa-
-%% chauu");
+%% Procedimiento
 
-%%primer y ultimo valor dentro del rango
-%%varlongint = -2147483648_l;
-varlongint = 2147483648_l;
-
-%%primer y ultimo valor fuera del rango
-%%-2147483649_l
-%%2147483648_l
-
-%%caso de pruebas palabras reservadas
-
-IF
-THEN
-ELSE
-END_IF
-OUT
-RETURN
-LOOP
-UNTIL
-LONGINT
-FLOAT
-
-%%caso de pruebas palabras reservadas - errores lexicos
-
-if
-then
-else
-end_if
-out
-return
-loop
-until
-longint
-float
+PROC hola ( LONGINT num, LONGINT num2 ) NA = 1_l , NS = 2_l {
+PROC holaa ( LONGINT num3, LONGINT num4 ) NA = 1_l , NS = 2_l {
+varlongint = 5_l;
+};
+};
+%% expresion OUT
+OUT("holaaa-
+ chauu");
+%% asignacion de una variable
+varlongint = 214748364_l;

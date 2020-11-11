@@ -11,8 +11,6 @@ F
 src/Errors/Errors.java,b/3/b3fc205f314b05cb15e8a304e581dcab214a3d76
 P
  src/SymbolTable/SymbolTable.java,1/e/1e2978989acefa7544e4d274ca98aac124e4f9b6
-@
-src/OutFile.java,5/6/5696d0d64f2fb04c8d45616beb48103bbc1cf22b
 7
 srcCode,2/2/22d4c77eec34887130b315f78ac94c44758678c7
 r
@@ -69,3 +67,12 @@ A
 tablaSimbolos.txt,5/3/53b9aded56cbcc636dce457b8794d60f489ad012
 W
 'src/AnalizadorSintactico/ParserVal.java,c/0/c0e2c67f623878663e9c4015de87f1ab1744729a
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+j
+:src/AnalizadorLexico/SemanticAction/AS_Comentario_End.java,8/b/8bb522745adcdcc2995e5af273e93145a5bee6a3
+l
+<src/AnalizadorLexico/SemanticAction/AS_Comentario_Start.java,7/b/7bfdcf6084abdc34ab6287bdf8c29a0ee5777c20
+T
+$src/AnalizadorSintactico/Parser.java,9/d/9dda008b5efc7f3dcc25536d6a7b9f2ebde1d109
