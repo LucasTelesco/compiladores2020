@@ -79,8 +79,8 @@ public class SymbolTable {
         float floatToAdd  = Float.valueOf(aux.getLexema().substring(0,aux.getLexema().length()))*(-1);
 
         if (floatToAdd < LexicalAnalyzer.MAX_FLOAT_SIZE) {
-            setSymbol("-"+aux.getLexema(), aux.getTipo());
-            setAtributo("-"+aux.getLexema(),"=>","CTE FLOTANTE");
+            setSymbol(aux.getLexema(), aux.getTipo());
+            setAtributo(aux.getLexema(),"=>","CTE FLOTANTE");
             return true;
         }
         return false;
