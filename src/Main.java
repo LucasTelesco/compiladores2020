@@ -26,7 +26,7 @@ public class Main {
         Errors errors;
         LexicalAnalyzer.OutFile outFile = new LexicalAnalyzer.OutFile();
         try {
-
+           // String srcCode = Args[0];//"srcCode";
             String srcCode = "srcCode";
             FileReader file = new FileReader(srcCode);
             BufferedReader src= new BufferedReader(file);

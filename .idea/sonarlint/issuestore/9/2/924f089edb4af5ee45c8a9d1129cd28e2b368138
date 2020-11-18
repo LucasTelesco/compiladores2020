@@ -1,23 +1,24 @@
 
-Z	java:S1066"9Replace this use of System.out or System.err by a logger.(·ŠäÁúÿÿÿÿ8Æı¡ƒÆ.
-Z
-java:S1197"8Move the array designator from the variable to the type.(Äÿëüÿÿÿÿ8Æı¡ƒÆ.
-j
-java:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(ûåîØúÿÿÿÿ8©Á¶…Ø.
-n
-java:S2095 "LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µ×µ·üÿÿÿÿ8©Á¶…Ø.
-9
-java:S1643%"Use a StringBuilder instead.(í­€Ö8¿Å¹…Ø.
 Z	java:S106."9Replace this use of System.out or System.err by a logger.(ÒØ…¡ûÿÿÿÿ8©Á¶…Ø.
-V
-java:S1854"9Remove this useless assignment to local variable "filea".(•µƒğ8¿Å¹…Ø.
-U	java:S106-"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8©Á¶…Ø.
 r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äÿëüÿÿÿÿ8Æı¡ƒÆ.
-\
-java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8Æı¡ƒÆ.
-C
-java:S1481"&Remove this unused "a" local variable.(ÜÉ‘ı8¡£·…Ø.
 7
 java:S1220""Move this file to a named package.8Æı¡ƒÆ.
+X	java:S125"<This block of commented-out lines of code should be removed.(£è‘•8ó½İÄÜ.
+V
+java:S1854"9Remove this useless assignment to local variable "filea".(•µƒğ8¿Å¹…Ø.
+Z
+java:S1197"8Move the array designator from the variable to the type.(Äÿëüÿÿÿÿ8Æı¡ƒÆ.
+C
+java:S1481"&Remove this unused "a" local variable.(ÜÉ‘ı8¡£·…Ø.
+n
+java:S2095 "LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µ×µ·üÿÿÿÿ8©Á¶…Ø.
+Z	java:S1066"9Replace this use of System.out or System.err by a logger.(·ŠäÁúÿÿÿÿ8Æı¡ƒÆ.
+9
+java:S1643%"Use a StringBuilder instead.(í­€Ö8¿Å¹…Ø.
+j
+java:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(ûåîØúÿÿÿÿ8©Á¶…Ø.
+U	java:S106-"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8©Á¶…Ø.
 G
 java:S1481"*Remove this unused "filea" local variable.(•µƒğ8½¢Á…Ø.
+\
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8Æı¡ƒÆ.

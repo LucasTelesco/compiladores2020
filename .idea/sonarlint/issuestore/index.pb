@@ -76,3 +76,5 @@ l
 <src/AnalizadorLexico/SemanticAction/AS_Comentario_Start.java,7/b/7bfdcf6084abdc34ab6287bdf8c29a0ee5777c20
 T
 $src/AnalizadorSintactico/Parser.java,9/d/9dda008b5efc7f3dcc25536d6a7b9f2ebde1d109
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

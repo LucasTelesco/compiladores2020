@@ -1,10 +1,10 @@
 
 2
 java:S1643K"Use a StringBuilder instead.(Ëë½ó
-J
-java:S2864J"4Iterate over the "entrySet" instead of the "keySet".(Éõ»—
-—
-java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‹Ğ‡û
 l
 java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ÒÙ£
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğ¦İØøÿÿÿÿ
+—
+java:S1186D"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‹Ğ‡û
+J
+java:S2864J"4Iterate over the "entrySet" instead of the "keySet".(Éõ»—

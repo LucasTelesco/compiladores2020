@@ -1,166 +1,168 @@
 
-g
-java:S1124%"EReorder the modifiers to comply with the Java Language Specification.(õ¢ò¾ùÿÿÿÿ8¼Àı×.
-V	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8¼Àı×.
+V	java:S106"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8¼Àı×.
+b
+java:S1124$"EReorder the modifiers to comply with the Java Language Specification.(ìÑ¼È8¼Àı×.
+O
+java:S1128	"-Remove this unused import 'java.util.Vector'.(ÿŒ¸Áÿÿÿÿÿ8ÏÜ……Ø.
+r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Ó¤’şÿÿÿÿ8°×ı÷×.
+o
+java:S1104="RMake column a static final constant or non-public and provide accessors if needed.(‰¹´8°×ı÷×.
+™
+java:S1319"vThe type of the "estructuras" object should be an interface such as "List" rather than the implementation "ArrayList".(ÚÉÿ¯şÿÿÿÿ8»÷öö×.
 g
 java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Òê…Ãúÿÿÿÿ8¼Àı×.
 b
-java:S1124 "EReorder the modifiers to comply with the Java Language Specification.(úóç¡8¼Àı×.
-b
-java:S11247"EReorder the modifiers to comply with the Java Language Specification.(Æ„•ô8¼Àı×.
-b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜‰¦ñ8ıÊ…Ø.
-b
-java:S1124'"EReorder the modifiers to comply with the Java Language Specification.(´Ä¨Õ8¼Àı×.
-[	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(£‰Ğ­ÿÿÿÿÿ8¼Àı×.
-r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®Ó¤’şÿÿÿÿ8°×ı÷×.
-£
-java:S1862¢"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(ê¤î8°×ı÷×.
-s
-java:S1149D"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ì—Í˜8°×ı÷×.
-b
-java:S1854P"@Remove this useless assignment to local variable "entero_start".(üÍª÷ıÿÿÿÿ8¼Àı×.
-g
-java:S1124""EReorder the modifiers to comply with the Java Language Specification.(ø‰íÚÿÿÿÿÿ8¼Àı×.
-p
-java:S3776‹"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ãê8¼Àı×.
-b
 java:S1124-"EReorder the modifiers to comply with the Java Language Specification.( áµ”8¼Àı×.
-r	java:S117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÏıãûÿÿÿÿ8°×ı÷×.
-[	java:S106"9Replace this use of System.out or System.err by a logger.(ºÔœ°ûÿÿÿÿ8¼Àı×.
-[	java:S106‡"9Replace this use of System.out or System.err by a logger.(¤Ö¯¼úÿÿÿÿ8¼Àı×.
-r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ÷ç’úÿÿÿÿ8°×ı÷×.
-l	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óô©*8°×ı÷×.
-g
-java:S1124&"EReorder the modifiers to comply with the Java Language Specification.(£Ú‹ºûÿÿÿÿ8¼Àı×.
-m	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıûò±8°×ı÷×.
-O
-java:S1128	"-Remove this unused import 'java.util.Vector'.(ÿŒ¸Áÿÿÿÿÿ8ÏÜ……Ø.
-r	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÍª÷ıÿÿÿÿ8°×ı÷×.
-\
-java:S4973ç"9Use the "equals" method if value comparison was intended.(ÕòÊ‰ùÿÿÿÿ8°×ı÷×.
-Q
-java:S1481J"/Remove this unused "comp_error" local variable.(µ÷ç’úÿÿÿÿ8¼Àı×.
-g
-java:S1124("EReorder the modifiers to comply with the Java Language Specification.(ŞÎÇ¥üÿÿÿÿ8¼Àı×.
-[	java:S106ö"9Replace this use of System.out or System.err by a logger.(¯ö´€úÿÿÿÿ8¼Àı×.
 
 java:S1130Ö"qRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from constructor's body.(‹­°‘8¼Àı×.
-r	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğœñîùÿÿÿÿ8°×ı÷×.
-r	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆËùÿÿÿÿ8°×ı÷×.
-g
-java:S11244"EReorder the modifiers to comply with the Java Language Specification.(Æ‰É…şÿÿÿÿ8¼Àı×.
-p
-java:S1104:"SMake srcCode a static final constant or non-public and provide accessors if needed.(¥‰ÙÉ8°×ı÷×.
-b
-java:S1124$"EReorder the modifiers to comply with the Java Language Specification.(ìÑ¼È8¼Àı×.
-V	java:S106‰"9Replace this use of System.out or System.err by a logger.(³»ş¡8¼Àı×.
-t
-java:S1104?"RMake buffer a static final constant or non-public and provide accessors if needed.(²¶óûÿÿÿÿ8°×ı÷×.
-™
-java:S1319"vThe type of the "estructuras" object should be an interface such as "List" rather than the implementation "ArrayList".(ÚÉÿ¯şÿÿÿÿ8»÷öö×.
-M
-java:S2093è"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8¼Àı×.
-K
-java:S1481N"/Remove this unused "comentario" local variable.(ßè€t8¼Àı×.
-m	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ§¡8°×ı÷×.
-l
-java:S1104<"OMake row a static final constant or non-public and provide accessors if needed.(¸®–ñ8°×ı÷×.
-G
-java:S1068E"+Remove this unused "outFile" private field.(Ù‡«8¼Àı×.
-–
-java:S1130Ö"xRemove the declaration of thrown exception 'java.io.FileNotFoundException' which is a subclass of 'java.io.IOException'.(‹­°‘8¼Àı×.
-b
-java:S11242"EReorder the modifiers to comply with the Java Language Specification.(×Óëü8¼Àı×.
-a
-java:S1124)"EReorder the modifiers to comply with the Java Language Specification.(¯õ¬!8¼Àı×.
-t	java:S116"XRename this field "MAX_WORD_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÏ‚8»÷öö×.
-Z
-java:S1854N">Remove this useless assignment to local variable "comentario".(ßè€t8¼Àı×.
-b
-java:S1124*"EReorder the modifiers to comply with the Java Language Specification.(ÓÀï¤8¼Àı×.
-™
-java:S1192ı"{Define a constant instead of duplicating this literal "----------------------------------------------------------" 3 times.(×Ş‹ô8»÷öö×.
-b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ó€­Õ8¼Àı×.
-a
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‹ªV8¼Àı×.
-V	java:S106"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8¼Àı×.
-[	java:S106”"9Replace this use of System.out or System.err by a logger.(£‰Ğ­ÿÿÿÿÿ8¼Àı×.
-b
-java:S11243"EReorder the modifiers to comply with the Java Language Specification.(Ø¼‡ü8¼Àı×.
-t
-java:S1104C"RMake errors a static final constant or non-public and provide accessors if needed.(£²ôşúÿÿÿÿ8°×ı÷×.
+Q
+java:S1481J"/Remove this unused "comp_error" local variable.(µ÷ç’úÿÿÿÿ8¼Àı×.
 S
 java:S1481P"1Remove this unused "entero_start" local variable.(üÍª÷ıÿÿÿÿ8¼Àı×.
-r	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ş°×ıÿÿÿÿ8°×ı÷×.
-o
-java:S1104="RMake column a static final constant or non-public and provide accessors if needed.(‰¹´8°×ı÷×.
+™
+java:S1192ı"{Define a constant instead of duplicating this literal "----------------------------------------------------------" 3 times.(×Ş‹ô8»÷öö×.
+r	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üÍª÷ıÿÿÿÿ8°×ı÷×.
+l
+java:S1104"VMake lastSymbol a static final constant or non-public and provide accessors if needed.(ç°¦â
 T
 java:S2696ğ"6Make the enclosing method "static" or remove this set.(ûš«8¼Àı×.
-g
-java:S1124,"EReorder the modifiers to comply with the Java Language Specification.(…ĞÍıÿÿÿÿ8¼Àı×.
-m	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊŒÚª8°×ı÷×.
->
-java:S1170"!Make this final field static too.(öÏ‚8»÷öö×.
-V	java:S106ı"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8¼Àı×.
-N
-java:S1444",Make this "public static yylval" field final(³÷úòıÿÿÿÿ8²â¨şÏ.
-g
-java:S1124/"EReorder the modifiers to comply with the Java Language Specification.(ŠŒŠ”ùÿÿÿÿ8¼Àı×.
-d
-java:S1126ç"AReplace this if-then-else statement by a single return statement.(ÕòÊ‰ùÿÿÿÿ8¼Àı×.
 t
-java:S1104"RMake yylval a static final constant or non-public and provide accessors if needed.(³÷úòıÿÿÿÿ8²â¨şÏ.
-v
-java:S1104D"YMake reservedWords a static final constant or non-public and provide accessors if needed.(ì—Í˜8°×ı÷×.
-g
-java:S11246"EReorder the modifiers to comply with the Java Language Specification.(±öìäşÿÿÿÿ8¼Àı×.
-t
-java:S1104>"WMake symbolTable a static final constant or non-public and provide accessors if needed.(‚¬Ì8°×ı÷×.
+java:S1104C"RMake errors a static final constant or non-public and provide accessors if needed.(£²ôşúÿÿÿÿ8°×ı÷×.
 s
 java:S1104A"QMake index a static final constant or non-public and provide accessors if needed.(×´úÕúÿÿÿÿ8°×ı÷×.
+b
+java:S1124+"EReorder the modifiers to comply with the Java Language Specification.(ˆ•¯¼8¼Àı×.
+r	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆËùÿÿÿÿ8°×ı÷×.
+”
+java:S1319D"wThe type of the "reservedWords" object should be an interface such as "Map" rather than the implementation "Hashtable".(ì—Í˜8°×ı÷×.
+s
+java:S1149D"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(ì—Í˜8°×ı÷×.
+?
+java:S1643"Use a StringBuilder instead.(¢ù€şÿÿÿÿ8»‹åÃÜ.
+g
+java:S11244"EReorder the modifiers to comply with the Java Language Specification.(Æ‰É…şÿÿÿÿ8¼Àı×.
+m	java:S117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å½ìâ8°×ı÷×.
+V	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8¼Àı×.
+>
+java:S1170"!Make this final field static too.(öÏ‚8»÷öö×.
+m	java:S117X"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œò‡Ô8°×ı÷×.
+\
+java:S4973ç"9Use the "equals" method if value comparison was intended.(ÕòÊ‰ùÿÿÿÿ8°×ı÷×.
+m	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊŒÚª8°×ı÷×.
+r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µ÷ç’úÿÿÿÿ8°×ı÷×.
+t	java:S116"XRename this field "MAX_WORD_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÏ‚8»÷öö×.
+g
+java:S1124""EReorder the modifiers to comply with the Java Language Specification.(ø‰íÚÿÿÿÿÿ8¼Àı×.
+b
+java:S11243"EReorder the modifiers to comply with the Java Language Specification.(Ø¼‡ü8¼Àı×.
+r	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ş°×ıÿÿÿÿ8°×ı÷×.
+b
+java:S1124'"EReorder the modifiers to comply with the Java Language Specification.(´Ä¨Õ8¼Àı×.
+g
+java:S1124%"EReorder the modifiers to comply with the Java Language Specification.(õ¢ò¾ùÿÿÿÿ8¼Àı×.
+w
+java:S2293à"YReplace the type specification in this constructor call with the diamond operator ("<>").(±Æ™Ä8¼Àı×.
+g
+java:S11240"EReorder the modifiers to comply with the Java Language Specification.(¹•Œœÿÿÿÿÿ8¼Àı×.
+b
+java:S1124 "EReorder the modifiers to comply with the Java Language Specification.(úóç¡8¼Àı×.
+V	java:S106Š"9Replace this use of System.out or System.err by a logger.(€À¯“8¼Àı×.
+b
+java:S1124!"EReorder the modifiers to comply with the Java Language Specification.(±Ú‚ƒ8¼Àı×.
+a
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‹ªV8¼Àı×.
+`
+java:S1854J">Remove this useless assignment to local variable "comp_error".(µ÷ç’úÿÿÿÿ8¼Àı×.
+b
+java:S11241"EReorder the modifiers to comply with the Java Language Specification.(ŞìæÂ8¼Àı×.
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ó€­Õ8¼Àı×.
+p
+java:S1104:"SMake srcCode a static final constant or non-public and provide accessors if needed.(¥‰ÙÉ8°×ı÷×.
+d
+java:S1126ç"AReplace this if-then-else statement by a single return statement.(ÕòÊ‰ùÿÿÿÿ8¼Àı×.
+[	java:S106ö"9Replace this use of System.out or System.err by a logger.(¯ö´€úÿÿÿÿ8¼Àı×.
+v
+java:S1104D"YMake reservedWords a static final constant or non-public and provide accessors if needed.(ì—Í˜8°×ı÷×.
+m	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã‘¢8°×ı÷×.
+M
+java:S2093è"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8¼Àı×.
+u
+java:S1104B"SMake tokenId a static final constant or non-public and provide accessors if needed.(ä‡»’úÿÿÿÿ8°×ı÷×.
+t
+java:S1104"RMake yylval a static final constant or non-public and provide accessors if needed.(³÷úòıÿÿÿÿ8²â¨şÏ.
+M
+java:S1144å"*Remove this unused private "crear" method.(ıóùÿÿÿÿ8¼Àı×.
+t
+java:S1104?"RMake buffer a static final constant or non-public and provide accessors if needed.(²¶óûÿÿÿÿ8°×ı÷×.
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜‰¦ñ8ıÊ…Ø.
+g
+java:S11246"EReorder the modifiers to comply with the Java Language Specification.(±öìäşÿÿÿÿ8¼Àı×.
+b
+java:S1124*"EReorder the modifiers to comply with the Java Language Specification.(ÓÀï¤8¼Àı×.
+Z
+java:S1854N">Remove this useless assignment to local variable "comentario".(ßè€t8¼Àı×.
+r	java:S117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÏıãûÿÿÿÿ8°×ı÷×.
+m	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ÉªÚ8°×ı÷×.
+g
+java:S1124("EReorder the modifiers to comply with the Java Language Specification.(ŞÎÇ¥üÿÿÿÿ8¼Àı×.
+b
+java:S11247"EReorder the modifiers to comply with the Java Language Specification.(Æ„•ô8¼Àı×.
+K
+java:S1481N"/Remove this unused "comentario" local variable.(ßè€t8¼Àı×.
+m	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıûò±8°×ı÷×.
+g
+java:S1124,"EReorder the modifiers to comply with the Java Language Specification.(…ĞÍıÿÿÿÿ8¼Àı×.
 =
 java:S2129ÿ" Remove this "String" constructor(Ä±Ş8¼Àı×.
 =
 java:S2129" Remove this "String" constructor(Ä±Ş8¼Àı×.
+G
+java:S1068E"+Remove this unused "outFile" private field.(Ù‡«8¼Àı×.
+l
+java:S1104<"OMake row a static final constant or non-public and provide accessors if needed.(¸®–ñ8°×ı÷×.
+l	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óô©*8°×ı÷×.
+g
+java:S1124."EReorder the modifiers to comply with the Java Language Specification.(ÔİÂ­øÿÿÿÿ8¼Àı×.
+V	java:S106‰"9Replace this use of System.out or System.err by a logger.(³»ş¡8¼Àı×.
+r	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğœñîùÿÿÿÿ8°×ı÷×.
+9
+java:S1643’"Use a StringBuilder instead.(ÒÓºr8»÷öö×.
 b
-java:S11241"EReorder the modifiers to comply with the Java Language Specification.(ŞìæÂ8¼Àı×.
-m	java:S117X"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œò‡Ô8°×ı÷×.
-V	java:S106Š"9Replace this use of System.out or System.err by a logger.(€À¯“8¼Àı×.
-m	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö®ü8°×ı÷×.
-[	java:S106ş"9Replace this use of System.out or System.err by a logger.(»ô¶ÿşÿÿÿÿ8¼Àı×.
-u
-java:S1104B"SMake tokenId a static final constant or non-public and provide accessors if needed.(ä‡»’úÿÿÿÿ8°×ı÷×.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õ”®øıÿÿÿÿ
-w
-java:S2293à"YReplace the type specification in this constructor call with the diamond operator ("<>").(±Æ™Ä8¼Àı×.
+java:S1854P"@Remove this useless assignment to local variable "entero_start".(üÍª÷ıÿÿÿÿ8¼Àı×.
 r	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²³¶şÿÿÿÿ8°×ı÷×.
+g
+java:S1124/"EReorder the modifiers to comply with the Java Language Specification.(ŠŒŠ”ùÿÿÿÿ8¼Àı×.
+V	java:S106ı"9Replace this use of System.out or System.err by a logger.(×Ş‹ô8¼Àı×.
 b
-java:S1124!"EReorder the modifiers to comply with the Java Language Specification.(±Ú‚ƒ8¼Àı×.
-m	java:S117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å½ìâ8°×ı÷×.
-m	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã‘¢8°×ı÷×.
-`
-java:S1854J">Remove this useless assignment to local variable "comp_error".(µ÷ç’úÿÿÿÿ8¼Àı×.
-”
-java:S1319D"wThe type of the "reservedWords" object should be an interface such as "Map" rather than the implementation "Hashtable".(ì—Í˜8°×ı÷×.
-m	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ÉªÚ8°×ı÷×.
+java:S1124#"EReorder the modifiers to comply with the Java Language Specification.(”ìÿØ8¼Àı×.
+l	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò®£88°×ı÷×.
+b
+java:S11242"EReorder the modifiers to comply with the Java Language Specification.(×Óëü8¼Àı×.
+m	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ§¡8°×ı÷×.
+–
+java:S1130Ö"xRemove the declaration of thrown exception 'java.io.FileNotFoundException' which is a subclass of 'java.io.IOException'.(‹­°‘8¼Àı×.
+t
+java:S1104>"WMake symbolTable a static final constant or non-public and provide accessors if needed.(‚¬Ì8°×ı÷×.
+[	java:S106ş"9Replace this use of System.out or System.err by a logger.(»ô¶ÿşÿÿÿÿ8¼Àı×.
+[	java:S106”"9Replace this use of System.out or System.err by a logger.(£‰Ğ­ÿÿÿÿÿ8¼Àı×.
+a
+java:S1124)"EReorder the modifiers to comply with the Java Language Specification.(¯õ¬!8¼Àı×.
 n
 java:S1104@"QMake state a static final constant or non-public and provide accessors if needed.(“Î°¹8°×ı÷×.
 l
 java:S2095ê"IUse try-with-resources or close this "PrintWriter" in a "finally" clause.(ó¯ã¯üÿÿÿÿ8»÷öö×.
-b
-java:S1124#"EReorder the modifiers to comply with the Java Language Specification.(”ìÿØ8¼Àı×.
-b
-java:S1124+"EReorder the modifiers to comply with the Java Language Specification.(ˆ•¯¼8¼Àı×.
-M
-java:S1144å"*Remove this unused private "crear" method.(ıóùÿÿÿÿ8¼Àı×.
+£
+java:S1862¢"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(ê¤î8°×ı÷×.
+N
+java:S1444",Make this "public static yylval" field final(³÷úòıÿÿÿÿ8²â¨şÏ.
+p
+java:S3776‹"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ãê8¼Àı×.
 g
-java:S11240"EReorder the modifiers to comply with the Java Language Specification.(¹•Œœÿÿÿÿÿ8¼Àı×.
-l	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò®£88°×ı÷×.
-l
-java:S1104"VMake lastSymbol a static final constant or non-public and provide accessors if needed.(ç°¦â
-g
-java:S1124."EReorder the modifiers to comply with the Java Language Specification.(ÔİÂ­øÿÿÿÿ8¼Àı×.
-9
-java:S1643’"Use a StringBuilder instead.(ÒÓºr8»÷öö×.
+java:S1124&"EReorder the modifiers to comply with the Java Language Specification.(£Ú‹ºûÿÿÿÿ8¼Àı×.
+[	java:S106‡"9Replace this use of System.out or System.err by a logger.(¤Ö¯¼úÿÿÿÿ8¼Àı×.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õ”®øıÿÿÿÿ
+m	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö®ü8°×ı÷×.
+[	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(£‰Ğ­ÿÿÿÿÿ8¼Àı×.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(ºÔœ°ûÿÿÿÿ8¼Àı×.

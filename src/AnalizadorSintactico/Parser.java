@@ -25,11 +25,12 @@ import SymbolTable.*;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.Stack;
-//#line 21 "gramaticaGrupo10.y"
+import Tercetos.*;
+//#line 22 "gramaticaGrupo10.y"
 
 
   
-//#line 30 "Parser.java"
+//#line 31 "Parser.java"
 
 
 
@@ -443,7 +444,7 @@ final static String yyrule[] = {
 "condicion : MENIG expresion",
 };
 
-//#line 231 "gramaticaGrupo10.y"
+//#line 278 "gramaticaGrupo10.y"
 
   LexicalAnalyzer lex;
   SymbolTable st;
@@ -451,10 +452,11 @@ final static String yyrule[] = {
   public ArrayList<String> estructuras;
   public ArrayList<String> tokens = new ArrayList<>();
   public ArrayList<String> id = new ArrayList<>();
+  public ArrayList<Terceto> listaTercetos = new ArrayList<>();
+  int contadorVarAux=0;
+  int contadorTerceto=0;
 
   public Stack<Integer> p = new Stack<Integer>();
-  int contadorVarAux=0;
-
 
     int yylex(){
 
@@ -484,7 +486,7 @@ void yyerror(String s){
 void yyerror(String s,int row){
       errors.setError(row,s);
   }
-//#line 416 "Parser.java"
+//#line 418 "Parser.java"
 //###############################################################
 // method: yylexdebug : check lexer state
 //###############################################################
@@ -639,78 +641,78 @@ boolean doaction;
       {
 //########## USER-SUPPLIED ACTIONS ##########
 case 1:
-//#line 25 "gramaticaGrupo10.y"
+//#line 26 "gramaticaGrupo10.y"
 {}
 break;
 case 2:
-//#line 26 "gramaticaGrupo10.y"
+//#line 27 "gramaticaGrupo10.y"
 {yyerror("No hay sentencia");}
 break;
 case 3:
-//#line 26 "gramaticaGrupo10.y"
+//#line 27 "gramaticaGrupo10.y"
 {}
 break;
 case 4:
-//#line 29 "gramaticaGrupo10.y"
-{}
-break;
-case 5:
 //#line 30 "gramaticaGrupo10.y"
 {}
 break;
-case 6:
-//#line 33 "gramaticaGrupo10.y"
+case 5:
+//#line 31 "gramaticaGrupo10.y"
 {}
 break;
-case 7:
+case 6:
 //#line 34 "gramaticaGrupo10.y"
 {}
 break;
+case 7:
+//#line 35 "gramaticaGrupo10.y"
+{}
+break;
 case 8:
-//#line 37 "gramaticaGrupo10.y"
+//#line 38 "gramaticaGrupo10.y"
 {estructuras.add("declaracion "+" fila "+val_peek(2).getFila());}
 break;
 case 9:
-//#line 38 "gramaticaGrupo10.y"
+//#line 39 "gramaticaGrupo10.y"
 {}
 break;
 case 10:
-//#line 39 "gramaticaGrupo10.y"
+//#line 40 "gramaticaGrupo10.y"
 {yyerror("Declaracion mal definida ");}
 break;
 case 11:
-//#line 43 "gramaticaGrupo10.y"
+//#line 44 "gramaticaGrupo10.y"
 {estructuras.add("Procedimiento "+" fila "+val_peek(14).getFila());}
 break;
 case 12:
-//#line 44 "gramaticaGrupo10.y"
+//#line 45 "gramaticaGrupo10.y"
 {yyerror("Control mal definida ");}
 break;
 case 13:
-//#line 47 "gramaticaGrupo10.y"
-{}
-break;
-case 14:
 //#line 48 "gramaticaGrupo10.y"
 {}
 break;
-case 15:
+case 14:
 //#line 49 "gramaticaGrupo10.y"
+{}
+break;
+case 15:
+//#line 50 "gramaticaGrupo10.y"
 {yyerror("Se esperaba ',' ",val_peek(1).getFila());}
 break;
 case 16:
-//#line 52 "gramaticaGrupo10.y"
+//#line 53 "gramaticaGrupo10.y"
 {}
 break;
 case 17:
-//#line 55 "gramaticaGrupo10.y"
+//#line 56 "gramaticaGrupo10.y"
 {
                 Vector<ParserVal> vect = new Vector<ParserVal>();/*$1 es el parser val con el symbolo de ese ID*/
                 vect.add(val_peek(0));
                 yyval.obj = vect; }
 break;
 case 18:
-//#line 61 "gramaticaGrupo10.y"
+//#line 62 "gramaticaGrupo10.y"
 {
                     Vector<ParserVal> vect = (Vector<ParserVal>)(val_peek(0).obj); /*$3 me trae el vector original primero y desp aumenta*/
                     vect.add(val_peek(2));/*ver si anda, hay que castear a Symbol? .obj*/
@@ -718,86 +720,106 @@ case 18:
 	}
 break;
 case 19:
-//#line 67 "gramaticaGrupo10.y"
+//#line 68 "gramaticaGrupo10.y"
 {yyerror("Se esperaba ';' ",val_peek(1).getFila());}
 break;
 case 20:
-//#line 70 "gramaticaGrupo10.y"
+//#line 71 "gramaticaGrupo10.y"
 {yyval.sval="longint";}
 break;
 case 21:
-//#line 71 "gramaticaGrupo10.y"
+//#line 72 "gramaticaGrupo10.y"
 {yyval.sval="float";}
 break;
 case 22:
-//#line 72 "gramaticaGrupo10.y"
+//#line 73 "gramaticaGrupo10.y"
 {yyerror("Tipo indefinido",val_peek(1).getFila());}
 break;
 case 23:
-//#line 75 "gramaticaGrupo10.y"
-{}
-break;
-case 24:
 //#line 76 "gramaticaGrupo10.y"
 {}
 break;
+case 24:
+//#line 77 "gramaticaGrupo10.y"
+{}
+break;
 case 25:
-//#line 79 "gramaticaGrupo10.y"
+//#line 80 "gramaticaGrupo10.y"
 {}
 break;
 case 26:
-//#line 80 "gramaticaGrupo10.y"
+//#line 81 "gramaticaGrupo10.y"
 {
           }
 break;
 case 27:
-//#line 82 "gramaticaGrupo10.y"
+//#line 83 "gramaticaGrupo10.y"
 {}
 break;
 case 28:
-//#line 86 "gramaticaGrupo10.y"
+//#line 87 "gramaticaGrupo10.y"
 {            
+  							Terceto t = new T_Suma_Resta(contadorTerceto,"+",val_peek(2).obj,val_peek(0).obj,st);
+                /*st es la tabla de simbolos, paso lexema porque lo uso para buscar en la tabla de simbolos*/
+                t.setVariableAux(contadorVarAux);
+                contadorVarAux++;
+                contadorTerceto ++;
+                listaTercetos.add(t);
                 yyval=val_peek(2);
-
+                yyval.obj = t;
 }
 break;
 case 29:
-//#line 90 "gramaticaGrupo10.y"
+//#line 97 "gramaticaGrupo10.y"
 {			    
-            yyval=val_peek(2);
-
+       						    Terceto t = new T_Suma_Resta(contadorTerceto,"-",val_peek(2).obj,val_peek(0).obj,st);
+                      /*st es la tabla de simbolos, paso lexema porque lo uso para buscar en la tabla de simbolos*/
+                      t.setVariableAux(contadorVarAux);
+                      contadorVarAux++;
+                      contadorTerceto ++;
+                      listaTercetos.add(t);
+                      yyval=val_peek(2);
+                      yyval.obj = t;
 }
 break;
 case 30:
-//#line 94 "gramaticaGrupo10.y"
+//#line 107 "gramaticaGrupo10.y"
 {yyval=val_peek(0);
-         yyval.obj=val_peek(0).obj; /*VER*/
+                  yyval.obj=val_peek(0).obj; /*VER*/
 }
 break;
 case 31:
-//#line 100 "gramaticaGrupo10.y"
+//#line 113 "gramaticaGrupo10.y"
 {
-yyval=val_peek(2);
-
-
+          Terceto t = new T_Mult_Div(contadorTerceto,"/",val_peek(2).obj,val_peek(0).obj,st);
+          t.setVariableAux(contadorVarAux);
+          contadorVarAux++;
+          contadorTerceto ++;
+          listaTercetos.add(t);
+          yyval=val_peek(2);
+          yyval.obj = t;
 }
 break;
 case 32:
-//#line 105 "gramaticaGrupo10.y"
+//#line 122 "gramaticaGrupo10.y"
 {
-              
-yyval=val_peek(2);
-
+          Terceto t = new T_Mult_Div(contadorTerceto,"*",val_peek(2).obj,val_peek(0).obj,st);
+          t.setVariableAux(contadorVarAux);
+          contadorVarAux++;
+          contadorTerceto ++;
+          listaTercetos.add(t);
+          yyval=val_peek(2);
+          yyval.obj = t;
     }
 break;
 case 33:
-//#line 110 "gramaticaGrupo10.y"
+//#line 131 "gramaticaGrupo10.y"
 {yyval=val_peek(0);
-			  yyval.obj=val_peek(0).obj;
-			 }
+			        yyval.obj=val_peek(0).obj;
+		}
 break;
 case 34:
-//#line 115 "gramaticaGrupo10.y"
+//#line 136 "gramaticaGrupo10.y"
 {yyval=val_peek(0);
                       if(!st.addLongintPositiva(((Symbol)(val_peek(0).obj)))){
                         yyerror("constante fuera de rango",val_peek(0).getFila());
@@ -805,7 +827,7 @@ case 34:
                     }
 break;
 case 35:
-//#line 120 "gramaticaGrupo10.y"
+//#line 141 "gramaticaGrupo10.y"
 {yyval=val_peek(0);
                if(!st.addFloatPositiva(((Symbol)(val_peek(0).obj)))){
                   yyerror("constante fuera de rango",val_peek(0).getFila());
@@ -813,7 +835,7 @@ case 35:
              }
 break;
 case 36:
-//#line 125 "gramaticaGrupo10.y"
+//#line 146 "gramaticaGrupo10.y"
 {if(!((Symbol)(val_peek(0).obj)).isUsada()){
 			/*error*/
 			yyerror("variable no declarada",val_peek(0).getFila());
@@ -822,7 +844,7 @@ case 36:
 	}
 break;
 case 37:
-//#line 131 "gramaticaGrupo10.y"
+//#line 152 "gramaticaGrupo10.y"
 {
 					           yyval=val_peek(0);
                       if(!st.addLongintNegativa(((Symbol)(val_peek(0).obj)))){
@@ -831,170 +853,196 @@ case 37:
  		              }
 break;
 case 38:
-//#line 137 "gramaticaGrupo10.y"
-{	
-		             yyval=val_peek(0);
-                  if(!st.addFloatNegativa(((Symbol)(val_peek(0).obj)))){
-                    yyerror("constante fuera de rango",val_peek(1).getFila());
-                  }    
-                    }
+//#line 158 "gramaticaGrupo10.y"
+{
+		              yyval=val_peek(0);
+                      if(!st.addFloatNegativa(((Symbol)(val_peek(0).obj)))){
+                        yyerror("constante fuera de rango",val_peek(1).getFila());
+                      }
+                   }
 break;
 case 39:
-//#line 145 "gramaticaGrupo10.y"
+//#line 166 "gramaticaGrupo10.y"
 {
-
+            Terceto t = new T_Asignacion(contadorTerceto,":=",val_peek(2).obj,val_peek(0).obj,st);
+            t.setVariableAux(contadorVarAux);/*casi seguro que si hay que crearla aca*/
+            contadorVarAux++;
+            contadorTerceto ++;
+            listaTercetos.add(t);
             yyval=val_peek(2);
-
+            yyval.obj = t;
             estructuras.add("Asignacion "+" fila "+val_peek(2).getFila());
     }
 break;
 case 40:
-//#line 151 "gramaticaGrupo10.y"
-{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
+//#line 176 "gramaticaGrupo10.y"
+{yyerror("Error de asignacion ",val_peek(1).getFila());}
 break;
 case 41:
-//#line 152 "gramaticaGrupo10.y"
-{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
+//#line 177 "gramaticaGrupo10.y"
+{yyerror("Error de asignacion ",val_peek(1).getFila());}
 break;
 case 42:
-//#line 153 "gramaticaGrupo10.y"
+//#line 178 "gramaticaGrupo10.y"
 {yyerror("no se encontro '=' ",val_peek(1).getFila());}
 break;
 case 43:
-//#line 157 "gramaticaGrupo10.y"
-{ estructuras.add("Expresion out "+" fila "+val_peek(3).getFila());
-	      	yyval=val_peek(3);}
+//#line 182 "gramaticaGrupo10.y"
+{ 
+        estructuras.add("Expresion out "+" fila "+val_peek(3).getFila());
+        Terceto t = new T_Out(contadorTerceto,"OUT",val_peek(1).obj,"",st);
+        contadorTerceto ++;
+        listaTercetos.add(t);
+        yyval=val_peek(3);
+        yyval.obj = t;
+        }
 break;
 case 44:
-//#line 159 "gramaticaGrupo10.y"
+//#line 190 "gramaticaGrupo10.y"
 {yyerror("Error en la construccion del out",val_peek(1).getFila());}
 break;
 case 45:
-//#line 163 "gramaticaGrupo10.y"
+//#line 194 "gramaticaGrupo10.y"
 {}
 break;
 case 46:
-//#line 164 "gramaticaGrupo10.y"
+//#line 195 "gramaticaGrupo10.y"
 {}
 break;
 case 47:
-//#line 168 "gramaticaGrupo10.y"
+//#line 199 "gramaticaGrupo10.y"
 {estructuras.add("Sentencia IF Else" +" fila "+val_peek(5).getFila());}
 break;
 case 48:
-//#line 169 "gramaticaGrupo10.y"
+//#line 200 "gramaticaGrupo10.y"
 {estructuras.add("Sentencia IF " +" fila "+val_peek(3).getFila());}
 break;
 case 49:
-//#line 170 "gramaticaGrupo10.y"
+//#line 201 "gramaticaGrupo10.y"
 {yyerror(" falta la palabra reservada IF",val_peek(3).getFila());}
 break;
 case 50:
-//#line 171 "gramaticaGrupo10.y"
+//#line 202 "gramaticaGrupo10.y"
 {yyerror(" Error en la construccion de la sentencia IF ",val_peek(2).getFila());}
 break;
 case 51:
-//#line 172 "gramaticaGrupo10.y"
+//#line 203 "gramaticaGrupo10.y"
 {yyerror(" Falta la palabra reservada ELSE ",val_peek(3).getFila());}
 break;
 case 52:
-//#line 175 "gramaticaGrupo10.y"
+//#line 206 "gramaticaGrupo10.y"
 {estructuras.add("Sentencia Loop " +" fila "+val_peek(3).getFila());}
 break;
 case 53:
-//#line 176 "gramaticaGrupo10.y"
+//#line 207 "gramaticaGrupo10.y"
 {yyerror("Linea  Falta palabra reservada UNTIL",val_peek(2).getFila());}
 break;
 case 54:
-//#line 179 "gramaticaGrupo10.y"
+//#line 210 "gramaticaGrupo10.y"
 {}
 break;
 case 55:
-//#line 180 "gramaticaGrupo10.y"
+//#line 211 "gramaticaGrupo10.y"
 {}
 break;
 case 56:
-//#line 181 "gramaticaGrupo10.y"
+//#line 212 "gramaticaGrupo10.y"
 {yyerror("LInea  Omision de la palabra reservada '{' ",val_peek(2).getFila());}
 break;
 case 57:
-//#line 184 "gramaticaGrupo10.y"
+//#line 215 "gramaticaGrupo10.y"
 {System.out.println("Encontro LOOP");}
 break;
 case 58:
-//#line 188 "gramaticaGrupo10.y"
+//#line 219 "gramaticaGrupo10.y"
 {
     yyval=val_peek(0);
     }
 break;
 case 59:
-//#line 193 "gramaticaGrupo10.y"
+//#line 224 "gramaticaGrupo10.y"
 {
     yyval=val_peek(2);
    
 }
 break;
 case 60:
-//#line 198 "gramaticaGrupo10.y"
+//#line 229 "gramaticaGrupo10.y"
 {
+    Terceto t = new T_Comparador(contadorTerceto,">",val_peek(2).obj,val_peek(0).obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     yyval=val_peek(2);
-
+    yyval.obj = t;
    	}
 break;
 case 61:
-//#line 202 "gramaticaGrupo10.y"
+//#line 236 "gramaticaGrupo10.y"
 {
+    Terceto t = new T_Comparador(contadorTerceto,"<",val_peek(2).obj,val_peek(0).obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     yyval=val_peek(2);
-
+    yyval.obj = t;
    }
 break;
 case 62:
-//#line 206 "gramaticaGrupo10.y"
+//#line 243 "gramaticaGrupo10.y"
 {
-
+    Terceto t = new T_Comparador(contadorTerceto,"=",val_peek(2).obj,val_peek(0).obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     yyval=val_peek(2);
-
+    yyval.obj = t;
     }
 break;
 case 63:
-//#line 211 "gramaticaGrupo10.y"
+//#line 250 "gramaticaGrupo10.y"
 {
-
+    Terceto t = new T_Comparador(contadorTerceto,"!=",val_peek(2).obj,val_peek(0).obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     yyval=val_peek(2);
-	
+    yyval.obj = t;
    }
 break;
 case 64:
-//#line 216 "gramaticaGrupo10.y"
+//#line 257 "gramaticaGrupo10.y"
 {
+    Terceto t = new T_Comparador(contadorTerceto,">=",val_peek(2).obj,val_peek(0).obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     yyval=val_peek(2);
-    
+    yyval.obj = t;
     }
 break;
 case 65:
-//#line 220 "gramaticaGrupo10.y"
+//#line 264 "gramaticaGrupo10.y"
 {
+    Terceto t = new T_Comparador(contadorTerceto,"<=",val_peek(2).obj,val_peek(0).obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     yyval=val_peek(2);
-
+    yyval.obj = t;
     }
 break;
 case 66:
-//#line 224 "gramaticaGrupo10.y"
+//#line 271 "gramaticaGrupo10.y"
 {yyerror("Linea  se esperaba una expresion y se encontro '>'",val_peek(1).getFila());}
 break;
 case 67:
-//#line 225 "gramaticaGrupo10.y"
+//#line 272 "gramaticaGrupo10.y"
 {yyerror("Linea  se esperaba una expresion y se encontro '<'",val_peek(1).getFila());}
 break;
 case 68:
-//#line 226 "gramaticaGrupo10.y"
+//#line 273 "gramaticaGrupo10.y"
 {yyerror("Linea  se esperaba una expresion y se encontro '>='",val_peek(1).getFila());}
 break;
 case 69:
-//#line 227 "gramaticaGrupo10.y"
+//#line 274 "gramaticaGrupo10.y"
 {yyerror("Linea  se esperaba una expresion y se encontro '<='",val_peek(1).getFila());}
 break;
-//#line 921 "Parser.java"
+//#line 969 "Parser.java"
 //########## END OF USER-SUPPLIED ACTIONS ##########
     }//switch
     //#### Now let's reduce... ####

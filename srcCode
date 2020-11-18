@@ -1,15 +1,22 @@
-%% prueba analizador sintactico
-%% declaracion de variable
-LONGINT varlongint;
-%% Procedimiento
+%%caso de pruebas Flotantes
+FLOAT float;
+float = 1.;
 
-PROC hola ( LONGINT num, LONGINT num2 ) NA = 1_l , NS = 2_l {
-PROC holaa ( LONGINT num3, LONGINT num4 ) NA = 1_l , NS = 2_l {
-varlongint = 5_l;
-};
-};
-%% expresion OUT
-OUT("holaaa-
- chauu");
-%% asignacion de una variable
-varlongint = 214748364_l;
+float = 12.2;
+
+float = 3.f-2;
+float = 3.f+5;
+
+float = -2.f-5;
+
+float = 0.0;
+
+
+
+%%fuera de rango
+float = -3.4f+39;
+float = 3.4f+39;
+
+
+%%caso de pruebas Flotantes - errores lexicos
+float = 1.f;

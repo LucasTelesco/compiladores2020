@@ -76,7 +76,7 @@ public class SymbolTable {
     }
 
     public boolean addFloatPositiva(Symbol aux) {
-        float floatToAdd  = Float.valueOf(aux.getLexema().substring(0,aux.getLexema().length()))*(-1);
+        float floatToAdd  = Float.valueOf(aux.getLexema().substring(0,aux.getLexema().length()));
 
         if (floatToAdd < LexicalAnalyzer.MAX_FLOAT_SIZE) {
             setSymbol(aux.getLexema(), aux.getTipo());

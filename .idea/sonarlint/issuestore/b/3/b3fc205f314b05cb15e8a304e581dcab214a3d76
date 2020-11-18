@@ -1,16 +1,16 @@
 
-g
-java:S1104	"QMake error a static final constant or non-public and provide accessors if needed.(¥©¼Š
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±¥Êýÿÿÿÿ
 g
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ò¥„Ëþÿÿÿÿ8–„‡…Ø.
-`
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ùåƒ‹ÿÿÿÿÿ
-e
-java:S1104"OMake row a static final constant or non-public and provide accessors if needed.(²¤÷”
-b
-java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜»„Œ8–„‡…Ø.
->
-java:S1643'"Use a StringBuilder instead.(ØÜ‹þúÿÿÿÿ8–„‡…Ø.
+java:S1104	"QMake error a static final constant or non-public and provide accessors if needed.(¥©¼Š
 5
 java:S2129$" Remove this "String" constructor(Ä±Þ
+e
+java:S1104"OMake row a static final constant or non-public and provide accessors if needed.(²¤÷”
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ò¥„Ëþÿÿÿÿ8–„‡…Ø.
+>
+java:S1643'"Use a StringBuilder instead.(ØÜ‹þúÿÿÿÿ8–„‡…Ø.
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ùåƒ‹ÿÿÿÿÿ
+b
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(˜»„Œ8–„‡…Ø.

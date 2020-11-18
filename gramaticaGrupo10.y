@@ -9,6 +9,7 @@ import SymbolTable.*;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.Stack;
+import Tercetos.*;
 %}
 
 /* Lista de tokens */
@@ -84,32 +85,52 @@ ejecutable: asignacion ';'{}
 ;
 
 expresion: termino '+' expresion {            
+  							Terceto t = new T_Suma_Resta(contadorTerceto,"+",$1.obj,$3.obj,st);
+                //st es la tabla de simbolos, paso lexema porque lo uso para buscar en la tabla de simbolos
+                t.setVariableAux(contadorVarAux);
+                contadorVarAux++;
+                contadorTerceto ++;
+                listaTercetos.add(t);
                 $$=$1;
-
+                $$.obj = t;
 }
 	     | termino '-' expresion {			    
-            $$=$1;
-
+       						    Terceto t = new T_Suma_Resta(contadorTerceto,"-",$1.obj,$3.obj,st);
+                      //st es la tabla de simbolos, paso lexema porque lo uso para buscar en la tabla de simbolos
+                      t.setVariableAux(contadorVarAux);
+                      contadorVarAux++;
+                      contadorTerceto ++;
+                      listaTercetos.add(t);
+                      $$=$1;
+                      $$.obj = t;
 }
 	     | termino {$$=$1;
-         $$.obj=$1.obj; //VER
+                  $$.obj=$1.obj; //VER
 }
 ;
 
 
 termino: factor '/' termino {
-$$=$1;
-
-
+          Terceto t = new T_Mult_Div(contadorTerceto,"/",$1.obj,$3.obj,st);
+          t.setVariableAux(contadorVarAux);
+          contadorVarAux++;
+          contadorTerceto ++;
+          listaTercetos.add(t);
+          $$=$1;
+          $$.obj = t;
 }
 	| factor '*' termino{
-              
-$$=$1;
-
+          Terceto t = new T_Mult_Div(contadorTerceto,"*",$1.obj,$3.obj,st);
+          t.setVariableAux(contadorVarAux);
+          contadorVarAux++;
+          contadorTerceto ++;
+          listaTercetos.add(t);
+          $$=$1;
+          $$.obj = t;
     }
     | factor {$$=$1;
-			  $$.obj=$1.obj;
-			 }
+			        $$.obj=$1.obj;
+		}
 	;
 // LONGINT y FLOAT 
 factor: CTELONGINT  {$$=$1;
@@ -134,28 +155,38 @@ factor: CTELONGINT  {$$=$1;
                         yyerror("constante fuera de rango",$1.getFila());
                       }  
  		              }
-	|'-' CTEFLOAT{	
-		             $$=$2;
-                  if(!st.addFloatNegativa(((Symbol)($2.obj)))){
-                    yyerror("constante fuera de rango",$1.getFila());
-                  }    
-                    }
+	|'-' CTEFLOAT {
+		              $$=$2;
+                      if(!st.addFloatNegativa(((Symbol)($2.obj)))){
+                        yyerror("constante fuera de rango",$1.getFila());
+                      }
+                   }
 	;
 
 asignacion: ID '=' expresion{
-
+            Terceto t = new T_Asignacion(contadorTerceto,":=",$1.obj,$3.obj,st);
+            t.setVariableAux(contadorVarAux);//casi seguro que si hay que crearla aca
+            contadorVarAux++;
+            contadorTerceto ++;
+            listaTercetos.add(t);
             $$=$1;
-
+            $$.obj = t;
             estructuras.add("Asignacion "+" fila "+$1.getFila());
     }
-	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila());}
-	| ID '='  {yyerror("Falta elemento de asignacion ",$1.getFila());}
+	| '=' expresion  {yyerror("Error de asignacion ",$1.getFila());}
+	| ID '='  {yyerror("Error de asignacion ",$1.getFila());}
 	| ID error  {yyerror("no se encontro '=' ",$1.getFila());}
 	;
 
 
-exp_out: OUT '(' CADENA_MULTINEA ')' { estructuras.add("Expresion out "+" fila "+$1.getFila());
-	      	$$=$1;}
+exp_out: OUT '(' CADENA_MULTINEA ')' { 
+        estructuras.add("Expresion out "+" fila "+$1.getFila());
+        Terceto t = new T_Out(contadorTerceto,"OUT",$3.obj,"",st);
+        contadorTerceto ++;
+        listaTercetos.add(t);
+        $$=$1;
+        $$.obj = t;
+        }
 		    | OUT error {yyerror("Error en la construccion del out",$1.getFila());}
         ;
 
@@ -196,30 +227,46 @@ condicion_salto: '(' condicion ')' {
 };
 
 condicion: expresion '>' expresion {
+    Terceto t = new T_Comparador(contadorTerceto,">",$1.obj,$3.obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     $$=$1;
-
+    $$.obj = t;
    	}
 	| expresion '<' expresion {
+    Terceto t = new T_Comparador(contadorTerceto,"<",$1.obj,$3.obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     $$=$1;
-
+    $$.obj = t;
    }
 	| expresion '=' expresion {
-
+    Terceto t = new T_Comparador(contadorTerceto,"=",$1.obj,$3.obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     $$=$1;
-
+    $$.obj = t;
     }
 	| expresion DIST expresion {
-
+    Terceto t = new T_Comparador(contadorTerceto,"!=",$1.obj,$3.obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     $$=$1;
-	
+    $$.obj = t;
    }
 	| expresion MAYIG expresion {
+    Terceto t = new T_Comparador(contadorTerceto,">=",$1.obj,$3.obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     $$=$1;
-    
+    $$.obj = t;
     }
 	| expresion MENIG expresion {
+    Terceto t = new T_Comparador(contadorTerceto,"<=",$1.obj,$3.obj,st);
+    contadorTerceto ++;
+    listaTercetos.add(t);
     $$=$1;
-
+    $$.obj = t;
     }
 	| '>' expresion {yyerror("Linea  se esperaba una expresion y se encontro '>'",$1.getFila());}
 	| '<' expresion {yyerror("Linea  se esperaba una expresion y se encontro '<'",$1.getFila());}
@@ -235,10 +282,11 @@ condicion: expresion '>' expresion {
   public ArrayList<String> estructuras;
   public ArrayList<String> tokens = new ArrayList<>();
   public ArrayList<String> id = new ArrayList<>();
+  public ArrayList<Terceto> listaTercetos = new ArrayList<>();
+  int contadorVarAux=0;
+  int contadorTerceto=0;
 
   public Stack<Integer> p = new Stack<Integer>();
-  int contadorVarAux=0;
-
 
     int yylex(){
 
