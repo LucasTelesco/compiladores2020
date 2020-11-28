@@ -1,6 +1,7 @@
 package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
+import SymbolTable.Symbol;
 
 public class AS_Cadena_End extends SemanticAction{
 
@@ -16,6 +17,10 @@ public class AS_Cadena_End extends SemanticAction{
 
         lexical.symbolTable.getSymbol(lexical.buffer).setTipoVar("cadena");
         lexical.symbolTable.getSymbol(lexical.buffer).setLexema(lexical.buffer);
+
+        Symbol symbol2 = new Symbol(lexical.buffer, LexicalAnalyzer.CADENA_MULTINEA);
+
+        lexical.yylval.obj= symbol2;
 
         lexical.buffer = "";
         lexical.index++;

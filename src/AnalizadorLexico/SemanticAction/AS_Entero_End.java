@@ -20,7 +20,9 @@ public class AS_Entero_End extends SemanticAction{
             num = lexical.MAX_INT_SIZE;
         }
 
-        lexical.yylval.obj= new Symbol(String.valueOf(num)+"_l", LexicalAnalyzer.CTELONGINT);
+        Symbol symbol2 = new Symbol(String.valueOf(num)+"_l", LexicalAnalyzer.CTELONGINT);
+        lexical.yylval.obj= symbol2;
+        lexical.symbolTable.addLongintPositiva(symbol2);
 
         lexical.buffer = "";
         lexical.index++;

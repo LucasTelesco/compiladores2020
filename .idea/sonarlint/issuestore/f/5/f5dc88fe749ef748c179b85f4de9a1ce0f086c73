@@ -1,7 +1,7 @@
 
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘Û¬‚
 W
 java:S2209"5Change this instance-reference to a static reference.(™·â«øÿÿÿÿ8ûìúı×.
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘Û¬‚
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ïİ’˜
 R
 java:S2209"5Change this instance-reference to a static reference.(¤‡Ç8øŒ»ÿ×.
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ïİ’˜

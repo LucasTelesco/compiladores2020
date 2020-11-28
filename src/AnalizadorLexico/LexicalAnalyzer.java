@@ -666,7 +666,7 @@ public class LexicalAnalyzer {
             return "FLOTANTE";
         }
         else if (valor == LexicalAnalyzer.CADENA_MULTINEA){
-            return "CADENA DE CARACTER";
+            return "CADENA DE CARACTER  " + ((Symbol)this.yylval.obj).getLexema();
         }
         else if (valor == LexicalAnalyzer.ESIGUAL){
             return "ESIGUAL";
@@ -715,10 +715,10 @@ public class LexicalAnalyzer {
             return "PALABRA RESERVADA FUNC";
         }
         else if (valor == LexicalAnalyzer.CTELONGINT) {
-            return "CONSTANTE ENTERO LARGO";
+            return "CONSTANTE ENTERO LARGO  " + ((Symbol)this.yylval.obj).getLexema();
         }
         else if (valor == LexicalAnalyzer.CTEFLOAT) {
-            return "CONSTANTE FLOTANTE";
+            return "CONSTANTE FLOTANTE  " + ((Symbol)this.yylval.obj).getLexema();
         }
         else if (valor == LexicalAnalyzer.PROC) {
             return "PALABRA RESERVADA PROC";

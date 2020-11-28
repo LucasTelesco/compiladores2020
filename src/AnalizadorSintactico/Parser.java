@@ -854,11 +854,11 @@ case 40:
 break;
 case 41:
 //#line 152 "gramaticaGrupo10.y"
-{yyerror("Falta elemento de asignacion ",val_peek(1).getFila());}
+{yyerror("error en la asignacion ",val_peek(1).getFila());}
 break;
 case 42:
 //#line 153 "gramaticaGrupo10.y"
-{yyerror("no se encontro '=' ",val_peek(1).getFila());}
+{yyerror("error en la asignacion ",val_peek(1).getFila());}
 break;
 case 43:
 //#line 157 "gramaticaGrupo10.y"

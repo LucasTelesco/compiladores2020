@@ -41,7 +41,7 @@ declaracion: tipo lista_id ';' {estructuras.add("declaracion "+" fila "+$1.getFi
 
 procedimiento:  PROC ID '(' lista_parametro ')' NA '=' CTELONGINT ',' NS '=' CTELONGINT '{' sentencia '}'
                   {estructuras.add("Procedimiento "+" fila "+$1.getFila());}
-                | error {yyerror("Control mal definida ");}
+                | error {yyerror("procedimiento mal definido ");}
                 ;
 
 lista_parametro:  parametro {}
@@ -149,8 +149,8 @@ asignacion: ID '=' expresion{
             estructuras.add("Asignacion "+" fila "+$1.getFila());
     }
 	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila());}
-	| ID '='  {yyerror("Falta elemento de asignacion ",$1.getFila());}
-	| ID error  {yyerror("no se encontro '=' ",$1.getFila());}
+	| ID '='  {yyerror("error en la asignacion ",$1.getFila());}
+	| ID error  {yyerror("error en la asignacion ",$1.getFila());}
 	;
 
 

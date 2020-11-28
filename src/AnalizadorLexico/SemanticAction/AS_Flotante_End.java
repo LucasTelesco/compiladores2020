@@ -13,9 +13,9 @@ public class AS_Flotante_End extends SemanticAction{
     @Override
     public void Action(Character symbol) {
         
-        if (lexical.buffer.contains("f")) {
-            lexical.buffer = lexical.buffer.replace('f', 'e');
-        }
+            if (lexical.buffer.contains("f")) {
+                lexical.buffer = lexical.buffer.replace('f', 'e');
+            }
             if (lexical.buffer.charAt(0) == '.' ){
                 lexical.buffer = "0" + lexical.buffer;
             }
@@ -23,6 +23,9 @@ public class AS_Flotante_End extends SemanticAction{
             float num = Float.valueOf(lexical.buffer);
             lexical.buffer = "";
             lexical.tokenId = LexicalAnalyzer.CTEFLOAT;
-            lexical.yylval.obj= new Symbol(String.valueOf(num), LexicalAnalyzer.CTEFLOAT);
+
+            Symbol symbol2 = new Symbol(String.valueOf(num), LexicalAnalyzer.CTEFLOAT);
+            lexical.yylval.obj= symbol2;
+            lexical.symbolTable.addFloatPositiva(symbol2);
     }
 }

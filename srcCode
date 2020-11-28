@@ -1,2 +1,10 @@
-LONGINT varlongint;
-% varlongint := 214748364_l;
+%%primer y ultimo valor dentro del rango
+%%LONGINT varlongint;
+%%varlongint=-2147483648_l;
+%%varlongint=2147483647_l;
+%%primer y ultimo valor fuera del rango
+%%varlongint=-2147483649_l;
+%%varlongint=2147483648_l;
+"compiladores una linea"
+a=2147483648_l
+123_l

@@ -56,6 +56,10 @@ public class SymbolTable {
             setAtributo(aux.getLexema(),"=>","CTE ENTERO LARGO");
             return true;
         }
+        // Agrega maximo valor permitido ya que se paso de rango
+        // aux.setLexema(String.valueOf(LexicalAnalyzer.MAX_INT_SIZE)+"_l");
+        //setSymbol(aux.getLexema(), aux.getTipo());
+        //setAtributo(aux.getLexema(),"=>","CTE ENTERO LARGO");
         return false;
     }
 
@@ -76,13 +80,14 @@ public class SymbolTable {
     }
 
     public boolean addFloatPositiva(Symbol aux) {
-        float floatToAdd  = Float.valueOf(aux.getLexema().substring(0,aux.getLexema().length()))*(-1);
+        float floatToAdd  = Float.valueOf(aux.getLexema().substring(0,aux.getLexema().length()));
 
         if (floatToAdd < LexicalAnalyzer.MAX_FLOAT_SIZE) {
             setSymbol(aux.getLexema(), aux.getTipo());
             setAtributo(aux.getLexema(),"=>","CTE FLOTANTE");
             return true;
         }
+        //no agrega numero maximo positivo en caso que se quede el tamanio sea menor
         return false;
     }
 
