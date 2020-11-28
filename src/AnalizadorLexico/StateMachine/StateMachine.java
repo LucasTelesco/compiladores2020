@@ -33,7 +33,14 @@ public final class StateMachine {
             return 'd';
         }
 
-        return c;
+        if ((asciiChar==42)||(asciiChar==47)||(asciiChar==45)||(asciiChar==62)||(asciiChar==61)||(asciiChar==33)
+                ||(asciiChar==123)||(asciiChar==125)||(asciiChar==40)||(asciiChar==41)||(asciiChar==44)||(asciiChar==59)
+                ||(asciiChar==37)||(asciiChar==46)||(asciiChar==95)||(asciiChar==34)||(asciiChar==32)
+                ||(asciiChar==108)||(asciiChar==100)||(asciiChar==102)||(asciiChar==10)){
+            //simbolos unitarios ascii
+            return c;
+        }
+        return 'C';
     }
 
     public static void addTransition(Integer state, Character symbol, Integer nextState, SemanticAction semanticAction){

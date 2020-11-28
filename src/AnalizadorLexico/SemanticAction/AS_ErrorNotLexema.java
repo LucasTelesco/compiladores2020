@@ -11,10 +11,10 @@ public class AS_ErrorNotLexema extends SemanticAction{
 
     @Override
     public void Action(Character symbol) {
-        String e= Errors.ERROR_FAIL_CHARACTER +" "+lexical.buffer;
+        String e= Errors.ERROR_FAIL_CHARACTER +" "+lexical.buffer+symbol;
 
         lexical.errors.setError(lexical.row,e);
         lexical.buffer = "";
-        lexical.row++;
+        lexical.index++;
     }
 }
