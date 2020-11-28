@@ -653,9 +653,6 @@ public class LexicalAnalyzer {
         if (valor == 0){
             return "EOF";
         }
-        else if (valor == LexicalAnalyzer.ID){
-            return "IDENTIFICADOR";
-        }
         else if (valor == LexicalAnalyzer.LONGINT){
             return "PALABRA RESERVADA LONGINT";
         }
@@ -672,7 +669,7 @@ public class LexicalAnalyzer {
             return "ESIGUAL";
         }
         else if (valor == LexicalAnalyzer.ID) {
-            return "IDENTIFICADOR";
+            return "IDENTIFICADOR  " + ((Symbol)this.yylval.obj).getLexema();
         }
         else if (valor == LexicalAnalyzer.THEN) {
             return "PALABRA RESERVADA THEN";

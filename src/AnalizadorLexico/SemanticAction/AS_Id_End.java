@@ -2,6 +2,7 @@ package AnalizadorLexico.SemanticAction;
 
 import AnalizadorLexico.LexicalAnalyzer;
 import Errors.*;
+import SymbolTable.Symbol;
 
 public class AS_Id_End extends SemanticAction{
 
@@ -18,6 +19,9 @@ public class AS_Id_End extends SemanticAction{
 
         lexical.symbolTable.setSymbol(lexical.buffer, LexicalAnalyzer.ID);
         lexical.symbolTable.setAtributo(lexical.buffer,"=>","IDENTIFICADOR");
+
+        Symbol symbol2 = new Symbol(lexical.buffer, LexicalAnalyzer.ID);
+        lexical.yylval.obj= symbol2;
 
         lexical.lastSymbol=lexical.buffer; // guardo el simbolo viejo
         lexical.buffer = "";
