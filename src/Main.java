@@ -39,7 +39,7 @@ public class Main {
             archivo+=  "\n";
             archivo = archivo.substring(0,archivo.length()-1);
             errors = new Errors();
-            final SymbolTable st = new SymbolTable();
+            final SymbolTable st = new SymbolTable(errors);
             final LexicalAnalyzer lexical = new LexicalAnalyzer(archivo,st,errors);
             final AnalizadorSintactico.Parser par = new Parser(lexical,st,errors,estructuras);
             System.out.println("----------------------------------------------------------");

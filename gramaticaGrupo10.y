@@ -113,7 +113,7 @@ $$=$1;
 	;
 // LONGINT y FLOAT 
 factor: CTELONGINT  {$$=$1;
-                      if(!st.addLongintPositiva(((Symbol)($1.obj)))){
+                      if(!st.addLongintPositiva(((Symbol)($1.obj)),$1.getFila())){
                         yyerror("constante fuera de rango",$1.getFila());
                       }  
                     }

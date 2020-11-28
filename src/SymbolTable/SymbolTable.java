@@ -13,9 +13,11 @@ public class SymbolTable {
 
     private Hashtable<String, Symbol> tb;
     private Queue<String> productor;
-    public SymbolTable(){
+    private Errors errors;
+    public SymbolTable(Errors errors){
         tb = new Hashtable<>();
         productor = new LinkedList<>();
+        this.errors = errors;
     }
 
     public Symbol getSymbol(String key){
@@ -48,7 +50,7 @@ public class SymbolTable {
         }
     }
 
-    public boolean addLongintPositiva(Symbol aux) {
+    public boolean addLongintPositiva(Symbol aux,int fila) {
         long numtoAdd = Long.valueOf(aux.getLexema().substring(0,aux.getLexema().length()-2));
 
         if (  numtoAdd < LexicalAnalyzer.MAX_INT_SIZE){
@@ -60,6 +62,7 @@ public class SymbolTable {
         // aux.setLexema(String.valueOf(LexicalAnalyzer.MAX_INT_SIZE)+"_l");
         //setSymbol(aux.getLexema(), aux.getTipo());
         //setAtributo(aux.getLexema(),"=>","CTE ENTERO LARGO");
+        errors.setError(fila,  Errors.ERROR_RANGE);
         return false;
     }
 

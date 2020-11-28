@@ -684,7 +684,7 @@ case 11:
 break;
 case 12:
 //#line 44 "gramaticaGrupo10.y"
-{yyerror("Control mal definida ");}
+{yyerror("procedimiento mal definido ");}
 break;
 case 13:
 //#line 47 "gramaticaGrupo10.y"
@@ -799,7 +799,7 @@ break;
 case 34:
 //#line 115 "gramaticaGrupo10.y"
 {yyval=val_peek(0);
-                      if(!st.addLongintPositiva(((Symbol)(val_peek(0).obj)))){
+                      if(!st.addLongintPositiva(((Symbol)(val_peek(0).obj)),val_peek(0).getFila())){
                         yyerror("constante fuera de rango",val_peek(0).getFila());
                       }  
                     }

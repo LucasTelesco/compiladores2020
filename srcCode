@@ -1,9 +1,4 @@
-%%caso de pruebas identificadores
+%%caso de pruebas Enteros largos primero dentro del rango
 
-compilador_2020_compilador_2020 = 1_l;
-compilador_2020 = 1_l;
-
-%%caso de pruebas identificadores - errores lexicos
-
-%%Compilador_2020 = 1_l;
-_compilador2020 = 1_l;
+2147483649_l
+123_l
