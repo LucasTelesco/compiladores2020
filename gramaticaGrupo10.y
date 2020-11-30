@@ -149,8 +149,8 @@ asignacion: ID '=' expresion{
             estructuras.add("Asignacion "+" fila "+$1.getFila());
     }
 	| '=' expresion  {yyerror("Falta elemento de asignacion ",$1.getFila());}
-	| ID '='  {yyerror("error en la asignacion ",$1.getFila());}
-	| ID error  {yyerror("error en la asignacion ",$1.getFila());}
+	| ID '='  {yyerror("error en el identificador, falta asignacion",$1.getFila());}
+	| ID error  {yyerror("error en el identificador, falta asignacion",$1.getFila());}
 	;
 
 
